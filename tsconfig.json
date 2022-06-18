@@ -5,7 +5,8 @@
     "paths": {
       "angular-http-client": ["dist/angular-http-client"],
       "@enum": ["./projects/angular-http-client/src/lib/enums/index.d.ts"],
-      "@interfaces": ["./projects/angular-http-client/src/lib/interfaces/index.d.ts"]
+      "@interfaces": ["./projects/angular-http-client/src/lib/interfaces/index.d.ts"],
+      "@mocks": ["./projects/angular-http-client/test/lib/mocks/index.d.ts"]
     },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",

@@ -1,9 +1,9 @@
-import { httpMethodNotSupported } from './../message/messages';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { HttpMethod } from '@enum';
 import { HttpParameters } from '@interfaces';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { httpMethodNotSupported } from './../message/messages';
 
 /**
  * Classe utilizada para requisições HTTP.
@@ -24,9 +24,9 @@ export class HttpRequestClientServices {
   execute<T>(
     method: HttpMethod,
     path: string,
-    headerParams: HttpParameters,
-    queryParams: HttpParameters,
-    bodyParams: object
+    headerParams?: HttpParameters,
+    queryParams?: HttpParameters,
+    bodyParams?: object
   ): Observable<T> {
     const options = {
       headers: {} as HttpParameters,
@@ -35,20 +35,21 @@ export class HttpRequestClientServices {
       this.addHeadersParams(options.headers, headerParams);
     }
 
-    const url: string = encodeURI(this.urlParams(path, queryParams));
+    const url = encodeURI(this.urlParams(path, queryParams));
+
     switch (method) {
       case HttpMethod.Get:
         return this.http.get<T>(url, options);
       case HttpMethod.Delete:
-        return this.http.delete<T>(path, options);
+        return this.http.delete<T>(url, options);
       case HttpMethod.Post:
-        return this.http.post<T>(path, bodyParams, options);
+        return this.http.post<T>(url, bodyParams, options);
       case HttpMethod.Patch:
-        return this.http.patch<T>(path, bodyParams, options);
+        return this.http.patch<T>(url, bodyParams, options);
       case HttpMethod.Put:
-        return this.http.put<T>(path, bodyParams, options);
+        return this.http.put<T>(url, bodyParams, options);
       default:
-        throw new Error(httpMethodNotSupported);
+        return throwError(() => new Error(httpMethodNotSupported));
     }
   }
 
@@ -73,7 +74,7 @@ export class HttpRequestClientServices {
    * @param params Parametros utilizados na requisição como queryString.
    * @returns URL com os parametros para requisição
    */
-  private urlParams(path: string, params: HttpParameters): string {
+  private urlParams(path: string, params?: HttpParameters): string {
     const urlParams: string[] = [];
     for (const key in params) {
       urlParams.push(`${key}=${params[key]}`);
