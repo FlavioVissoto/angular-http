@@ -3,23 +3,23 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-http-client": {
+    "http-client": {
       "projectType": "library",
-      "root": "projects/angular-http-client",
-      "sourceRoot": "projects/angular-http-client/src",
+      "root": "projects/http-client",
+      "sourceRoot": "projects/http-client/src",
       "prefix": "ahc",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/angular-http-client/ng-package.json"
+            "project": "projects/http-client/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/angular-http-client/tsconfig.lib.prod.json"
+              "tsConfig": "projects/http-client/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/angular-http-client/tsconfig.lib.json"
+              "tsConfig": "projects/http-client/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
