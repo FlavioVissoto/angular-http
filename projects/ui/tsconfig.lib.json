@@ -8,5 +8,6 @@
     "inlineSources": true,
     "types": []
   },
+  "compileOnSave": true,
   "exclude": ["src/test.ts", "**/*.spec.ts"]
 }

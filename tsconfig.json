@@ -6,15 +6,9 @@
       "http-client": ["dist/http-client"],
       "@enum": ["./projects/http-client/src/lib/enums/index.d.ts"],
       "@interfaces": ["./projects/http-client/src/lib/interfaces/index.d.ts"],
-      "@mocks": [
-        "./projects/http-client/test/lib/mocks/index.d.ts"
-      ],
-      "storage": [
-        "dist/storage"
-      ],
-      "ui": [
-        "dist/ui"
-      ]
+      "@mocks": ["./projects/http-client/test/lib/mocks/index.d.ts"],
+      "storage": ["dist/storage"],
+      "ui": ["dist/ui"]
     },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
@@ -22,7 +16,7 @@
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
+    "noImplicitReturns": false,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
@@ -32,7 +26,8 @@
     "importHelpers": true,
     "target": "es2020",
     "module": "es2020",
-    "lib": ["es2020", "dom"]
+    "lib": ["es2020", "dom"],
+    "strictPropertyInitialization": false
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
