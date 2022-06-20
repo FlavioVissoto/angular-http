@@ -11,6 +11,9 @@
       ],
       "storage": [
         "dist/storage"
+      ],
+      "ui": [
+        "dist/ui"
       ]
     },
     "baseUrl": "./",
