@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { By } from '@angular/platform-browser';
+import { Tab } from './interface/tab.interface';
 import { TabComponent } from './tab.component';
 
 // import { InputRadioComponent } from './ico-tabs.component';

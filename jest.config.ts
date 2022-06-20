@@ -1,7 +1,7 @@
 import type { Config } from '@jest/types';
 
 const config: Config.InitialOptions = {
-  roots: ['<rootDir>', './../vissoto-angular-http/projects/angular-http-client/test'],
+  roots: ['<rootDir>'],
   moduleDirectories: ['node_modules'],
   verbose: true,
   preset: 'jest-preset-angular',

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Image } from './../interface/image.interface';
 import { Card } from './interface/card.interface';
 
 @Component({
