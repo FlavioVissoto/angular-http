@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CardComponent } from './card.component';
@@ -7,12 +7,12 @@ describe('IonIUButtonComponent', () => {
   let component: CardComponent;
   let fixture: ComponentFixture<CardComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [CardComponent],
       imports: [FontAwesomeModule],
     }).compileComponents();
-  }));
+  });
 
   test('should create component', () => {
     fixture = TestBed.createComponent(CardComponent);
