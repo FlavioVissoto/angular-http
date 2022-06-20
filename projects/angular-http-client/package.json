@@ -1,6 +1,6 @@
 {
-  "name": "angular-http-client",
-  "version": "0.0.1",
+  "name": "@angular-pack/http-client",
+  "version": "1.0.0",
   "peerDependencies": {
     "@angular/common": "^14.0.0",
     "@angular/core": "^14.0.0"

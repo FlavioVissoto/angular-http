@@ -1,11 +1,31 @@
 {
-  "name": "vissoto-angular-http",
-  "version": "0.0.0",
+  "name": "@angular-pack/http-client",
+  "version": "1.0.0",
+  "description": "Esse projeto foi criado para facilitar as consultas HTTP realizadas em projetos Angular.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlavioVissoto/angular-http.git"
+  },
+  "keywords": [
+    "angular",
+    "http",
+    "client",
+    "request",
+    "pack",
+    "vissoto"
+  ],
+  "author": "Flavio Vissoto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FlavioVissoto/angular-http/issues"
+  },
+  "homepage": "https://github.com/FlavioVissoto/angular-http#readme",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:prod": "ng build --prod && npm run pack",
+    "build:prod": "ng build && npm run pack",
     "watch": "ng build --watch --configuration development",
     "test": "npx jest --no-cache",
     "lint": "eslint . --ext .ts",
