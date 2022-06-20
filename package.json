@@ -26,6 +26,7 @@
     "start": "ng serve",
     "build": "ng build",
     "build:http": "ng build http-client && npm run pack",
+    "build:storage": "ng build http-client && npm run pack",
     "watch": "ng build --watch --configuration development",
     "test": "npx jest --no-cache",
     "lint": "eslint . --ext .ts",

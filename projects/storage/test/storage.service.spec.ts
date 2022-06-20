@@ -1,5 +1,5 @@
-import { StorageServices } from './storage.services';
 import { TestBed } from '@angular/core/testing';
+import { StorageServices } from '../src/lib/storage.service';
 
 describe('StorageServices', () => {
   const mockValues = {
@@ -59,4 +59,3 @@ describe('StorageServices', () => {
     expect(sessionStorage.length).toBe(0);
   });
 });
-
