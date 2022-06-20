@@ -76,4 +76,3 @@ export class StorageServices {
     sessionStorage.clear();
   }
 }
-

@@ -1,3 +1,5 @@
+import { StoreService } from '../src/lib/store.services';
+
 describe('StoreService', () => {
   let storeService: StoreService<string>;
 
