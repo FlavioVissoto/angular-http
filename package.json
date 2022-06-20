@@ -33,8 +33,10 @@
     "pack": "cd dist && npm pack",
     "tailwind": "npx tailwindcss -o ./projects/ui/src/assets/css/tailwind.css"
   },
-  "hooks": {
-    "pre-push": "npm run lint && npm run test"
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run lint && npm run test"
+    }
   },
   "private": true,
   "dependencies": {
