@@ -6,7 +6,12 @@
       "http-client": ["dist/http-client"],
       "@enum": ["./projects/http-client/src/lib/enums/index.d.ts"],
       "@interfaces": ["./projects/http-client/src/lib/interfaces/index.d.ts"],
-      "@mocks": ["./projects/http-client/test/lib/mocks/index.d.ts"]
+      "@mocks": [
+        "./projects/http-client/test/lib/mocks/index.d.ts"
+      ],
+      "storage": [
+        "dist/storage"
+      ]
     },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",

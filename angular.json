@@ -7,7 +7,7 @@
       "projectType": "library",
       "root": "projects/http-client",
       "sourceRoot": "projects/http-client/src",
-      "prefix": "ahc",
+      "prefix": "vat",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -23,6 +23,37 @@
             }
           },
           "defaultConfiguration": "production"
+        }
+      }
+    },
+    "storage": {
+      "projectType": "library",
+      "root": "projects/storage",
+      "sourceRoot": "projects/storage/src",
+      "prefix": "vat",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/storage/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/storage/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/storage/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/storage/src/test.ts",
+            "tsConfig": "projects/storage/tsconfig.spec.json",
+            "karmaConfig": "projects/storage/karma.conf.js"
+          }
         }
       }
     }
