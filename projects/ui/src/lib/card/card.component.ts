@@ -1,15 +1,40 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+
+import { Card } from './interfaces/iui-card.interface';
+import { Image } from '../interface/image';
 
 @Component({
-  selector: 'vat-card',
-  templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css']
+  selector: 'iui-card',
+  templateUrl: './iui-card.component.html',
+  styleUrls: ['./../../assets/css/tailwind.scss', './../../assets/css/tailwind-custom.scss', './iui-card.component.scss'],
 })
-export class CardComponent implements OnInit {
+export class IonUICardComponent implements OnInit {
+  @Input() card: Card;
+  @Input() title: string;
+  @Input() message: string;
+  @Input() messageFooter: string;
+  @Input() image: Image;
 
-  constructor() { }
+  @Input() disabled = false;
+  @Input() loading = false;
+
+  @Output() clickedButton = new EventEmitter();
 
   ngOnInit(): void {
+    if (!this.card) {
+      this.card = {
+        image: this.image,
+        title: this.title,
+        message: this.message,
+        messageFooter: this.messageFooter,
+      } as Card;
+    }
   }
 
+  clickCard(): void {
+    if (this.loading || this.disabled) {
+      return;
+    }
+    this.clickedButton.emit(true);
+  }
 }
