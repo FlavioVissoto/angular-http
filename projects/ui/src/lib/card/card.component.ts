@@ -1,14 +1,13 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
-import { Card } from './interfaces/iui-card.interface';
 import { Image } from '../interface/image';
 
 @Component({
-  selector: 'iui-card',
-  templateUrl: './iui-card.component.html',
-  styleUrls: ['./../../assets/css/tailwind.scss', './../../assets/css/tailwind-custom.scss', './iui-card.component.scss'],
+  selector: 'vat-card',
+  templateUrl: './card.component.html',
+  styleUrls: ['./../../assets/css/tailwind.scss', './../../assets/css/tailwind-custom.scss', './card.component.scss'],
 })
-export class IonUICardComponent implements OnInit {
+export class CardComponent implements OnInit {
   @Input() card: Card;
   @Input() title: string;
   @Input() message: string;

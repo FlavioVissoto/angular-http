@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { IonUITabComponent } from './iui-tab.component';
 import { NgModule } from '@angular/core';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TabComponent } from './tab.component';
 
 @NgModule({
-  declarations: [IonUITabComponent],
-  exports: [IonUITabComponent],
+  declarations: [TabComponent],
+  exports: [TabComponent],
   imports: [CommonModule, FontAwesomeModule],
 })
-export class IonUITabModule {}
+export class TabModule {}

@@ -3,11 +3,11 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'iui-button',
-  templateUrl: './iui-button.component.html',
+  selector: 'vat-button',
+  templateUrl: './button.component.html',
   styleUrls: ['./../../assets/css/tailwind.scss'],
 })
-export class IonIUButtonComponent {
+export class ButtonComponent {
   @Input() text: string;
   @Input() disabled = false;
   @Input() loading = false;

@@ -1,29 +1,29 @@
-import { ComponentFixture, TestBed, async } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { By } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { IonIUButtonComponent } from './iui-button.component';
+import { ButtonComponent } from './button.component';
 
-describe('IonIUButtonComponent', () => {
-  let component: IonIUButtonComponent;
-  let fixture: ComponentFixture<IonIUButtonComponent>;
+describe('ButtonComponent', () => {
+  let component: ButtonComponent;
+  let fixture: ComponentFixture<ButtonComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [IonIUButtonComponent],
+      declarations: [ButtonComponent],
       imports: [FontAwesomeModule],
     }).compileComponents();
   }));
 
   test('should create component', () => {
-    fixture = TestBed.createComponent(IonIUButtonComponent);
+    fixture = TestBed.createComponent(ButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
     expect(component).toBeTruthy();
   });
 
   test('should emit tab on click', () => {
-    fixture = TestBed.createComponent(IonIUButtonComponent);
+    fixture = TestBed.createComponent(ButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
     const button = fixture.debugElement.query(By.css('button'));
@@ -35,7 +35,7 @@ describe('IonIUButtonComponent', () => {
   });
 
   test('should emit tab on click with onloading', () => {
-    fixture = TestBed.createComponent(IonIUButtonComponent);
+    fixture = TestBed.createComponent(ButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
     component.loading = true;

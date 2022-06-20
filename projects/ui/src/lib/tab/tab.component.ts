@@ -3,10 +3,10 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IonUITab } from './interfaces/iui-tab.interface';
 
 @Component({
-  selector: 'iui-tab',
-  templateUrl: './iui-tab.component.html',
+  selector: 'vat-tab',
+  templateUrl: './tab.component.html',
 })
-export class IonUITabComponent {
+export class TabComponent {
   @Input() Tabs: IonUITab[] = [];
 
   /**
