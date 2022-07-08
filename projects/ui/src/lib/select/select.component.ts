@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { Select, SelectOptions } from './interfaces/iui-select.interface';
 
 @Component({
   selector: 'vat-select',
@@ -30,7 +33,6 @@ export class SelectComponent implements OnInit {
   faChevronDown = faChevronDown;
 
   ngOnInit(): void {
-    /* istanbul ignore next */
     document.addEventListener('click', (ev: Event) => {
       if ((<Element>ev.target).closest(`.${this.className}`)) {
         return;
