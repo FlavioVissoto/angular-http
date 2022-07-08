@@ -1,11 +1,16 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Image } from './../interface/image.interface';
+
 import { Card } from './interface/card.interface';
+import { Image } from './../interface/image.interface';
 
 @Component({
   selector: 'vat-card',
   templateUrl: './card.component.html',
-  styleUrls: ['./../../assets/css/tailwind.css', './../../assets/css/tailwind-custom.scss', './card.component.scss'],
+  styleUrls: [
+    './../../assets/css/tailwind.css',
+    './../../assets/css/tailwind-custom.scss',
+    './card.component.scss',
+  ],
 })
 export class CardComponent implements OnInit {
   @Input() card: Card;

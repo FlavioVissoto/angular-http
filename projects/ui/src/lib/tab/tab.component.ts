@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+
 import { Tab } from './interface/tab.interface';
 
 @Component({
@@ -24,7 +25,8 @@ export class TabComponent {
 
   setSelected(tab: Tab): void {
     for (let index = 0; index < this.Tabs.length; index++) {
-      this.Tabs[index].selected = this.Tabs[index].id === tab.id && this.Tabs[index].text === tab.text;
+      this.Tabs[index].selected =
+        this.Tabs[index].id === tab.id && this.Tabs[index].text === tab.text;
     }
   }
 }
