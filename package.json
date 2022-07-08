@@ -1,11 +1,11 @@
 {
-  "name": "@angular-pack/http-client",
+  "name": "vissoto-angular-toolkit",
   "version": "1.0.0",
-  "description": "Esse projeto foi criado para facilitar as consultas HTTP realizadas em projetos Angular.",
+  "description": "",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FlavioVissoto/angular-http.git"
+    "url": "git+https://github.com/FlavioVissoto/vissoto-angular-toolkit.git"
   },
   "keywords": [
     "angular",
@@ -13,14 +13,15 @@
     "client",
     "request",
     "pack",
-    "vissoto"
+    "vissoto",
+    "toolkit"
   ],
   "author": "Flavio Vissoto",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/FlavioVissoto/angular-http/issues"
+    "url": "https://github.com/FlavioVissoto/vissoto-angular-toolkit/issues"
   },
-  "homepage": "https://github.com/FlavioVissoto/angular-http#readme",
+  "homepage": "https://github.com/FlavioVissoto/vissoto-angular-toolkit#readme",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
