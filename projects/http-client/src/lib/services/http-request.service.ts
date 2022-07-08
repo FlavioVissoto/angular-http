@@ -60,7 +60,10 @@ export class HttpRequestClientServices {
    * @param params Parametros que serão utilizados no cabeçalho da requisição.
    * @returns Retorna um objeto Headers com as informações de parametros.
    */
-  private addHeadersParams(header: HttpParameters, params: HttpParameters): HttpParameters {
+  private addHeadersParams(
+    header: HttpParameters,
+    params: HttpParameters
+  ): HttpParameters {
     if (params) {
       for (const key in params) {
         header[key] = params[key];
