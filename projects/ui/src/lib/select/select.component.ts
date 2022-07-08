@@ -33,12 +33,16 @@ export class SelectComponent implements OnInit {
   faChevronDown = faChevronDown;
 
   ngOnInit(): void {
-    document.addEventListener('click', (ev: Event) => {
-      if ((<Element>ev.target).closest(`.${this.className}`)) {
-        return;
-      }
-      this.showOptions = false;
-    });
+    document.addEventListener(
+      'click',
+      (ev: Event) => {
+        if ((<Element>ev.target).closest(`.${this.className}`)) {
+          return;
+        }
+        this.showOptions = false;
+      },
+      false
+    );
     this.listenerSetSelected();
   }
 
