@@ -6,32 +6,66 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./select.component.scss'],
 })
 export class SelectComponent implements OnInit {
-  @Input() card: Card;
+  private _values: Select;
+  @Input() set values(value: Select) {
+    this.optionSelected = value.options.find((x: SelectOptions) => x.selected);
+    this._values = value;
+  }
+  get values(): Select {
+    return this._values;
+  }
+  @Input() firstIsEmpty = false;
+  @Input() className = 'custom-dropdown';
   @Input() title: string;
-  @Input() message: string;
-  @Input() messageFooter: string;
-  @Input() image: Image;
+  @Input() titleCssClass: string;
+  @Input() placeholder: string;
+  @Input() form: FormControl;
+  @Input() optionSelected: SelectOptions | undefined;
+  @Input() onSetSelected: EventEmitter<SelectOptions>;
 
-  @Input() disabled = false;
-  @Input() loading = false;
+  @Output() onSelected = new EventEmitter<SelectOptions>();
 
-  @Output() clickedButton = new EventEmitter();
+  showOptions = false;
+  faChevronUp = faChevronUp;
+  faChevronDown = faChevronDown;
 
   ngOnInit(): void {
-    if (!this.card) {
-      this.card = {
-        image: this.image,
-        title: this.title,
-        message: this.message,
-        messageFooter: this.messageFooter,
-      } as Card;
-    }
+    /* istanbul ignore next */
+    document.addEventListener('click', (ev: Event) => {
+      if ((<Element>ev.target).closest(`.${this.className}`)) {
+        return;
+      }
+      this.showOptions = false;
+    });
+    this.listenerSetSelected();
   }
 
-  clickCard(): void {
-    if (this.loading || this.disabled) {
+  openOptions(): void {
+    this.showOptions = !this.showOptions;
+  }
+
+  clickSelect(index: number): void {
+    if (index == this.values.options.findIndex((x) => x.selected)) {
       return;
     }
-    this.clickedButton.emit(true);
+    for (let i = 0; i < this.values.options.length; i++) {
+      this.values.options[i].selected = false;
+    }
+    this.values.options[index].selected = true;
+    this.optionSelected = this.values.options[index];
+    if (this.form) {
+      this.form.setValue(this.optionSelected.value);
+    }
+    this.onSelected.emit(this.optionSelected);
+  }
+
+  listenerSetSelected(): void {
+    if (this.onSetSelected) {
+      this.onSetSelected.subscribe({
+        next: (x: SelectOptions) => {
+          this.optionSelected = x;
+        },
+      });
+    }
   }
 }
