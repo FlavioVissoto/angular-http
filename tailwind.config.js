@@ -3,7 +3,7 @@ module.exports = {
   content: ['./src/**/*.{html,ts}', './projects/**/*.{html,ts,js}'],
   theme: {
     fontFamily: {
-      itau: [''],
+      roboto: ['roboto'],
     },
     extend: {
       width: {},

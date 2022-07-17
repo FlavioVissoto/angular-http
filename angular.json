@@ -25,7 +25,12 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss", "src/assets/css/tailwind.css", "src/assets/icons/style.css"],
+            "styles": [
+              "src/styles.scss",
+              "src/assets/css/tailwind.css",
+              "src/assets/icons/style.css",
+              "src/assets/css/fonts.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -78,81 +83,6 @@
           "options": {
             "browserTarget": "angular-toolkit-web:build"
           }
-        }
-      }
-    },
-    "http-client": {
-      "projectType": "library",
-      "root": "projects/http-client",
-      "sourceRoot": "projects/http-client/src",
-      "prefix": "vat",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "projects/http-client/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/http-client/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "projects/http-client/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        }
-      }
-    },
-    "storage": {
-      "projectType": "library",
-      "root": "projects/storage",
-      "sourceRoot": "projects/storage/src",
-      "prefix": "vat",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "projects/storage/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/storage/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "projects/storage/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        }
-      }
-    },
-    "ui": {
-      "projectType": "library",
-      "root": "projects/ui",
-      "sourceRoot": "projects/ui/src",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      },
-      "prefix": "vat",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "projects/ui/ng-package.json",
-            "tsConfig": "projects/ui/tsconfig.lib.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/ui/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "projects/ui/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
         }
       }
     }

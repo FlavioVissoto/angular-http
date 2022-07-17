@@ -1,2 +1,12 @@
 <app-sidebar></app-sidebar>
-<router-outlet></router-outlet>
+<div class="overflow-hidden">
+  <div class="max-w-8xl mx-auto px-4 sm:px-6 md:px-8">
+    <div
+      class="fixed inset-0 overflow-y-auto pb-10 px-8 right-auto top-[3.8125rem] w-[19.5rem]">
+      <app-navbar></app-navbar>
+    </div>
+    <div class="lg:pl-[19.5rem]">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
