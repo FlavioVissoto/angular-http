@@ -26,6 +26,7 @@
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
+              "./node_modules/@vissoto-angular-toolkit/ui/src/assets/css/tailwind.css",
               "src/styles.scss",
               "src/assets/css/tailwind.css",
               "src/assets/icons/style.css",
