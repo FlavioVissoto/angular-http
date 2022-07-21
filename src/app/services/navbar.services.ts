@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 import { Navbar } from '../components/navbar/interface/navbar.interface';
 import { Observable } from 'rxjs';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class NavbarServices {
   constructor(private http: HttpRequestClientServices) {}
 
