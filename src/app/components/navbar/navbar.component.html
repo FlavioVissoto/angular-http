@@ -1,80 +1,26 @@
 <nav id="nav" class="lg:text-sm lg:leading-6 relative">
-  <!-- BOTÃO DE PESQUISA -->
-  <div class="sticky top-0 -ml-0.5 pointer-events-none">
-    <div class="h-10 bg-white dark:bg-slate-900"></div>
-    <div class="bg-white dark:bg-slate-900 relative pointer-events-auto">
-      <!-- <button
-        type="button"
-        class="hidden w-full lg:flex items-center text-sm leading-6 text-slate-400 rounded-md ring-1 ring-slate-900/10 shadow-sm py-1.5 pl-2 pr-3 hover:ring-slate-300 dark:bg-slate-800 dark:highlight-white/5 dark:hover:bg-slate-700">
-        Quick search...<span class="ml-auto pl-3 flex-none text-xs font-semibold">Ctrl K</span>
-      </button> -->
-    </div>
-    <div class="h-8 bg-gradient-to-b from-white dark:from-slate-900"></div>
-  </div>
-
   <!-- MENU PRINCIPAL -->
-  <ul>
-    <li *ngFor="let item of navbarPrincipal">
-      <a
-        [href]="item.href"
-        class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400 {{
-          item.iconCss
-        }}">
-        <div
-          class="mr-4 rounded-md ring-1 ring-slate-900/5 shadow-sm group-hover:shadow group-hover:ring-slate-900/10 dark:ring-0 dark:shadow-none dark:group-hover:shadow-none dark:group-hover:highlight-white/10 group-hover:shadow-sky-200 dark:group-hover:bg-sky-500 dark:bg-sky-500 dark:highlight-white/10"></div>
-        {{ item.text }}
-      </a>
+  <ul *ngIf="navbarPrincipal" class="pt-12">
+    <li
+      *ngFor="let item of navbarPrincipal"
+      class="flex items-center lg:text-sm mb-4 space-x-2 text-slate-600 hover:text-slate-600/60 font-semibold">
+      <i [class]="item.iconCss"></i>
+      <a [href]="item.href">{{ item.text }}</a>
     </li>
   </ul>
 
   <!-- SUB MENUS -->
-  <ul>
-    <li class="mt-12 lg:mt-8">
+  <ul *ngIf="navbarSecondary">
+    <li class="mt-12 lg:mt-8" *ngFor="let navBar of navbarSecondary">
       <h5 class="mb-8 lg:mb-3 font-semibold text-slate-900 dark:text-slate-200">
-        Getting Started
+        {{ navBar.title }}
       </h5>
-      <ul
-        class="space-y-6 lg:space-y-2 border-l border-slate-100 dark:border-slate-800">
-        <li>
+      <ul class="space-y-6 lg:space-y-2 border-l border-slate-100">
+        <li *ngFor="let item of navBar.items">
           <a
-            class="block border-l pl-4 -ml-px text-sky-500 border-current font-semibold dark:text-sky-400"
-            href="/docs/installation"
-            >Installation</a
-          >
-        </li>
-        <li>
-          <a
-            class="block border-l pl-4 -ml-px border-transparent hover:border-slate-400 dark:hover:border-slate-500 text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300"
-            href="/docs/editor-setup"
-            >Editor Setup</a
-          >
-        </li>
-        <li>
-          <a
-            class="block border-l pl-4 -ml-px border-transparent hover:border-slate-400 dark:hover:border-slate-500 text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300"
-            href="/docs/using-with-preprocessors"
-            >Using with Preprocessors</a
-          >
-        </li>
-        <li>
-          <a
-            class="block border-l pl-4 -ml-px border-transparent hover:border-slate-400 dark:hover:border-slate-500 text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300"
-            href="/docs/optimizing-for-production"
-            >Optimizing for Production</a
-          >
-        </li>
-        <li>
-          <a
-            class="block border-l pl-4 -ml-px border-transparent hover:border-slate-400 dark:hover:border-slate-500 text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300"
-            href="/docs/browser-support"
-            >Browser Support</a
-          >
-        </li>
-        <li>
-          <a
-            class="block border-l pl-4 -ml-px border-transparent hover:border-slate-400 dark:hover:border-slate-500 text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300"
-            href="/docs/upgrade-guide"
-            >Upgrade Guide</a
+            class="block border-l pl-4 -ml-px text-sky-500 border-current hover:text-sky-700"
+            [href]="item.href"
+            >{{ item.text }}</a
           >
         </li>
       </ul>

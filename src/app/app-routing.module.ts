@@ -12,9 +12,7 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => {
-      return import('./modules/home/home-routing.module').then(
-        (m) => m.HomeRoutingModule
-      );
+      return import('./modules/home/home.module').then((m) => m.HomeModule);
     },
   },
 ];

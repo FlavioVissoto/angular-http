@@ -12,18 +12,26 @@
           <nav class="text-sm leading-6 font-semibold text-blue-800">
             <ul class="flex space-x-4">
               <li>
-                <a class="hover:text-blue-500" href="/">Docs</a>
-              </li>
-              <li>
-                <a href="/" class="hover:text-blue-500">Components</a>
-              </li>
-              <li>
-                <a class="hover:text-blue-500" href="/">Blog</a>
+                <a href="/" class="hover:text-blue-500">Componentes</a>
               </li>
             </ul>
           </nav>
           <div
             class="flex items-center border-l border-blue-200 ml-6 space-x-4 px-4">
+            <vat-tooltip [text]="'Facebook'" [position]="2">
+              <a
+                id="xxx"
+                href="https://www.facebook.com/flavio.vissoto/"
+                target="_blank"
+                class="icon-facebook2 block text-blue-500 hover:text-blue-600 tooltip-trigger"></a>
+            </vat-tooltip>
+            <vat-tooltip [text]="'Instagram'" [position]="2">
+              <a
+                id="xxx"
+                href="https://www.instagram.com/flaviovissoto/"
+                target="_blank"
+                class="icon-instagram block text-blue-500 hover:text-blue-600 tooltip-trigger"></a>
+            </vat-tooltip>
             <vat-tooltip [text]="'GitHub'" [position]="2">
               <a
                 href="https://github.com/FlavioVissoto"

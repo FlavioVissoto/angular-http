@@ -1,7 +1,57 @@
 [
   {
-    "href": "docs",
-    "iconCss": "icon-books",
-    "text": "Documentação"
+    "title": "ARCADIA, The Dreams World",
+    "items": [
+      {
+        "href": "docs",
+        "iconCss": "icon-books",
+        "text": "O que é"
+      },
+      {
+        "href": "docs",
+        "iconCss": "icon-books",
+        "text": "História"
+      },
+      {
+        "href": "docs",
+        "iconCss": "icon-books",
+        "text": "Personagens"
+      }
+    ]
+  },
+  {
+    "title": "HTTP Client",
+    "items": [
+      {
+        "href": "docs",
+        "iconCss": "icon-books",
+        "text": "Instalação"
+      },
+      {
+        "href": "docs",
+        "iconCss": "icon-books",
+        "text": "Utilização"
+      }
+    ]
+  },
+  {
+    "title": "Storage",
+    "items": [
+      {
+        "href": "docs",
+        "iconCss": "icon-books",
+        "text": "Instalação"
+      }
+    ]
+  },
+  {
+    "title": "UI",
+    "items": [
+      {
+        "href": "docs",
+        "iconCss": "icon-books",
+        "text": "Instalação"
+      }
+    ]
   }
 ]

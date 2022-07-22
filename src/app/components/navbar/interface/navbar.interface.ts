@@ -3,3 +3,8 @@ export interface Navbar {
   iconCss?: string;
   text: string;
 }
+
+export interface NavBarSecondary {
+  title: string;
+  items: Navbar[];
+}

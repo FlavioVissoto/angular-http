@@ -1,12 +1,12 @@
 [
   {
-    "href": "module/http-client",
+    "href": "module/componentes",
     "iconCss": "icon-books",
-    "text": "HTTP CLIENT"
+    "text": "Componentes"
   },
   {
-    "href": "module/ui",
+    "href": "module/tutoriais",
     "iconCss": "icon-fire",
-    "text": "UI"
+    "text": "Tutoriais"
   }
 ]

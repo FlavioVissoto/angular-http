@@ -1,1 +1,116 @@
-<p>home works!</p>
+<!-- TOPO -->
+<div>
+  <div class="flex flex-row p-4">
+    <div>
+      <img src="../../../assets/img/blackhole.png " />
+    </div>
+    <div class="flex flex-col pl-16 justify-center space-y-4">
+      <p class="w-full">Seja bem vindo</p>
+      <p class="w-5/6 text-left">
+        O intuito desse site é auxiliar no desenvolvimento de sistemas
+        utilizando
+        <a
+          href="https://dotnet.microsoft.com/en-us/"
+          class="font-semibold cursor-pointer hover:underline"
+          target="_blank"
+          >.Net</a
+        >,
+        <a
+          href="https://nodejs.org/en/"
+          class="font-semibold cursor-pointer hover:underline"
+          >Node</a
+        >
+        e
+        <a
+          href="https://angular.io/"
+          class="font-semibold cursor-pointer hover:underline"
+          >Angular</a
+        >.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Social -->
+<div>
+  <p class="w-full text-center">
+    Você pode entrar em contato comigo nas redes sociais
+  </p>
+  <div class="flex flex-row justify-center pt-4">
+    <div class="flex items-center ml-6 space-x-4 px-4">
+      <vat-tooltip [text]="'Facebook'" [position]="0">
+        <a
+          id="xxx"
+          href="https://www.facebook.com/flavio.vissoto/"
+          target="_blank"
+          class="block text-blue-500 hover:text-blue-600 tooltip-trigger">
+          <img src="./../../../assets/img/facebook.png" width="50"
+        /></a>
+      </vat-tooltip>
+      <vat-tooltip [text]="'Instagram'" [position]="0">
+        <a
+          href="https://www.instagram.com/flaviovissoto/"
+          target="_blank"
+          class="block text-blue-500 hover:text-blue-600 tooltip-trigger">
+          <img src="./../../../assets/img/instagram.png" width="50"
+        /></a>
+      </vat-tooltip>
+      <vat-tooltip [text]="'GitHub'" [position]="0">
+        <a
+          href="https://github.com/FlavioVissoto"
+          target="_blank"
+          class="block text-blue-500 hover:text-blue-600 tool">
+          <img src="./../../../assets/img/github.png" width="50"
+        /></a>
+      </vat-tooltip>
+      <vat-tooltip [text]="'YouTube'" [position]="0">
+        <a
+          href="https://www.youtube.com/user/flaviovissoto"
+          target="_blank"
+          class="block text-blue-500 hover:text-blue-600 tooltip-trigger">
+          <img src="./../../../assets/img/youtube.png" width="50"
+        /></a>
+      </vat-tooltip>
+    </div>
+  </div>
+</div>
+
+<!-- Cards -->
+<div class="pt-32">
+  <h1 class="w-full text-left">
+    Abaixo estão os últimos posts realizados para que você possa acompanhar
+  </h1>
+
+  <div class="grid grid-cols-4 gap-4 pt-2">
+    <vat-card
+      [imageSrc]="
+        'https://images.unsplash.com/photo-1611916656173-875e4277bea6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&ixlib=rb-1.2.1&q=80&w=400'
+      "
+      [message]="
+        'Lorem ipsum sit dolor amitLorem ipsum sit dolor amitLorem ipsum sit dolor amitLorem ipsum sit dolor amit'
+      "
+      [title]="
+        'A Super Wonderful Headline A Super Wonderful Headline'
+      "></vat-card>
+    <vat-card
+      [imageSrc]="
+        'https://images.unsplash.com/photo-1611916656173-875e4277bea6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&ixlib=rb-1.2.1&q=80&w=400'
+      "
+      [message]="
+        'Lorem ipsum sit dolor amitLorem ipsum sit dolor amitLorem ipsum sit dolor amitLorem ipsum sit dolor amit'
+      "
+      [title]="
+        'A Super Wonderful Headline A Super Wonderful Headline'
+      "></vat-card>
+    <vat-card
+      [imageSrc]="
+        'https://images.unsplash.com/photo-1611916656173-875e4277bea6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&ixlib=rb-1.2.1&q=80&w=400'
+      "
+      [message]="
+        'Lorem ipsum sit dolor amitLorem ipsum sit dolor amitLorem ipsum sit dolor amitLorem ipsum sit dolor amit'
+      "
+      [title]="
+        'A Super Wonderful Headline A Super Wonderful Headline'
+      "></vat-card>
+  </div>
+</div>
