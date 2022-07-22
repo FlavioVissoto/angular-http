@@ -1,10 +1,15 @@
+import {
+  CUSTOM_ELEMENTS_SCHEMA,
+  NO_ERRORS_SCHEMA,
+  NgModule,
+} from '@angular/core';
+
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { ComponentsModule } from './components/components.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpRequestClientServices } from '@vissoto-angular-toolkit/http-client';
-import { NgModule } from '@angular/core';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -14,6 +19,7 @@ import { NgModule } from '@angular/core';
     HttpClientModule,
   ],
   providers: [HttpRequestClientServices],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

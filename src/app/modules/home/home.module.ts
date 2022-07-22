@@ -6,5 +6,6 @@ import { NgModule } from '@angular/core';
 @NgModule({
   declarations: [HomeComponent],
   imports: [CommonModule, HomeRoutingModule],
+  schemas: [],
 })
 export class HomeModule {}

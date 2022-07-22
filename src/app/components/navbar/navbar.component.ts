@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Navbar } from './interface/navbar.interface';
 import { NavbarServices } from './../../services/navbar.services';
@@ -11,8 +11,8 @@ import { NavbarServices } from './../../services/navbar.services';
 export class NavbarComponent implements OnInit {
   constructor(private navBarServices: NavbarServices) {}
 
-  @Input() navbarPrincipal: Navbar[];
-  @Input() navbarSecondary: Navbar[];
+  navbarPrincipal: Navbar[];
+  navbarSecondary: Navbar[];
 
   ngOnInit(): void {
     this.getPrimaryMenu();
