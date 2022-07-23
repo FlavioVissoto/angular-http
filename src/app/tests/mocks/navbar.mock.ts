@@ -1,4 +1,7 @@
-import { Navbar } from './../../components/navbar/interface/navbar.interface';
+import {
+  Navbar,
+  NavbarSecondary,
+} from './../../components/navbar/interface/navbar.interface';
 
 export const mockNavbar: Navbar[] = [
   {
@@ -10,5 +13,16 @@ export const mockNavbar: Navbar[] = [
     text: 'test2Text',
     href: 'test2Href',
     iconCss: 'test2CssIcon',
+  },
+];
+
+export const mockNavBarSecondary: NavbarSecondary[] = [
+  {
+    title: 'testSecondary1',
+    items: mockNavbar,
+  },
+  {
+    title: 'testSecondary2',
+    items: mockNavbar,
   },
 ];

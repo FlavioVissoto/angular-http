@@ -8,6 +8,9 @@ const config: Config.InitialOptions = {
   collectCoverage: true,
   coverageDirectory: './coverage',
   setupFilesAfterEnv: ['<rootDir>/setup-jest.ts'],
+  moduleNameMapper: {
+    '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
+  },
   coveragePathIgnorePatterns: [
     'node_modules',
     'test-config',

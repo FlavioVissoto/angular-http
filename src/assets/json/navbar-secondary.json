@@ -48,9 +48,28 @@
     "title": "UI",
     "items": [
       {
-        "href": "docs",
-        "iconCss": "icon-books",
+        "href": "https://www.npmjs.com/package/@vissoto-angular-toolkit/ui",
         "text": "Instalação"
+      },
+      {
+        "href": "component/ui/button",
+        "text": "Button"
+      },
+      {
+        "href": "component/ui/card",
+        "text": "Card"
+      },
+      {
+        "href": "component/ui/select",
+        "text": "Select"
+      },
+      {
+        "href": "component/ui/tab",
+        "text": "Tab"
+      },
+      {
+        "href": "component/ui/tooltip",
+        "text": "Tooltip"
       }
     ]
   }

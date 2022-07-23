@@ -1,10 +1,10 @@
-<nav id="nav" class="lg:text-sm lg:leading-6 relative">
+<nav class="lg:text-sm lg:leading-6 relative">
   <!-- MENU PRINCIPAL -->
   <ul *ngIf="navbarPrincipal" class="pt-12">
     <li
       *ngFor="let item of navbarPrincipal"
       class="flex items-center lg:text-sm mb-4 space-x-2 text-slate-600 hover:text-slate-600/60 font-semibold">
-      <i [class]="item.iconCss"></i>
+      <i class="{{ item.iconCss }}"></i>
       <a [href]="item.href">{{ item.text }}</a>
     </li>
   </ul>

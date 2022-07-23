@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavBarSecondary, Navbar } from './interface/navbar.interface';
+import { Navbar, NavbarSecondary } from './interface/navbar.interface';
 
 import { NavbarServices } from './../../services/navbar.services';
 
@@ -12,7 +12,7 @@ export class NavbarComponent implements OnInit {
   constructor(private navBarServices: NavbarServices) {}
 
   navbarPrincipal: Navbar[];
-  navbarSecondary: NavBarSecondary[];
+  navbarSecondary: NavbarSecondary[];
 
   ngOnInit(): void {
     this.getPrimaryMenu();
@@ -29,7 +29,7 @@ export class NavbarComponent implements OnInit {
 
   private getSecondaryMenu(): void {
     this.navBarServices.getMenuSecondary().subscribe({
-      next: (x: NavBarSecondary[]) => {
+      next: (x: NavbarSecondary[]) => {
         this.navbarSecondary = x;
       },
     });

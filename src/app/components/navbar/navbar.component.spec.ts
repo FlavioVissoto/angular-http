@@ -1,10 +1,15 @@
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {
+  mockNavBarSecondary,
+  mockNavbar,
+} from './../../tests/mocks/navbar.mock';
 
+import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar.component';
 import { NavbarServices } from './../../services/navbar.services';
-import { mockNavbar } from './../../tests/mocks/navbar.mock';
 import { of } from 'rxjs';
 
 describe('NavbarComponent', () => {
@@ -16,7 +21,8 @@ describe('NavbarComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [NavbarComponent],
       providers: [NavbarServices],
-      imports: [HttpClientModule, CommonModule],
+      imports: [BrowserModule, HttpClientModule, CommonModule],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
     }).compileComponents();
 
     fixture = TestBed.createComponent(NavbarComponent);
@@ -25,11 +31,11 @@ describe('NavbarComponent', () => {
     fixture.detectChanges();
   });
 
-  test('should create', () => {
+  test('deve criar o componente', () => {
     expect(component).toBeTruthy();
   });
 
-  test('should', () => {
+  test('deve retornar o menu principal.', () => {
     jest
       .spyOn(navBarServices, 'getMenuPrincipal')
       .mockImplementation(() => of(mockNavbar));
@@ -43,17 +49,17 @@ describe('NavbarComponent', () => {
     expect(component.navbarPrincipal).toEqual(mockNavbar);
   });
 
-  test('should', () => {
+  test('deve retornar o menu secundario', () => {
     jest
       .spyOn(navBarServices, 'getMenuSecondary')
-      .mockImplementation(() => of(mockNavbar));
+      .mockImplementation(() => of(mockNavBarSecondary));
 
     jest.useFakeTimers();
     component['getSecondaryMenu']();
     jest.runOnlyPendingTimers();
 
     expect(component.navbarSecondary).not.toEqual(undefined);
-    expect(component.navbarSecondary.length).toBe(mockNavbar.length);
-    expect(component.navbarSecondary).toEqual(mockNavbar);
+    expect(component.navbarSecondary.length).toBe(mockNavBarSecondary.length);
+    expect(component.navbarSecondary).toEqual(mockNavBarSecondary);
   });
 });

@@ -3,8 +3,8 @@ import {
   HttpRequestClientServices,
 } from '@vissoto-angular-toolkit/http-client';
 import {
-  NavBarSecondary,
   Navbar,
+  NavbarSecondary,
 } from '../components/navbar/interface/navbar.interface';
 
 import { Injectable } from '@angular/core';
@@ -23,8 +23,8 @@ export class NavbarServices {
     );
   }
 
-  getMenuSecondary(): Observable<NavBarSecondary[]> {
-    return this.http.execute<NavBarSecondary[]>(
+  getMenuSecondary(): Observable<NavbarSecondary[]> {
+    return this.http.execute<NavbarSecondary[]>(
       HttpMethod.Get,
       this.httpUrlBase + 'navbar-secondary.json'
     );

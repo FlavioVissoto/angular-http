@@ -4,7 +4,7 @@ export interface Navbar {
   text: string;
 }
 
-export interface NavBarSecondary {
+export interface NavbarSecondary {
   title: string;
   items: Navbar[];
 }

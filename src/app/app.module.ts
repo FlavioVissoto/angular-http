@@ -5,7 +5,6 @@ import { ComponentsModule } from './components/components.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpRequestClientServices } from '@vissoto-angular-toolkit/http-client';
 import { NgModule } from '@angular/core';
-import { TooltipModule } from '@vissoto-angular-toolkit/ui';
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,7 +13,6 @@ import { TooltipModule } from '@vissoto-angular-toolkit/ui';
     AppRoutingModule,
     ComponentsModule,
     HttpClientModule,
-    TooltipModule,
   ],
   providers: [HttpRequestClientServices],
   schemas: [],
