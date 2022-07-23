@@ -1,36 +1,16 @@
 [
   {
-    "title": "ARCADIA, The Dreams World",
-    "items": [
-      {
-        "href": "docs",
-        "iconCss": "icon-books",
-        "text": "O que é"
-      },
-      {
-        "href": "docs",
-        "iconCss": "icon-books",
-        "text": "História"
-      },
-      {
-        "href": "docs",
-        "iconCss": "icon-books",
-        "text": "Personagens"
-      }
-    ]
-  },
-  {
     "title": "HTTP Client",
     "items": [
       {
-        "href": "docs",
-        "iconCss": "icon-books",
-        "text": "Instalação"
+        "href": "https://www.npmjs.com/package/@vissoto-angular-toolkit/http-client",
+        "text": "Instalação",
+        "target": "_blank"
       },
       {
-        "href": "docs",
-        "iconCss": "icon-books",
-        "text": "Utilização"
+        "href": "components/http-client",
+        "text": "Utilização",
+        "target": "_parent"
       }
     ]
   },
@@ -38,9 +18,9 @@
     "title": "Storage",
     "items": [
       {
-        "href": "docs",
-        "iconCss": "icon-books",
-        "text": "Instalação"
+        "href": "https://www.npmjs.com/package/@vissoto-angular-toolkit/storage",
+        "text": "Instalação",
+        "target": "_blank"
       }
     ]
   },

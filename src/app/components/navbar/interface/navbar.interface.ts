@@ -2,7 +2,7 @@ export interface Navbar {
   href?: string;
   iconCss?: string;
   text: string;
-  target: string;
+  target: '_blank' | '_self' | '_parent' | '_top';
 }
 
 export interface NavbarSecondary {

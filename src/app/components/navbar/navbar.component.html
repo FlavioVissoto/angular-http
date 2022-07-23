@@ -18,7 +18,14 @@
       <ul class="space-y-6 lg:space-y-2 border-l border-slate-100">
         <li *ngFor="let item of navBar.items">
           <a
-            class="block border-l pl-4 -ml-px text-sky-500 border-current hover:text-sky-700"
+            *ngIf="item.target != '_blank'"
+            class="block border-l pl-4 text-sky-500 border-current hover:text-sky-700"
+            [routerLink]="[item.href]"
+            >{{ item.text }}</a
+          >
+          <a
+            *ngIf="item.target == '_blank'"
+            class="block border-l pl-4 text-sky-500 border-current hover:text-sky-700"
             [href]="item.href"
             [target]="item.target"
             >{{ item.text }}</a

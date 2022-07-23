@@ -23,6 +23,17 @@ const routes: Routes = [
       );
     },
   },
+  {
+    path: 'error',
+    loadChildren: () => {
+      return import('./modules/error/error.module').then((m) => m.ErrorModule);
+    },
+  },
+  {
+    path: '**',
+    pathMatch: 'full',
+    redirectTo: '/error/pagenotfound',
+  },
 ];
 
 @NgModule({
