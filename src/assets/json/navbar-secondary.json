@@ -52,23 +52,23 @@
         "text": "Instalação"
       },
       {
-        "href": "component/ui/button",
+        "href": "components/ui/button",
         "text": "Button"
       },
       {
-        "href": "component/ui/card",
+        "href": "components/ui/card",
         "text": "Card"
       },
       {
-        "href": "component/ui/select",
+        "href": "components/ui/select",
         "text": "Select"
       },
       {
-        "href": "component/ui/tab",
+        "href": "components/ui/tab",
         "text": "Tab"
       },
       {
-        "href": "component/ui/tooltip",
+        "href": "components/ui/tooltip",
         "text": "Tooltip"
       }
     ]

@@ -15,6 +15,14 @@ const routes: Routes = [
       return import('./modules/home/home.module').then((m) => m.HomeModule);
     },
   },
+  {
+    path: 'components',
+    loadChildren: () => {
+      return import('./modules/components/components.module').then(
+        (m) => m.ComponentsModule
+      );
+    },
+  },
 ];
 
 @NgModule({
