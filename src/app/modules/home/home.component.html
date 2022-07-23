@@ -81,28 +81,10 @@
     Abaixo estão os últimos posts realizados para que você possa acompanhar
   </h1>
 
-  <div class="grid grid-cols-4 gap-4 pt-2">
+  <div
+    class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 pt-2">
     <vat-card
-      [imageSrc]="
-        'https://images.unsplash.com/photo-1611916656173-875e4277bea6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&ixlib=rb-1.2.1&q=80&w=400'
-      "
-      [message]="
-        'Lorem ipsum sit dolor amitLorem ipsum sit dolor amitLorem ipsum sit dolor amitLorem ipsum sit dolor amit'
-      "
-      [title]="
-        'A Super Wonderful Headline A Super Wonderful Headline'
-      "></vat-card>
-    <vat-card
-      [imageSrc]="
-        'https://images.unsplash.com/photo-1611916656173-875e4277bea6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&ixlib=rb-1.2.1&q=80&w=400'
-      "
-      [message]="
-        'Lorem ipsum sit dolor amitLorem ipsum sit dolor amitLorem ipsum sit dolor amitLorem ipsum sit dolor amit'
-      "
-      [title]="
-        'A Super Wonderful Headline A Super Wonderful Headline'
-      "></vat-card>
-    <vat-card
+      *ngFor="let item of loopingTeste"
       [imageSrc]="
         'https://images.unsplash.com/photo-1611916656173-875e4277bea6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&ixlib=rb-1.2.1&q=80&w=400'
       "
