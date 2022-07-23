@@ -49,27 +49,33 @@
     "items": [
       {
         "href": "https://www.npmjs.com/package/@vissoto-angular-toolkit/ui",
-        "text": "Instalação"
+        "text": "Instalação",
+        "target": "_blank"
       },
       {
         "href": "components/ui/button",
-        "text": "Button"
+        "text": "Button",
+        "target": "_parent"
       },
       {
         "href": "components/ui/card",
-        "text": "Card"
+        "text": "Card",
+        "target": "_parent"
       },
       {
         "href": "components/ui/select",
-        "text": "Select"
+        "text": "Select",
+        "target": "_parent"
       },
       {
         "href": "components/ui/tab",
-        "text": "Tab"
+        "text": "Tab",
+        "target": "_parent"
       },
       {
         "href": "components/ui/tooltip",
-        "text": "Tooltip"
+        "text": "Tooltip",
+        "target": "_parent"
       }
     ]
   }
