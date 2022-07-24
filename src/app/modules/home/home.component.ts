@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent {
-  loopingTeste = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-}
+export class HomeComponent {}

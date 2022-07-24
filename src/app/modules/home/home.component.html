@@ -1,12 +1,12 @@
 <!-- TOPO -->
-<div>
+<div class="flex flex-row w-full justify-center">
   <div class="flex flex-row p-4">
     <div>
       <img src="../../../assets/img/blackhole.png " />
     </div>
     <div class="flex flex-col pl-16 justify-center space-y-4">
       <p class="w-full">Seja bem vindo</p>
-      <p class="w-5/6 text-left">
+      <p class="w-full text-left">
         O intuito desse site é auxiliar no desenvolvimento de sistemas
         utilizando
         <a
@@ -75,24 +75,4 @@
   </div>
 </div>
 
-<!-- Cards -->
-<div class="pt-32">
-  <h1 class="w-full text-left">
-    Abaixo estão os últimos posts realizados para que você possa acompanhar
-  </h1>
-
-  <div
-    class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 pt-2">
-    <vat-card
-      *ngFor="let item of loopingTeste"
-      [imageSrc]="
-        'https://images.unsplash.com/photo-1611916656173-875e4277bea6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&ixlib=rb-1.2.1&q=80&w=400'
-      "
-      [message]="
-        'Lorem ipsum sit dolor amitLorem ipsum sit dolor amitLorem ipsum sit dolor amitLorem ipsum sit dolor amit'
-      "
-      [title]="
-        'A Super Wonderful Headline A Super Wonderful Headline'
-      "></vat-card>
-  </div>
-</div>
+<app-home-cards></app-home-cards>
