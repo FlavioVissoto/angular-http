@@ -8,12 +8,7 @@ import { NgModule } from '@angular/core';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ComponentsModule,
-    HttpClientModule,
-  ],
+  imports: [BrowserModule, AppRoutingModule, ComponentsModule, HttpClientModule],
   providers: [HttpRequestClientServices],
   schemas: [],
   bootstrap: [AppComponent],

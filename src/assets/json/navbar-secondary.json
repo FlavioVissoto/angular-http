@@ -5,12 +5,14 @@
       {
         "href": "https://www.npmjs.com/package/@vissoto-angular-toolkit/http-client",
         "text": "Instalação",
-        "target": "_blank"
+        "target": "_blank",
+        "selected": false
       },
       {
-        "href": "components/http-client",
+        "href": "/components/http-client",
         "text": "Utilização",
-        "target": "_parent"
+        "target": "_parent",
+        "selected": false
       }
     ]
   },
@@ -20,7 +22,8 @@
       {
         "href": "https://www.npmjs.com/package/@vissoto-angular-toolkit/storage",
         "text": "Instalação",
-        "target": "_blank"
+        "target": "_blank",
+        "selected": false
       }
     ]
   },
@@ -30,32 +33,38 @@
       {
         "href": "https://www.npmjs.com/package/@vissoto-angular-toolkit/ui",
         "text": "Instalação",
-        "target": "_blank"
+        "target": "_blank",
+        "selected": false
       },
       {
-        "href": "components/ui/button",
+        "href": "/components/ui/button",
         "text": "Button",
-        "target": "_parent"
+        "target": "_parent",
+        "selected": false
       },
       {
-        "href": "components/ui/card",
+        "href": "/components/ui/card",
         "text": "Card",
-        "target": "_parent"
+        "target": "_parent",
+        "selected": false
       },
       {
-        "href": "components/ui/select",
+        "href": "/components/ui/select",
         "text": "Select",
-        "target": "_parent"
+        "target": "_parent",
+        "selected": false
       },
       {
-        "href": "components/ui/tab",
+        "href": "/components/ui/tab",
         "text": "Tab",
-        "target": "_parent"
+        "target": "_parent",
+        "selected": false
       },
       {
-        "href": "components/ui/tooltip",
+        "href": "/components/ui/tooltip",
         "text": "Tooltip",
-        "target": "_parent"
+        "target": "_parent",
+        "selected": false
       }
     ]
   }

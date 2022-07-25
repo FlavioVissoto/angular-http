@@ -13,10 +13,15 @@ export class NavbarComponent implements OnInit {
 
   navbarPrincipal: Navbar[];
   navbarSecondary: NavbarSecondary[];
+  showMenu = false;
 
   ngOnInit(): void {
     this.getPrimaryMenu();
     this.getSecondaryMenu();
+  }
+
+  toggleMenu(): void {
+    this.showMenu = !this.showMenu;
   }
 
   private getPrimaryMenu(): void {

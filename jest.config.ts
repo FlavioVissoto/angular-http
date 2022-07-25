@@ -11,21 +11,8 @@ const config: Config.InitialOptions = {
   moduleNameMapper: {
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
   },
-  coveragePathIgnorePatterns: [
-    'node_modules',
-    'test-config',
-    'interfaces',
-    '.module.ts',
-    '.router.ts',
-    '.html',
-    'enum',
-  ],
-  testPathIgnorePatterns: [
-    '<rootDir>/node_modules',
-    '<rootDir>/dist/',
-    '<rootDir>/src/test.ts',
-    '<rootDir>/setup-jest.ts',
-  ],
+  coveragePathIgnorePatterns: ['node_modules', 'test-config', 'interfaces', '.module.ts', '.router.ts', '.html', 'enum'],
+  testPathIgnorePatterns: ['<rootDir>/node_modules', '<rootDir>/dist/', '<rootDir>/src/test.ts', '<rootDir>/setup-jest.ts'],
   transformIgnorePatterns: ['node_modules/(?!.*\\.mjs$)'],
   coverageThreshold: {
     global: {

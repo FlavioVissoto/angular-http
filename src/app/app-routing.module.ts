@@ -5,12 +5,12 @@ import { NgModule } from '@angular/core';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     pathMatch: 'full',
-    redirectTo: 'home',
+    redirectTo: '',
   },
   {
-    path: 'home',
+    path: '',
     loadChildren: () => {
       return import('./modules/home/home.module').then((m) => m.HomeModule);
     },
@@ -18,9 +18,7 @@ const routes: Routes = [
   {
     path: 'components',
     loadChildren: () => {
-      return import('./modules/components/components.module').then(
-        (m) => m.ComponentsModule
-      );
+      return import('./modules/components/components.module').then((m) => m.ComponentsModule);
     },
   },
   {

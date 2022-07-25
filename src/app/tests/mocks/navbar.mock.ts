@@ -1,7 +1,4 @@
-import {
-  Navbar,
-  NavbarSecondary,
-} from './../../components/navbar/interface/navbar.interface';
+import { Navbar, NavbarSecondary } from './../../components/navbar/interface/navbar.interface';
 
 export const mockNavbar: Navbar[] = [
   {
@@ -9,12 +6,14 @@ export const mockNavbar: Navbar[] = [
     href: 'test1Href',
     iconCss: 'test1CssIcon',
     target: '_blank',
+    selected: false,
   },
   {
     text: 'test2Text',
     href: 'test2Href',
     iconCss: 'test2CssIcon',
     target: '_blank',
+    selected: false,
   },
 ];
 

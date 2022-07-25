@@ -1,5 +1,10 @@
 [
   {
+    "href": "/",
+    "iconCss": "icon-home",
+    "text": "Página Inicial"
+  },
+  {
     "href": "module/componentes",
     "iconCss": "icon-books",
     "text": "Componentes"

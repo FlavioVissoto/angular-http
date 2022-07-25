@@ -1,11 +1,8 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
+import { BrowserModule, By } from '@angular/platform-browser';
+import { CUSTOM_ELEMENTS_SCHEMA, DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import {
-  mockNavBarSecondary,
-  mockNavbar,
-} from './../../tests/mocks/navbar.mock';
+import { mockNavBarSecondary, mockNavbar } from './../../tests/mocks/navbar.mock';
 
-import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar.component';
@@ -28,7 +25,6 @@ describe('NavbarComponent', () => {
     fixture = TestBed.createComponent(NavbarComponent);
     component = fixture.componentInstance;
     navBarServices = TestBed.inject(NavbarServices);
-    fixture.detectChanges();
   });
 
   test('deve criar o componente', () => {
@@ -36,9 +32,7 @@ describe('NavbarComponent', () => {
   });
 
   test('deve retornar o menu principal.', () => {
-    jest
-      .spyOn(navBarServices, 'getMenuPrincipal')
-      .mockImplementation(() => of(mockNavbar));
+    jest.spyOn(navBarServices, 'getMenuPrincipal').mockImplementation(() => of(mockNavbar));
 
     jest.useFakeTimers();
     component['getPrimaryMenu']();
@@ -50,9 +44,7 @@ describe('NavbarComponent', () => {
   });
 
   test('deve retornar o menu secundario', () => {
-    jest
-      .spyOn(navBarServices, 'getMenuSecondary')
-      .mockImplementation(() => of(mockNavBarSecondary));
+    jest.spyOn(navBarServices, 'getMenuSecondary').mockImplementation(() => of(mockNavBarSecondary));
 
     jest.useFakeTimers();
     component['getSecondaryMenu']();
@@ -61,5 +53,29 @@ describe('NavbarComponent', () => {
     expect(component.navbarSecondary).not.toEqual(undefined);
     expect(component.navbarSecondary.length).toBe(mockNavBarSecondary.length);
     expect(component.navbarSecondary).toEqual(mockNavBarSecondary);
+  });
+
+  test('deve mostar o menu', () => {
+    component.showMenu = false;
+    component.toggleMenu();
+    fixture.detectChanges();
+
+    const debugElement: DebugElement = fixture.debugElement;
+    const div = debugElement.query(By.css('.menuFullScreen'));
+
+    expect(component.showMenu).toBe(true);
+    expect(div).not.toBeFalsy();
+  });
+
+  test('deve esconder o menu', () => {
+    component.showMenu = true;
+    component.toggleMenu();
+    fixture.detectChanges();
+
+    const debugElement: DebugElement = fixture.debugElement;
+    const div = debugElement.query(By.css('.menuFullScreen'));
+
+    expect(component.showMenu).toBe(false);
+    expect(div).toBeNull();
   });
 });
