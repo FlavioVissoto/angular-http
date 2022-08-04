@@ -6,7 +6,7 @@
       class="flex items-center lg:text-sm mb-4 space-x-2 font-semibold"
       [ngClass]="{ 'text-slate-600 hover:text-slate-600/60': !item.selected, 'text-sky-600 hover:text-sky-600/60': item.selected }">
       <i class="{{ item.iconCss }}"></i>
-      <a [routerLink]="[item.href]">{{ item.text }}</a>
+      <a [routerLink]="[item.href]" (click)="clicked(item)">{{ item.text }}</a>
     </li>
   </ul>
 
@@ -23,7 +23,7 @@
             class="block pl-4 text-sky-500 border-current hover:text-sky-700"
             [ngClass]="{ 'border-l': item.selected }"
             [routerLink]="[item.href]"
-            (click)="itemSecondaryClicked(item)"
+            (click)="clicked(item)"
             >{{ item.text }}</a
           >
           <a
@@ -32,7 +32,7 @@
             [ngClass]="{ 'border-l': item.selected }"
             [href]="item.href"
             [target]="item.target"
-            (click)="itemSecondaryClicked(item)"
+            (click)="clicked(item)"
             >{{ item.text }}</a
           >
         </li>

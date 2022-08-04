@@ -1,4 +1,4 @@
-<div class="lg:fixed overflow-y-auto pb-10 lg:px-8 right-auto top-[3.8125rem] w-full lg:w-[19.5rem]">
+<div class="lg:fixed pb-10 lg:px-8 right-auto bottom-0 overflow-y-scroll top-[3.8125rem]" [ngClass]="{ 'z-50': showMenu }">
   <div class="w-full p-4 flex flex-row space-x-2 items-center lg:hidden" (click)="toggleMenu()">
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +24,11 @@
                 <path d="M0 0L10 10M10 0L0 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
               </svg>
             </button>
-            <app-navbar-items class="" [navbarPrincipal]="navbarPrincipal" [navbarSecondary]="navbarSecondary"></app-navbar-items>
+            <app-navbar-items
+              class=""
+              [navbarPrincipal]="navbarPrincipal"
+              [navbarSecondary]="navbarSecondary"
+              (OnClickedNavbar)="toggleMenu()"></app-navbar-items>
           </div>
         </div>
       </div>

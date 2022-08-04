@@ -25,7 +25,7 @@ export class NavbarItemsComponent implements AfterViewInit {
     });
   }
 
-  itemSecondaryClicked(item: Navbar): void {
+  clicked(item: Navbar): void {
     if (item.href) {
       this.setMenuSelected(item.href);
     }

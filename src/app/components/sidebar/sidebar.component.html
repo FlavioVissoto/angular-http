@@ -1,5 +1,4 @@
-<div
-  class="duration-500 lg:border-b lg:border-blue-900/10 lg:z-50 top-0 transition-colors w-full">
+<div class="fixed duration-500 lg:border-b lg:border-blue-900/10 lg:z-50 top-0 transition-colors w-full bg-white">
   <div class="max-w-8xl mx-auto">
     <div class="border-b lg:border-0 lg:mx-0 lg:px-8 mx-4 py-4">
       <div class="relative flex items-center">
@@ -12,14 +11,11 @@
           <nav class="text-sm leading-6 font-semibold text-blue-800">
             <ul class="flex space-x-4">
               <li>
-                <a [routerLink]="['/']" class="hover:text-blue-500"
-                  >Componentes</a
-                >
+                <a [routerLink]="['/']" class="hover:text-blue-500">Componentes</a>
               </li>
             </ul>
           </nav>
-          <div
-            class="flex items-center border-l border-blue-200 ml-6 space-x-4 px-4">
+          <div class="flex items-center border-l border-blue-200 ml-6 space-x-4 px-4">
             <vat-tooltip [text]="'Facebook'" [position]="2">
               <a
                 href="https://www.facebook.com/flavio.vissoto/"
@@ -43,6 +39,12 @@
                 href="https://www.youtube.com/user/flaviovissoto"
                 target="_blank"
                 class="icon-youtube2 block text-blue-500 hover:text-blue-600 tooltip-trigger"></a>
+            </vat-tooltip>
+            <vat-tooltip [text]="'LinkedIn'" [position]="2">
+              <a
+                href="www.linkedin.com/in/flavio-vissoto"
+                target="_blank"
+                class="icon-linkedin block text-blue-500 hover:text-blue-600 tooltip-trigger"></a>
             </vat-tooltip>
           </div>
         </div>
