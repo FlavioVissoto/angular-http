@@ -1,9 +1,10 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
-import { CardModule, TooltipModule } from '@vissoto-angular-toolkit/ui';
+import { CardAlfaModule, TooltipModule } from '@vissoto-angular-toolkit/ui';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CommonModule } from '@angular/common';
 import { ComponentsModule } from './../../components/components.module';
+import { HomeCardsComponent } from './home-cards/home-cards.component';
 import { HomeComponent } from './home.component';
 import { RouterTestingModule } from '@angular/router/testing';
 
@@ -13,13 +14,8 @@ describe('HomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule,
-        ComponentsModule,
-        CommonModule,
-        TooltipModule,
-        CardModule,
-      ],
+      declarations: [HomeCardsComponent],
+      imports: [RouterTestingModule, ComponentsModule, CommonModule, TooltipModule, CardAlfaModule],
       schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
     }).compileComponents();
 

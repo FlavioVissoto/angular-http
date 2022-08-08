@@ -26,6 +26,5 @@ export class HomeCardsComponent implements OnInit {
         title: 'Lucario',
       });
     }
-    console.log(this.cards);
   }
 }
