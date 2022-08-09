@@ -2,27 +2,88 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
+  "defaultProject": "angular-toolkit-web",
   "projects": {
-    "http-client": {
-      "projectType": "library",
-      "root": "projects/http-client",
-      "sourceRoot": "projects/http-client/src",
-      "prefix": "ahc",
+    "angular-toolkit-web": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "angular-toolkit-web",
+      "sourceRoot": "src",
+      "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "project": "projects/http-client/ng-package.json"
+            "outputPath": "dist/angular-toolkit-web",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": [
+              "./node_modules/@vissoto-angular-toolkit/ui/src/assets/css/tailwind.css",
+              "src/styles.scss",
+              "src/assets/css/tailwind.css",
+              "src/assets/icons/style.css",
+              "src/assets/css/fonts.scss"
+            ],
+            "scripts": []
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/http-client/tsconfig.lib.prod.json"
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
             },
             "development": {
-              "tsConfig": "projects/http-client/tsconfig.lib.json"
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
             }
           },
           "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "angular-toolkit-web:build:production"
+            },
+            "development": {
+              "browserTarget": "angular-toolkit-web:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "angular-toolkit-web:build"
+          }
         }
       }
     }

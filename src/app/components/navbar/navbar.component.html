@@ -1,0 +1,38 @@
+<div class="lg:fixed pb-10 lg:px-8 right-auto bottom-0 overflow-y-scroll top-[3.8125rem]" [ngClass]="{ 'z-50': showMenu }">
+  <div class="w-full p-4 flex flex-row space-x-2 items-center lg:hidden" (click)="toggleMenu()">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      id="menu-button"
+      class="h-6 w-6 cursor-pointer lg:hidden md:block text-slate-600 hover:text-slate-600/60"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+    <p>Pagina Inicial</p>
+  </div>
+
+  <nav class="absolute lg:text-sm lg:leading-6 lg:relative lg:block pt-4">
+    <div class="menuFullScreen" *ngIf="showMenu">
+      <div class="absolute z-50 inset-0 block lg:hidden">
+        <div class="backdrop-blur-sm bg-black/20 dark:bg-slate-900/80 inset-0 fixed" (click)="toggleMenu()"></div>
+        <div class="bg-white fixed w-[19.5rem] inset-0">
+          <div class="relative h-screen overflow-y-scroll p-6 scrollbar">
+            <button (click)="toggleMenu()" type="button" class="absolute flex h-8 items-center justify-center right-5 top-5 w-8 z-10">
+              <span class="sr-only">Close navigation</span>
+              <svg viewBox="0 0 10 10" class="w-2.5 h-2.5 overflow-visible">
+                <path d="M0 0L10 10M10 0L0 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+              </svg>
+            </button>
+            <app-navbar-items
+              class=""
+              [navbarPrincipal]="navbarPrincipal"
+              [navbarSecondary]="navbarSecondary"
+              (OnClickedNavbar)="toggleMenu()"></app-navbar-items>
+          </div>
+        </div>
+      </div>
+    </div>
+    <app-navbar-items [navbarPrincipal]="navbarPrincipal" [navbarSecondary]="navbarSecondary" class="hidden lg:block"></app-navbar-items>
+  </nav>
+</div>

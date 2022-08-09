@@ -1,0 +1,71 @@
+[
+  {
+    "title": "HTTP Client",
+    "items": [
+      {
+        "href": "https://www.npmjs.com/package/@vissoto-angular-toolkit/http-client",
+        "text": "Instalação",
+        "target": "_blank",
+        "selected": false
+      },
+      {
+        "href": "/components/http-client",
+        "text": "Utilização",
+        "target": "_parent",
+        "selected": false
+      }
+    ]
+  },
+  {
+    "title": "Storage",
+    "items": [
+      {
+        "href": "https://www.npmjs.com/package/@vissoto-angular-toolkit/storage",
+        "text": "Instalação",
+        "target": "_blank",
+        "selected": false
+      }
+    ]
+  },
+  {
+    "title": "UI",
+    "items": [
+      {
+        "href": "https://www.npmjs.com/package/@vissoto-angular-toolkit/ui",
+        "text": "Instalação",
+        "target": "_blank",
+        "selected": false
+      },
+      {
+        "href": "/components/ui/button",
+        "text": "Button",
+        "target": "_parent",
+        "selected": false
+      },
+      {
+        "href": "/components/ui/card",
+        "text": "Card",
+        "target": "_parent",
+        "selected": false
+      },
+      {
+        "href": "/components/ui/select",
+        "text": "Select",
+        "target": "_parent",
+        "selected": false
+      },
+      {
+        "href": "/components/ui/tab",
+        "text": "Tab",
+        "target": "_parent",
+        "selected": false
+      },
+      {
+        "href": "/components/ui/tooltip",
+        "text": "Tooltip",
+        "target": "_parent",
+        "selected": false
+      }
+    ]
+  }
+]

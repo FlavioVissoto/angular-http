@@ -1,0 +1,17 @@
+[
+  {
+    "href": "/",
+    "iconCss": "icon-home",
+    "text": "Página Inicial"
+  },
+  {
+    "href": "module/componentes",
+    "iconCss": "icon-books",
+    "text": "Componentes"
+  },
+  {
+    "href": "module/tutoriais",
+    "iconCss": "icon-fire",
+    "text": "Tutoriais"
+  }
+]

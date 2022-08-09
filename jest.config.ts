@@ -1,13 +1,16 @@
 import type { Config } from '@jest/types';
 
 const config: Config.InitialOptions = {
-  roots: ['<rootDir>', './../vissoto-angular-http/projects/angular-http-client/test'],
+  roots: ['<rootDir>'],
   moduleDirectories: ['node_modules'],
   verbose: true,
   preset: 'jest-preset-angular',
   collectCoverage: true,
   coverageDirectory: './coverage',
   setupFilesAfterEnv: ['<rootDir>/setup-jest.ts'],
+  moduleNameMapper: {
+    '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
+  },
   coveragePathIgnorePatterns: ['node_modules', 'test-config', 'interfaces', '.module.ts', '.router.ts', '.html', 'enum'],
   testPathIgnorePatterns: ['<rootDir>/node_modules', '<rootDir>/dist/', '<rootDir>/src/test.ts', '<rootDir>/setup-jest.ts'],
   transformIgnorePatterns: ['node_modules/(?!.*\\.mjs$)'],
