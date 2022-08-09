@@ -1,6 +1,9 @@
+import { CardAlfa, TagAlfa } from '@vissoto-angular-toolkit/ui';
+import { CardPost, TagPost } from './../../../interfaces/card-post.interface';
 import { Component, OnInit } from '@angular/core';
 
-import { CardAlfa } from '@vissoto-angular-toolkit/ui';
+import { DatePipe } from '@angular/common';
+import { HomeServices } from './../../../../../src/app/services/home.services';
 
 @Component({
   selector: 'app-home-cards',
@@ -11,20 +14,31 @@ export class HomeCardsComponent implements OnInit {
   cards: CardAlfa[] = [];
   loopingTeste: number[] = [];
 
+  constructor(private service: HomeServices, private pipeDate: DatePipe) {}
+
   ngOnInit(): void {
-    for (let index = 0; index < 15; index++) {
-      this.loopingTeste.push(0);
-      this.cards.push({
-        date: '31/07/2022',
-        imageSrc: 'https://i.pinimg.com/564x/de/23/4d/de234d3aa33209e58c050029266501a8.jpg',
-        tags: [
-          {
-            name: 'angular',
-          },
-        ],
-        message: 'Dizem que nenhum inimigo pode permanecer invisível para LUCARIO, pois ele pode detectar auras.',
-        title: 'Lucario',
-      });
-    }
+    this.getCards();
+  }
+
+  private getCards(): void {
+    this.service.getLastPosts().subscribe({
+      next: (x: CardPost[]) => {
+        x.forEach((element: CardPost) => {
+          this.cards.push(this.convertCardAlfa(element));
+        });
+      },
+    });
+  }
+
+  private convertCardAlfa(element: CardPost): CardAlfa {
+    return {
+      date: this.pipeDate.transform(element.datePost, 'dd/MM/yyyy HH:mm'),
+      imageSrc: element.urlImage,
+      message: element.subTitle,
+      title: element.title,
+      tags: element.tags.map((m: TagPost) => {
+        return { name: m.name } as TagAlfa;
+      }),
+    } as CardAlfa;
   }
 }

@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class NavbarServices {
   constructor(private http: HttpRequestClientServices) {}
 
-  private httpUrlBase = 'assets/json/';
+  private readonly httpUrlBase = 'assets/json/';
 
   getMenuPrincipal(): Observable<Navbar[]> {
     return this.http.execute<Navbar[]>(HttpMethod.Get, this.httpUrlBase + 'navbar-principal.json');
