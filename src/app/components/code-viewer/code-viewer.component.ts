@@ -14,16 +14,19 @@ export class CodeViewerComponent implements AfterViewInit {
   @ViewChild('code') codeElement: ElementRef;
 
   ngAfterViewInit(): void {
-    let highlightedCode: string;
-    if (this.codeViewer?.language) {
-      highlightedCode = hljs.highlight(this.codeViewer.code, {
-        language: this.codeViewer.language,
-      }).value;
+    if (this.codeViewer) {
+      let highlightedCode: string;
+      if (this.codeViewer.language) {
+        highlightedCode = hljs.highlight(this.codeViewer.code, {
+          language: this.codeViewer.language,
+        }).value;
+      } else {
+        const auto = hljs.highlightAuto(this.codeViewer.code);
+        highlightedCode = auto.value;
+      }
+      this.codeElement.nativeElement.innerHTML = highlightedCode;
     } else {
-      const auto = hljs.highlightAuto(this.codeViewer.code);
-      highlightedCode = auto.value;
+      console.warn('Parametro codeViewer (CodeViewer) não informado.');
     }
-
-    this.codeElement.nativeElement.innerHTML = highlightedCode;
   }
 }
