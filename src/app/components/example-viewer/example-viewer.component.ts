@@ -7,12 +7,23 @@ import { Component, Input } from '@angular/core';
 })
 export class ExampleViewerComponent {
   @Input() title: string;
+  @Input() idExample: string;
+  @Input() linkExample: string;
 
-  clickCode(): void {
-    console.log('clicou para abrir codigo');
-  }
+  //private fragment: string;
 
-  clickLink(): void {
-    console.log('clicou para copiar link');
+  /* istanbul ignore next */
+  clickCopy(): void {
+    const linkCopy = `${window.location.origin + window.location.pathname}`;
+    const listener = (e: ClipboardEvent) => {
+      if (e.clipboardData) {
+        e.clipboardData.setData('text/plain', linkCopy);
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener('copy', listener);
+    document.execCommand('copy');
+    document.removeEventListener('copy', listener);
   }
 }

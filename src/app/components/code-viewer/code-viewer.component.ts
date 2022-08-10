@@ -25,8 +25,6 @@ export class CodeViewerComponent implements AfterViewInit {
         highlightedCode = auto.value;
       }
       this.codeElement.nativeElement.innerHTML = highlightedCode;
-    } else {
-      console.warn('Parametro codeViewer (CodeViewer) não informado.');
     }
   }
 }
