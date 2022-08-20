@@ -1,5 +1,6 @@
 import { CardAlfaModule, TooltipModule } from '@vissoto-angular-toolkit/ui';
 
+import { ButtonComponent } from './button/button.component';
 import { CardComponent } from './card/card.component';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
@@ -11,7 +12,7 @@ import { UIRoutingModule } from './ui-routing.module';
 import { UiComponent } from './ui.component';
 
 @NgModule({
-  declarations: [UiComponent, TooltipComponent, TooltipIconsComponent, CardComponent],
+  declarations: [UiComponent, TooltipComponent, TooltipIconsComponent, CardComponent, ButtonComponent],
   providers: [SanitizeHtmlPipe],
   imports: [CommonModule, UIRoutingModule, SharingComponentsModule, TooltipModule, CardAlfaModule],
 })

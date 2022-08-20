@@ -1,5 +1,6 @@
 import { RouterModule, Routes } from '@angular/router';
 
+import { ButtonComponent } from './button/button.component';
 import { CardComponent } from './card/card.component';
 import { NgModule } from '@angular/core';
 import { TooltipComponent } from './tooltip/tooltip.component';
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'ui/card',
     component: CardComponent,
+  },
+  {
+    path: 'ui/button',
+    component: ButtonComponent,
   },
 ];
 
