@@ -2,22 +2,16 @@ import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
-import { ComponentsModule } from './components/components.module';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
+import { SharingComponentsModule } from './components/components.module';
 import { TestBed } from '@angular/core/testing';
 import { TooltipModule } from '@vissoto-angular-toolkit/ui';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule,
-        ComponentsModule,
-        HttpClientModule,
-        CommonModule,
-        TooltipModule,
-      ],
+      imports: [RouterTestingModule, SharingComponentsModule, HttpClientModule, CommonModule, TooltipModule],
       declarations: [AppComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
     }).compileComponents();

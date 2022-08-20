@@ -27,6 +27,7 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "./node_modules/@vissoto-angular-toolkit/ui/src/assets/css/tailwind.css",
+              "./node_modules/highlight.js/styles/vs2015.css",
               "src/styles.scss",
               "src/assets/css/tailwind.css",
               "src/assets/icons/style.css",
