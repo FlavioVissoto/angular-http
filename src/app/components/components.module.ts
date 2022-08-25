@@ -1,19 +1,26 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-
+import { ButtonComponent } from './button/button.component';
 import { CodeViewerComponent } from './code-viewer/code-viewer.component';
 import { CommonModule } from '@angular/common';
 import { ExampleViewerComponent } from './example-viewer/example-viewer.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NavbarItemsComponent } from './navbar/navbar-items/navbar-items.component';
+import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { TooltipModule } from '@vissoto-angular-toolkit/ui';
 
 @NgModule({
-  declarations: [SidebarComponent, NavbarComponent, NavbarItemsComponent, ExampleViewerComponent, CodeViewerComponent, FooterComponent],
-  exports: [SidebarComponent, NavbarComponent, ExampleViewerComponent, CodeViewerComponent, FooterComponent],
+  declarations: [
+    SidebarComponent,
+    NavbarComponent,
+    NavbarItemsComponent,
+    ExampleViewerComponent,
+    CodeViewerComponent,
+    FooterComponent,
+    ButtonComponent,
+  ],
+  exports: [SidebarComponent, NavbarComponent, ExampleViewerComponent, CodeViewerComponent, FooterComponent, ButtonComponent],
   imports: [CommonModule, TooltipModule, RouterModule],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class SharingComponentsModule {}

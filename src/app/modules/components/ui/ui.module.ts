@@ -1,9 +1,9 @@
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, NgModule } from '@angular/core';
 import { CardAlfaModule, TooltipModule } from '@vissoto-angular-toolkit/ui';
 
 import { ButtonComponent } from './button/button.component';
 import { CardComponent } from './card/card.component';
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
 import { SanitizeHtmlPipe } from 'src/app/pipes/sanitize.pipe';
 import { SharingComponentsModule } from 'src/app/components/components.module';
 import { TooltipComponent } from './tooltip/tooltip.component';
@@ -15,5 +15,6 @@ import { UiComponent } from './ui.component';
   declarations: [UiComponent, TooltipComponent, TooltipIconsComponent, CardComponent, ButtonComponent],
   providers: [SanitizeHtmlPipe],
   imports: [CommonModule, UIRoutingModule, SharingComponentsModule, TooltipModule, CardAlfaModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
 export class UIModule {}
