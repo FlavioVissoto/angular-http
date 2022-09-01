@@ -1,5 +1,5 @@
 export enum GradientDuotone {
-  PurpleToBlue = 0,
+  PurpleToBlue = 1,
   CyanToBlue,
   GreenToBlue,
   PurpleToPink,

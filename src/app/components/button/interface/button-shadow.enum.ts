@@ -1,4 +1,4 @@
-export enum GradientMonochrome {
+export enum Shadow {
   Blue = 1,
   Green,
   Cyan,
