@@ -1,6 +1,6 @@
 <button
   type="button"
-  class="font-medium mr-2 mb-2 active:outline-none 
+  class="font-medium mr-2 mb-2 active:outline-none
   {{ cssClassCollor }} 
   {{ cssClassRounded }} 
   {{ cssClassGradientDuotone }} 
@@ -8,6 +8,7 @@
   {{ cssClassGradientOutline ? '' : cssClassSize }}
   {{ cssShadow }}
   {{ cssClassGradientOutline }}
+  {{ cssClassOutline }}
   {{ cssClassDisabled }}"
   [ngClass]="{ ' active:ring-1 ': !disabled }">
   <span
@@ -20,7 +21,7 @@
       aria-hidden="true"
       role="status"
       class="inline mr-3 w-4 h-4 animate-spin"
-      [ngClass]="{ 'text-white': !cssClassGradientOutline }"
+      [ngClass]="{ 'text-white': !cssClassGradientOutline, 'text-black': cssClassOutline }"
       viewBox="0 0 100 101"
       fill="none"
       xmlns="http://www.w3.org/2000/svg">

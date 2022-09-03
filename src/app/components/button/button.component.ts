@@ -16,7 +16,7 @@ export class ButtonComponent implements OnInit {
     if (!this._size) {
       this.size = Size.Base;
     }
-    if (!this._collor && !this._gradientDuotone && !this._gradientMonochrome && !this._gradientOutline) {
+    if (!this._collor && !this._gradientDuotone && !this._gradientMonochrome && !this._gradientOutline && !this._outline) {
       this.collor = Collor.Default;
     }
   }
@@ -32,6 +32,7 @@ export class ButtonComponent implements OnInit {
   cssClassGradientDuotone: string;
   cssClassGradientOutline: string;
   cssClassGradientMonochrome: string;
+  cssClassOutline: string;
   cssClassSize: string;
   cssClassDisabled: string;
 
@@ -45,6 +46,7 @@ export class ButtonComponent implements OnInit {
   private _gradientDuotone: GradientDuotone;
   private _gradientOutline: GradientDuotone;
   private _gradientMonochrome: GradientMonochrome;
+  private _outline: Collor;
   private _size: Size;
   private _disabled: boolean;
 
@@ -63,6 +65,9 @@ export class ButtonComponent implements OnInit {
     }
     if (this._gradientOutline) {
       this.gradientOutline = this._gradientOutline;
+    }
+    if (this._outline) {
+      this.outline = this._outline;
     }
   }
 
@@ -98,6 +103,11 @@ export class ButtonComponent implements OnInit {
   @Input() set gradientMonochrome(value: GradientMonochrome) {
     this._gradientMonochrome = value;
     this.cssClassGradientMonochrome = this.getCssGradientMonochrome();
+  }
+
+  @Input() set outline(value: Collor) {
+    this._outline = value;
+    this.cssClassOutline = this.getCssOutline(value);
   }
 
   @Input() set size(value: Size) {
@@ -338,6 +348,48 @@ export class ButtonComponent implements OnInit {
           return 'text-white bg-gradient-to-r from-pink-200 via-pink-400 to-pink-500';
         case GradientMonochrome.Purple:
           return 'text-white bg-gradient-to-r from-purple-200 via-purple-300 to-purple-400';
+      }
+    }
+  }
+
+  private getCssOutline(value: Collor): string {
+    if (!this._disabled) {
+      switch (value) {
+        case Collor.Default:
+          return 'text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 active:ring-blue-300';
+        case Collor.Alternative:
+          return 'text-gray-900 border border-gray-300 hover:bg-gray-100 hover:text-blue-700';
+        case Collor.Dark:
+          return 'text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 active:ring-gray-300';
+        case Collor.Light:
+          return 'text-gray-900 border border-gray-300 hover:bg-gray-100 active:ring-gray-200';
+        case Collor.Green:
+          return 'text-green-700 hover:text-white border border-green-700 hover:bg-green-800 active:ring-green-300';
+        case Collor.Red:
+          return 'text-red-700 hover:text-white border border-red-700 hover:bg-red-800 active:ring-red-300';
+        case Collor.Yellow:
+          return 'text-yellow-400 hover:text-white border border-yellow-400 hover:bg-yellow-500 active:ring-yellow-300';
+        case Collor.Purple:
+          return 'text-purple-700 hover:text-white border border-purple-700 hover:bg-purple-800 active:ring-purple-300';
+      }
+    } else {
+      switch (value) {
+        case Collor.Default:
+          return 'text-blue-700 hover:text-white border border-blue-300 hover:bg-blue-400';
+        case Collor.Alternative:
+          return 'text-gray-900 border border-gray-300 hover:bg-gray-100 hover:text-blue-700';
+        case Collor.Dark:
+          return 'text-gray-900 hover:text-white border border-gray-400 hover:bg-gray-400';
+        case Collor.Light:
+          return 'text-gray-900 border border-gray-300 hover:bg-gray-100 active:ring-gray-200';
+        case Collor.Green:
+          return 'text-green-700 hover:text-white border border-green-900 hover:bg-green-900';
+        case Collor.Red:
+          return 'text-red-700 hover:text-white border border-red-300 hover:bg-red-300';
+        case Collor.Yellow:
+          return 'text-yellow-400 hover:text-white border border-yellow-600 hover:bg-yellow-600';
+        case Collor.Purple:
+          return 'text-purple-700 hover:text-white border border-purple-300 hover:bg-purple-300';
       }
     }
   }
