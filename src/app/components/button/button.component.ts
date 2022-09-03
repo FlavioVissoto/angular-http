@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { Collor } from './interface/button-collor.enum';
 import { GradientDuotone } from './interface/button-gradient-duotone.enum';
@@ -11,12 +11,12 @@ import { Size } from './interface/button-size.enum';
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
 })
-export class ButtonComponent {
-  constructor() {
-    if (!this.size) {
+export class ButtonComponent implements OnInit {
+  ngOnInit(): void {
+    if (!this._size) {
       this.size = Size.Base;
     }
-    if (!this.collor && !this.gradientDuotone && !this.gradientMonochrome) {
+    if (!this._collor && !this._gradientDuotone && !this._gradientMonochrome && !this._gradientOutline) {
       this.collor = Collor.Default;
     }
   }
@@ -27,10 +27,10 @@ export class ButtonComponent {
   enumGradientDuotone = GradientDuotone;
 
   cssShadow: string;
-  cssClassCollor: string;
   cssClassRounded: string;
-  cssClassOutline: string;
+  cssClassCollor: string;
   cssClassGradientDuotone: string;
+  cssClassGradientOutline: string;
   cssClassGradientMonochrome: string;
   cssClassSize: string;
   cssClassDisabled: string;
@@ -43,17 +43,15 @@ export class ButtonComponent {
   private _rounded: Size;
   private _collor: Collor;
   private _gradientDuotone: GradientDuotone;
+  private _gradientOutline: GradientDuotone;
   private _gradientMonochrome: GradientMonochrome;
   private _size: Size;
   private _disabled: boolean;
 
   @Input() set disabled(value: boolean) {
     this._disabled = value;
-    this.cssClassDisabled = this.setCssDisabled();
+    this.cssClassDisabled = this.getCssDisabled();
 
-    if (this._shadow) {
-      this.setCssShadow();
-    }
     if (this._collor) {
       this.collor = this._collor;
     }
@@ -63,19 +61,23 @@ export class ButtonComponent {
     if (this._gradientMonochrome) {
       this.gradientMonochrome = this._gradientMonochrome;
     }
+    if (this._gradientOutline) {
+      this.gradientOutline = this._gradientOutline;
+    }
   }
+
   get disabled(): boolean {
     return this._disabled;
   }
 
   @Input() set shadow(value: Shadow) {
     this._shadow = value;
-    this.cssShadow = this.setCssShadow();
+    this.cssShadow = this.getCssShadow();
   }
 
   @Input() set rounded(value: Size) {
     this._rounded = value;
-    this.cssClassRounded = this.setCssRounded();
+    this.cssClassRounded = this.getCssRounded();
   }
 
   @Input() set collor(value: Collor) {
@@ -85,39 +87,41 @@ export class ButtonComponent {
 
   @Input() set gradientDuotone(value: GradientDuotone) {
     this._gradientDuotone = value;
-    this.cssClassGradientDuotone = this.setCssGradientDuotone();
+    this.cssClassGradientDuotone = this.getCssGradientDuotone();
+  }
+
+  @Input() set gradientOutline(value: GradientDuotone) {
+    this._gradientOutline = value;
+    this.cssClassGradientOutline = this.getCssGradientOutline(value);
   }
 
   @Input() set gradientMonochrome(value: GradientMonochrome) {
     this._gradientMonochrome = value;
-    this.cssClassGradientMonochrome = this.setCssGradientMonochrome();
+    this.cssClassGradientMonochrome = this.getCssGradientMonochrome();
   }
 
   @Input() set size(value: Size) {
     this._size = value;
-    this.cssClassSize = this.setCssSize();
+    this.cssClassSize = this.getCssSize();
   }
 
-  // private setCssGradientOutline(value: GradientDuotone): string {
-  //   switch (value) {
-  //     case GradientDuotone.CyanToBlue:
-  //       return 'bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl active:ring-cyan-300';
-  //     case GradientDuotone.GreenToBlue:
-  //       return 'bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl active:ring-green-200';
-  //     case GradientDuotone.PinkToOrange:
-  //       return 'bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl active:ring-pink-200';
-  //     case GradientDuotone.PurpleToBlue:
-  //       return 'bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl active:ring-blue-300';
-  //     case GradientDuotone.PurpleToPink:
-  //       return 'bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l active:ring-purple-200';
-  //     case GradientDuotone.RedToYellow:
-  //       return 'text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl active:ring-red-100';
-  //     case GradientDuotone.TealToLime:
-  //       return 'text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 active:ring-lime-200';
-  //   }
-  // }
+  roundedOutline(): string {
+    switch (this._rounded) {
+      case Size.ExtraSmall:
+      case Size.Small:
+        return 'rounded-sm';
+      case Size.Base:
+        return 'rounded';
+      case Size.Large:
+        return 'rounded-md';
+      case Size.ExtraLarge:
+        return 'rounded-full';
+      default:
+        return '';
+    }
+  }
 
-  private setCssShadow(): string {
+  private getCssShadow(): string {
     const css = 'shadow-lg ';
     switch (this._shadow) {
       case Shadow.Blue:
@@ -139,17 +143,18 @@ export class ButtonComponent {
     }
   }
 
-  private setCssRounded(): string {
+  private getCssRounded(): string {
     switch (this._rounded) {
-      case Size.Base:
-        return 'rounded-lg';
-      case Size.ExtraLarge:
-      case Size.Large:
-        return 'rounded-full';
       case Size.ExtraSmall:
         return 'rounded-sm';
       case Size.Small:
+        return 'rounded';
+      case Size.Base:
         return 'rounded-md';
+      case Size.Large:
+        return 'rounded-lg';
+      case Size.ExtraLarge:
+        return 'rounded-full';
       default:
         return '';
     }
@@ -197,7 +202,7 @@ export class ButtonComponent {
     }
   }
 
-  private setCssGradientDuotone(): string {
+  private getCssGradientDuotone(): string {
     if (!this._disabled) {
       switch (this._gradientDuotone) {
         case GradientDuotone.PurpleToBlue:
@@ -235,7 +240,67 @@ export class ButtonComponent {
     }
   }
 
-  private setCssGradientMonochrome(): string {
+  private getCssGradientOutline(value: GradientDuotone): string {
+    let css =
+      'relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-gray-900 group bg-gradient-to-br hover:text-white ';
+    if (!this._disabled) {
+      switch (value) {
+        case GradientDuotone.PurpleToBlue:
+          css = css + 'from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 active:ring-blue-300';
+          break;
+        case GradientDuotone.CyanToBlue:
+          css = css + 'from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 active:ring-cyan-200';
+          break;
+        case GradientDuotone.GreenToBlue:
+          css = css + 'from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 active:ring-green-200';
+          break;
+        case GradientDuotone.PurpleToPink:
+          css = css + 'from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 active:ring-purple-200';
+          break;
+        case GradientDuotone.PinkToOrange:
+          css = css + 'from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 active:ring-pink-200';
+          break;
+        case GradientDuotone.TealToLime:
+          css =
+            css + 'from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 active:ring-lime-200 hover:text-gray-900';
+          break;
+        case GradientDuotone.RedToYellow:
+          css =
+            css +
+            'from-red-200 via-red-300 to-yellow-200 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200 active:ring-red-100 hover:text-gray-900';
+          break;
+      }
+    } else {
+      switch (value) {
+        case GradientDuotone.PurpleToBlue:
+          css = css + 'from-purple-400 to-blue-300 group-hover:from-purple-400 group-hover:to-blue-300';
+          break;
+        case GradientDuotone.CyanToBlue:
+          css = css + 'from-cyan-300 to-blue-300 group-hover:from-cyan-300 group-hover:to-blue-300 ';
+          break;
+        case GradientDuotone.GreenToBlue:
+          css = css + 'from-green-200 to-blue-300 group-hover:from-green-200 group-hover:to-blue-300';
+          break;
+        case GradientDuotone.PurpleToPink:
+          css = css + 'from-purple-300 to-pink-300 group-hover:from-purple-300 group-hover:to-pink-300';
+          break;
+        case GradientDuotone.PinkToOrange:
+          css = css + 'from-pink-100 to-orange-100 group-hover:from-pink-100 group-hover:to-orange-100 hover:text-gray-900';
+          break;
+        case GradientDuotone.TealToLime:
+          css = css + 'from-teal-100 to-lime-100 group-hover:from-teal-100 group-hover:to-lime-100 hover:text-gray-900';
+          break;
+        case GradientDuotone.RedToYellow:
+          css =
+            css +
+            'from-red-100 via-red-200 to-yellow-100 group-hover:from-red-100 group-hover:via-red-200 group-hover:to-yellow-100 hover:text-gray-900';
+          break;
+      }
+    }
+    return css;
+  }
+
+  private getCssGradientMonochrome(): string {
     if (!this._disabled) {
       switch (this._gradientMonochrome) {
         case GradientMonochrome.Blue:
@@ -277,23 +342,23 @@ export class ButtonComponent {
     }
   }
 
-  private setCssSize(): string {
+  private getCssSize(): string {
     switch (this._size) {
       case Size.ExtraSmall:
-        return 'py-2 px-3 text-xs';
+        return 'py-1 px-1 text-xs';
       case Size.Small:
-        return 'py-2 px-3 text-sm';
+        return 'py-2 px-2 text-sm';
       default:
       case Size.Base:
-        return 'py-2.5 px-5 text-sm';
+        return 'py-2.5 px-2 text-sm';
       case Size.Large:
         return 'py-3 px-5 text-base';
       case Size.ExtraLarge:
-        return 'py-3.5 px-6 text-base';
+        return 'py-4 px-7 text-base';
     }
   }
 
-  private setCssDisabled(): string {
+  private getCssDisabled(): string {
     if (this._disabled) {
       return 'cursor-not-allowed';
     } else {
