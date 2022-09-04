@@ -136,20 +136,20 @@ export class ButtonComponent implements OnInit {
     switch (this._shadow) {
       case Shadow.Blue:
         return css + 'shadow-blue-500/50';
-      case Shadow.Cyan:
-        return css + 'shadow-cyan-500/50';
       case Shadow.Green:
         return css + 'shadow-green-500/50';
+      case Shadow.Cyan:
+        return css + 'shadow-cyan-500/50';
+      case Shadow.Teal:
+        return css + 'shadow-teal-500/50';
       case Shadow.Lime:
         return css + 'shadow-lime-500/50';
+      case Shadow.Red:
+        return css + 'shadow-red-500/50';
       case Shadow.Pink:
         return css + 'shadow-pink-500/50';
       case Shadow.Purple:
         return css + 'shadow-purple-500/50';
-      case Shadow.Red:
-        return css + 'shadow-red-500/50';
-      case Shadow.Teal:
-        return css + 'shadow-teal-500/50';
     }
   }
 
@@ -286,7 +286,7 @@ export class ButtonComponent implements OnInit {
           css = css + 'from-purple-400 to-blue-300 group-hover:from-purple-400 group-hover:to-blue-300';
           break;
         case GradientDuotone.CyanToBlue:
-          css = css + 'from-cyan-300 to-blue-300 group-hover:from-cyan-300 group-hover:to-blue-300 ';
+          css = css + 'from-cyan-300 to-blue-300 group-hover:from-cyan-300 group-hover:to-blue-300';
           break;
         case GradientDuotone.GreenToBlue:
           css = css + 'from-green-200 to-blue-300 group-hover:from-green-200 group-hover:to-blue-300';
@@ -400,7 +400,6 @@ export class ButtonComponent implements OnInit {
         return 'py-1 px-1 text-xs';
       case Size.Small:
         return 'py-2 px-2 text-sm';
-      default:
       case Size.Base:
         return 'py-2.5 px-2 text-sm';
       case Size.Large:
