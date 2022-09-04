@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ButtonComponent } from './button.component';
 import { Collor } from './interface/button-collor.enum';
+import { EventEmitter } from '@angular/core';
 import { GradientDuotone } from './interface/button-gradient-duotone.enum';
 import { GradientMonochrome } from './interface/button-gradient-monochrome.enum';
 import { Shadow } from './interface/button-shadow.enum';
@@ -59,6 +60,20 @@ describe('ButtonComponent', () => {
     );
     fixture.detectChanges();
     expect(emitSpy).toHaveBeenCalled();
+  });
+
+  test('should loading status equal true with event emitter', () => {
+    const eventEmitter = new EventEmitter<boolean>();
+    component.loadingEmitter = eventEmitter;
+    eventEmitter.emit(true);
+    expect(component.disabled).toBeTruthy();
+  });
+
+  test('should loading status equal false with event emitter', () => {
+    const eventEmitter = new EventEmitter<boolean>();
+    component.loadingEmitter = eventEmitter;
+    eventEmitter.emit(false);
+    expect(component.disabled).toBeFalsy();
   });
 
   test('set disable', () => {

@@ -53,6 +53,7 @@ export class ButtonComponent implements OnInit {
   private _outline: Collor;
   private _size: Size;
   private _disabled: boolean;
+  private _loadingEmitter: EventEmitter<boolean>;
 
   btnClick(): void {
     this.byClick.emit();
@@ -64,6 +65,11 @@ export class ButtonComponent implements OnInit {
 
   btnLeave(): void {
     this.byLeave.emit();
+  }
+
+  @Input() set loadingEmitter(value: EventEmitter<boolean>) {
+    this._loadingEmitter = value;
+    this.listenerLoading();
   }
 
   @Input() set disabled(value: boolean) {
@@ -430,6 +436,16 @@ export class ButtonComponent implements OnInit {
       return 'cursor-not-allowed';
     } else {
       return '';
+    }
+  }
+
+  private listenerLoading(): void {
+    if (this._loadingEmitter) {
+      this._loadingEmitter.subscribe({
+        next: (value: boolean) => {
+          this.disabled = value;
+        },
+      });
     }
   }
 }
