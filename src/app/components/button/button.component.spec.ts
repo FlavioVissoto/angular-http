@@ -28,6 +28,39 @@ describe('ButtonComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  test('should trigger event when clicked', () => {
+    const emitSpy = jest.spyOn(component.byClick, 'emit');
+    fixture.nativeElement.querySelector('button').click();
+    fixture.detectChanges();
+    expect(emitSpy).toHaveBeenCalled();
+  });
+
+  test('should trigger event when mouse hover', () => {
+    const emitSpy = jest.spyOn(component.byHover, 'emit');
+    fixture.nativeElement.querySelector('button').dispatchEvent(
+      new MouseEvent('mouseover', {
+        view: window,
+        bubbles: true,
+        cancelable: true,
+      })
+    );
+    fixture.detectChanges();
+    expect(emitSpy).toHaveBeenCalled();
+  });
+
+  test('should trigger event when mouse leave', () => {
+    const emitSpy = jest.spyOn(component.byLeave, 'emit');
+    fixture.nativeElement.querySelector('button').dispatchEvent(
+      new MouseEvent('mouseleave', {
+        view: window,
+        bubbles: true,
+        cancelable: true,
+      })
+    );
+    fixture.detectChanges();
+    expect(emitSpy).toHaveBeenCalled();
+  });
+
   test('set disable', () => {
     component.collor = Collor.Default;
     component.gradientDuotone = GradientDuotone.CyanToBlue;

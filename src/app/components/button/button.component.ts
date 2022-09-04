@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 import { Collor } from './interface/button-collor.enum';
 import { GradientDuotone } from './interface/button-gradient-duotone.enum';
@@ -40,6 +40,10 @@ export class ButtonComponent implements OnInit {
   @Input() message: string;
   @Input() loading: boolean;
 
+  @Output() byClick = new EventEmitter();
+  @Output() byHover = new EventEmitter();
+  @Output() byLeave = new EventEmitter();
+
   private _shadow: Shadow;
   private _rounded: Size;
   private _collor: Collor;
@@ -49,6 +53,18 @@ export class ButtonComponent implements OnInit {
   private _outline: Collor;
   private _size: Size;
   private _disabled: boolean;
+
+  btnClick(): void {
+    this.byClick.emit();
+  }
+
+  btnHover(): void {
+    this.byHover.emit();
+  }
+
+  btnLeave(): void {
+    this.byLeave.emit();
+  }
 
   @Input() set disabled(value: boolean) {
     this._disabled = value;
