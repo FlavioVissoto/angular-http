@@ -1,4 +1,3 @@
-import { ButtonComponent } from './button/button.component';
 import { CodeViewerComponent } from './code-viewer/code-viewer.component';
 import { CommonModule } from '@angular/common';
 import { ExampleViewerComponent } from './example-viewer/example-viewer.component';
@@ -11,16 +10,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { TooltipModule } from '@vissoto-angular-toolkit/ui';
 
 @NgModule({
-  declarations: [
-    SidebarComponent,
-    NavbarComponent,
-    NavbarItemsComponent,
-    ExampleViewerComponent,
-    CodeViewerComponent,
-    FooterComponent,
-    ButtonComponent,
-  ],
-  exports: [SidebarComponent, NavbarComponent, ExampleViewerComponent, CodeViewerComponent, FooterComponent, ButtonComponent],
+  declarations: [SidebarComponent, NavbarComponent, NavbarItemsComponent, ExampleViewerComponent, CodeViewerComponent, FooterComponent],
+  exports: [SidebarComponent, NavbarComponent, ExampleViewerComponent, CodeViewerComponent, FooterComponent],
   imports: [CommonModule, TooltipModule, RouterModule],
 })
 export class SharingComponentsModule {}
