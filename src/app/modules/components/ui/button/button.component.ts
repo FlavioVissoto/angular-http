@@ -16,6 +16,10 @@ export class ButtonComponent implements OnInit {
   buttonEvents: ButtonEvents[];
 
   ngOnInit(): void {
+    this.getButtonEvents();
+  }
+
+  private getButtonEvents(): void {
     this.service.getButtonEvents().subscribe({
       next: (x: ButtonEvents[]) => {
         this.buttonEvents = x;
