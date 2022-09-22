@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ButtonComponent } from './button/button.component';
 import { CardComponent } from './card/card.component';
 import { NgModule } from '@angular/core';
+import { SelectComponent } from './select/select.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
 import { TooltipIconsComponent } from './tooltip-icons/tooltip-icons.component';
 import { UiComponent } from './ui.component';
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'ui/button',
     component: ButtonComponent,
+  },
+  {
+    path: 'ui/select',
+    component: SelectComponent,
   },
 ];
 
