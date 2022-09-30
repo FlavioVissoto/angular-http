@@ -1,16 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
+import { ActivatedRoute } from '@angular/router';
+import { CodeViewer } from './../../../../components/code-viewer/interfaces/code-viewer.interface';
+import { EnumsServices } from '../../../../services/components/ui/enuns.services';
+import { EventsComponents } from '../../../../interfaces/components/events.interface';
+import { RequestDefault } from '../../../../interfaces/request/request.interface';
 import { SelectItem } from '@vissoto-angular-toolkit/ui';
+import { SelectRequest } from '../../../../interfaces/components/ui/select/select-request.interface';
+import { SelectServices } from '../../../../services/components/ui/select/select.services';
 
 @Component({
   selector: 'app-select',
   templateUrl: './select.component.html',
   styleUrls: ['./select.component.scss'],
 })
-export class SelectComponent implements OnInit {
+export class SelectComponent implements OnInit, AfterViewInit {
+  constructor(private selectServices: SelectServices, private enumServices: EnumsServices, private route: ActivatedRoute) {}
+
+  @ViewChild('pageInfo') pageInfo: ElementRef;
+
   itens: SelectItem[] = [];
 
+  moduleCV: CodeViewer;
+  roundedCV: CodeViewer;
+  roundedEnumCV: CodeViewer;
+  titleCV: CodeViewer;
+  events: EventsComponents[];
+
   ngOnInit(): void {
+    this.getSelectRequest();
+    this.getRoundedEnum();
     this.itens.push({
       selected: true,
       srcImg: 'https://img.pokemondb.net/sprites/home/normal/bulbasaur.png',
@@ -82,6 +101,40 @@ export class SelectComponent implements OnInit {
       srcImg: 'https://img.pokemondb.net/sprites/home/normal/butterfree.png',
       text: 'Butterfree',
       value: 12,
+    });
+  }
+
+  ngAfterViewInit(): void {
+    this.route.fragment.subscribe((fragment: string | null) => {
+      this.scrollToAnchor(fragment);
+    });
+  }
+
+  scrollToAnchor(fragment: string | null): void {
+    if (fragment) {
+      const el = document.querySelector('#' + fragment);
+      if (el) {
+        el.scrollIntoView();
+      }
+    }
+  }
+
+  private getRoundedEnum(): void {
+    this.enumServices.getSizeEnum().subscribe({
+      next: (x: RequestDefault<CodeViewer>) => {
+        this.roundedEnumCV = x.data;
+      },
+    });
+  }
+
+  private getSelectRequest(): void {
+    this.selectServices.getSelectCodes().subscribe({
+      next: (x: RequestDefault<SelectRequest>) => {
+        this.moduleCV = x.data.codeModule;
+        this.roundedCV = x.data.codeRounded;
+        this.titleCV = x.data.codeTitle;
+        this.events = x.data.events;
+      },
     });
   }
 }

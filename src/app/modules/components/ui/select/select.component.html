@@ -2,7 +2,7 @@
   <div class="flex items-center font-bold uppercase text-2xl">
     <h1>UI Select</h1>
   </div>
-  <p class="pt-2 text-gray-600">Exemplos para utilização do componente Button.</p>
+  <p class="pt-2 text-gray-600">Exemplos para utilização do componente Select.</p>
 </div>
 <hr class="my-4 border-b-2 border-gray-200" />
 
@@ -10,7 +10,7 @@
   <p class="">Use o componente select para permitir o usuário selecionar uma opção em uma lista de opções.</p>
 </div>
 
-<app-example-viewer [title]="'Alguns exemplos do componente Botão'">
+<app-example-viewer [title]="'Alguns exemplos do componente Select'">
   <div class="flex flex-wrap space-x-2 justify-center items-center">
     <vat-select class="w-2/6" [title]="'Selecione o Pokemon'" [placeholder]="'Selecione um item'" [itens]="itens"></vat-select>
     <vat-select
@@ -27,7 +27,7 @@
   <p class="text-sm">
     Após instalar o componente, será necessário importar o Modulo do Bottão nos modulos da aplicação, conforme exemplo abaixo.
   </p>
-  <app-code-viewer></app-code-viewer>
+  <app-code-viewer *ngIf="moduleCV" [codeViewer]="moduleCV"></app-code-viewer>
 </div>
 
 <div class="mt-10">
@@ -42,11 +42,11 @@
         </tr>
       </thead>
       <tbody>
-        <!-- <tr *ngFor="let item of buttonEvents" class="hover:bg-gray-200/30">
+        <tr *ngFor="let item of events" class="hover:bg-gray-200/30">
           <th class="py-2 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ item.name }}</th>
           <td class="px-6">{{ item.trigger }}</td>
           <td class="px-6">{{ item.return }}</td>
-        </tr> -->
+        </tr>
       </tbody>
     </table>
   </div>
@@ -55,53 +55,42 @@
 <div class="mt-10">
   <h2 class="font-semibold">Exemplo de personalização para estilo "Rounded"</h2>
   <div class="px-4 pt-4 bg-sky-100/50">
-    <div class="flex flex-wrap w-full">
+    <div class="flex flex-wrap w-full pb-4">
       <div class="w-2/6 px-1 py-1">
         <vat-select [title]="'Selecione o Pokemon'" [placeholder]="'Selecione um item'" [itens]="itens"></vat-select>
       </div>
       <div class="w-2/6 px-1 py-1">
-        <vat-select
-          class="w-2/6"
-          [title]="'Selecione o Pokemon'"
-          [placeholder]="'Selecione um item'"
-          [itens]="itens"
-          [rounded]="1"></vat-select>
+        <vat-select [title]="'Selecione o Pokemon'" [placeholder]="'Selecione um item'" [itens]="itens" [rounded]="1"></vat-select>
       </div>
       <div class="w-2/6 px-1 py-1">
-        <vat-select
-          class="w-2/6"
-          [title]="'Selecione o Pokemon'"
-          [placeholder]="'Selecione um item'"
-          [itens]="itens"
-          [rounded]="2"></vat-select>
+        <vat-select [title]="'Selecione o Pokemon'" [placeholder]="'Selecione um item'" [itens]="itens" [rounded]="2"></vat-select>
       </div>
       <div class="w-2/6 px-1 py-1">
-        <vat-select
-          class="w-2/6"
-          [title]="'Selecione o Pokemon'"
-          [placeholder]="'Selecione um item'"
-          [itens]="itens"
-          [rounded]="3"></vat-select>
+        <vat-select [title]="'Selecione o Pokemon'" [placeholder]="'Selecione um item'" [itens]="itens" [rounded]="3"></vat-select>
       </div>
       <div class="w-2/6 px-1 py-1">
-        <vat-select
-          class="w-2/6"
-          [title]="'Selecione o Pokemon'"
-          [placeholder]="'Selecione um item'"
-          [itens]="itens"
-          [rounded]="4"></vat-select>
+        <vat-select [title]="'Selecione o Pokemon'" [placeholder]="'Selecione um item'" [itens]="itens" [rounded]="4"></vat-select>
       </div>
       <div class="w-2/6 px-1 py-1">
-        <vat-select
-          class="w-2/6"
-          [title]="'Selecione o Pokemon'"
-          [placeholder]="'Selecione um item'"
-          [itens]="itens"
-          [rounded]="5"></vat-select>
+        <vat-select [title]="'Selecione o Pokemon'" [placeholder]="'Selecione um item'" [itens]="itens" [rounded]="5"></vat-select>
       </div>
     </div>
     <p>O parâmetro <span class="font-semibold">"Rounded"</span> recebe um enumerador, conforme mostrado abaixo:</p>
-    <app-code-viewer></app-code-viewer>
-    <app-code-viewer></app-code-viewer>
+    <app-code-viewer *ngIf="roundedEnumCV" [codeViewer]="roundedEnumCV"></app-code-viewer>
+    <app-code-viewer *ngIf="roundedCV" [codeViewer]="roundedCV"></app-code-viewer>
   </div>
 </div>
+
+<div class="mt-10">
+  <h2 class="font-semibold">Exemplo de utilização para "Title"</h2>
+  <div class="px-4 pt-4 bg-sky-100/50">
+    <div class="flex flex-wrap w-full pb-4">
+      <div class="w-2/6 px-1 py-1">
+        <vat-select class="w-2/6" [title]="'Selecione o Pokemon - Titulo do select '" [itens]="itens"></vat-select>
+      </div>
+    </div>
+    <p>O parâmetro <span class="font-semibold">"Title"</span> é uma label que fica acima do select.</p>
+    <app-code-viewer *ngIf="titleCV" [codeViewer]="titleCV"></app-code-viewer>
+  </div>
+</div>
+
