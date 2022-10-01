@@ -65,6 +65,12 @@
         "text": "Tooltip",
         "target": "_parent",
         "selected": false
+      },
+      {
+        "href": "/components/ui/number-stepper",
+        "text": "Number Stepper",
+        "target": "_parent",
+        "selected": false
       }
     ]
   }

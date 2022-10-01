@@ -20,6 +20,16 @@ const routes: Routes = [
     loadChildren: () => {
       return import('./modules/components/components.module').then((m) => m.ComponentsModule);
     },
+    // children: [
+    //   {
+    //     path: 'ui',
+    //     component: UiComponent,
+    //   },
+    //   {
+    //     path: 'ui/button',
+    //     component: ButtonComponent,
+    //   },
+    // ],
   },
   {
     path: 'error',

@@ -6,31 +6,31 @@ import { NgModule } from '@angular/core';
 import { SelectComponent } from './select/select.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
 import { TooltipIconsComponent } from './tooltip-icons/tooltip-icons.component';
-import { UiComponent } from './ui.component';
 
 const routes: Routes = [
   {
-    path: 'ui',
-    component: UiComponent,
+    path: '',
+    redirectTo: 'tooltip',
+    pathMatch: 'full',
   },
   {
-    path: 'ui/tooltip',
+    path: 'tooltip',
     component: TooltipComponent,
   },
   {
-    path: 'ui/tooltip-icons',
+    path: 'tooltip-icons',
     component: TooltipIconsComponent,
   },
   {
-    path: 'ui/card',
+    path: 'card',
     component: CardComponent,
   },
   {
-    path: 'ui/button',
+    path: 'button',
     component: ButtonComponent,
   },
   {
-    path: 'ui/select',
+    path: 'select',
     component: SelectComponent,
   },
 ];
