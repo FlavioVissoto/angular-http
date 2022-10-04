@@ -14,6 +14,12 @@ const routes: Routes = [
       return import('./ui/ui.module').then((m) => m.UIModule);
     },
   },
+  {
+    path: 'http-client',
+    loadChildren: () => {
+      return import('./http-cliente/http-cliente.module').then((m) => m.HttpClienteModule);
+    },
+  },
 ];
 
 @NgModule({

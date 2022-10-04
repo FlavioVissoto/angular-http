@@ -37,7 +37,7 @@ describe('NavbarServices', () => {
   });
 
   test('should return MenuSecondary', () => {
-    jest.spyOn(http, 'execute').mockImplementation(() => of(mockNavbar));
+    jest.spyOn(http, 'execute').mockImplementation(() => of(mockNavBarSecondary));
     service.getMenuSecondary().subscribe({
       next: (x: NavbarSecondary[]) => {
         expect(x.length).toBe(mockNavBarSecondary.length);

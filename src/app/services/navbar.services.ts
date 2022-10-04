@@ -19,10 +19,10 @@ export class NavbarServices {
       tap((result: NavbarSecondary[]) => {
         for (let index = 0; index < result.length; index++) {
           result[index].items.sort((a: Navbar, b: Navbar) => {
-            if (b.text == 'Instalação') {
+            if (b.text != null && b.text != undefined && b.text.toLowerCase() == 'instalação') {
               return 1;
             } else {
-              return a.text > b.text ? 1 : -1;
+              return a.text.localeCompare(b.text);
             }
           });
         }

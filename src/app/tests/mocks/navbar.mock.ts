@@ -2,6 +2,13 @@ import { Navbar, NavbarSecondary } from './../../components/navbar/interface/nav
 
 export const mockNavbar: Navbar[] = [
   {
+    text: 'Instalação',
+    href: 'test2Href',
+    iconCss: 'test2CssIcon',
+    target: '_blank',
+    selected: false,
+  },
+  {
     text: 'test1Text',
     href: 'test1Href',
     iconCss: 'test1CssIcon',
