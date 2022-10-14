@@ -7,7 +7,7 @@ import { NavbarItemsComponent } from './navbar/navbar-items/navbar-items.compone
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { TooltipModule } from '@vissoto-angular-toolkit/ui';
+import { TooltipModule } from '@vissoto-angular/ui';
 
 @NgModule({
   declarations: [SidebarComponent, NavbarComponent, NavbarItemsComponent, ExampleViewerComponent, CodeViewerComponent, FooterComponent],

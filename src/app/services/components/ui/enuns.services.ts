@@ -1,4 +1,4 @@
-import { HttpMethod, HttpRequestClientServices } from '@vissoto-angular-toolkit/http-client';
+import { HttpMethod, HttpRequestClientServices } from '@vissoto-angular/http-client';
 
 import { CodeViewer } from '../../../components/code-viewer/interfaces/code-viewer.interface';
 import { Injectable } from '@angular/core';

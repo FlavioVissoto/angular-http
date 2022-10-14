@@ -3,7 +3,7 @@
     "title": "HTTP Client",
     "items": [
       {
-        "href": "https://www.npmjs.com/package/@vissoto-angular-toolkit/http-client",
+        "href": "https://www.npmjs.com/package/@vissoto-angular/http-client",
         "text": "Instalação",
         "target": "_blank",
         "selected": false
@@ -20,7 +20,7 @@
     "title": "Storage",
     "items": [
       {
-        "href": "https://www.npmjs.com/package/@vissoto-angular-toolkit/storage",
+        "href": "https://www.npmjs.com/package/@vissoto-angular/storage",
         "text": "Instalação",
         "target": "_blank",
         "selected": false
@@ -31,7 +31,7 @@
     "title": "UI",
     "items": [
       {
-        "href": "https://www.npmjs.com/package/@vissoto-angular-toolkit/ui",
+        "href": "https://www.npmjs.com/package/@vissoto-angular/ui",
         "text": "Instalação",
         "target": "_blank",
         "selected": false

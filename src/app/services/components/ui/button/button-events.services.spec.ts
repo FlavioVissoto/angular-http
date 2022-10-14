@@ -1,7 +1,7 @@
 import { ButtonEvents } from './../../../../interfaces/components/ui/button/button-events.interface';
 import { ButtonServices } from './button-events.services';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpRequestClientServices } from '@vissoto-angular-toolkit/http-client';
+import { HttpRequestClientServices } from '@vissoto-angular/http-client';
 import { TestBed } from '@angular/core/testing';
 import { mockButtonEvents } from '../../../../tests/mocks/button-events.mock';
 import { of } from 'rxjs';

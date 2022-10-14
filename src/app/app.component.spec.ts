@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import { SharingComponentsModule } from './components/components.module';
 import { TestBed } from '@angular/core/testing';
-import { TooltipModule } from '@vissoto-angular-toolkit/ui';
+import { TooltipModule } from '@vissoto-angular/ui';
 
 describe('AppComponent', () => {
   beforeEach(async () => {

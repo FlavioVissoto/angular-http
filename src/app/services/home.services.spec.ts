@@ -1,6 +1,6 @@
 import { HomeServices } from './home.services';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpRequestClientServices } from '@vissoto-angular-toolkit/http-client';
+import { HttpRequestClientServices } from '@vissoto-angular/http-client';
 import { TestBed } from '@angular/core/testing';
 
 describe('HomeServices', () => {

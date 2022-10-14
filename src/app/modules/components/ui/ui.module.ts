@@ -1,4 +1,4 @@
-import { ButtonModule, CardAlfaModule, SelectModule, TooltipModule } from '@vissoto-angular-toolkit/ui';
+import { ButtonModule, CardAlfaModule, SelectModule, TooltipModule } from '@vissoto-angular/ui';
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, NgModule } from '@angular/core';
 
 import { ButtonComponent } from './button/button.component';

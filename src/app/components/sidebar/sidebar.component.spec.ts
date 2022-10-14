@@ -4,7 +4,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { SidebarComponent } from './sidebar.component';
-import { TooltipModule } from '@vissoto-angular-toolkit/ui';
+import { TooltipModule } from '@vissoto-angular/ui';
 
 describe('SidebarComponent', () => {
   let component: SidebarComponent;

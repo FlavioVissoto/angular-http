@@ -5,7 +5,7 @@ import { CodeViewer } from './../../../../components/code-viewer/interfaces/code
 import { EnumsServices } from '../../../../services/components/ui/enuns.services';
 import { EventsComponents } from '../../../../interfaces/components/events.interface';
 import { RequestDefault } from '../../../../interfaces/request/request.interface';
-import { SelectItem } from '@vissoto-angular-toolkit/ui';
+import { SelectItem } from '@vissoto-angular/ui';
 import { SelectRequest } from '../../../../interfaces/components/ui/select/select-request.interface';
 import { SelectServices } from '../../../../services/components/ui/select/select.services';
 

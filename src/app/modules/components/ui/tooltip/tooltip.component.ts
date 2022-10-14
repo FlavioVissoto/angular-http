@@ -10,7 +10,7 @@ import { Language } from 'src/app/components/code-viewer/interfaces/languages.en
 export class TooltipComponent {
   codeModule = {
     code:
-      "import { TooltipModule } from '@vissoto-angular-toolkit/ui';\n\n" +
+      "import { TooltipModule } from '@vissoto-angular/ui';\n\n" +
       '\t@NgModule({\n' +
       '\t\tdeclarations: [],\n' +
       '\t\tproviders: [],\n' +

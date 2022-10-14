@@ -1,4 +1,4 @@
-import { HttpMethod, HttpRequestClientServices } from '@vissoto-angular-toolkit/http-client';
+import { HttpMethod, HttpRequestClientServices } from '@vissoto-angular/http-client';
 
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';

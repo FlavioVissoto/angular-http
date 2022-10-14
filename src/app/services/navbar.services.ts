@@ -1,4 +1,4 @@
-import { HttpMethod, HttpRequestClientServices } from '@vissoto-angular-toolkit/http-client';
+import { HttpMethod, HttpRequestClientServices } from '@vissoto-angular/http-client';
 import { Navbar, NavbarSecondary } from '../components/navbar/interface/navbar.interface';
 import { Observable, tap } from 'rxjs';
 

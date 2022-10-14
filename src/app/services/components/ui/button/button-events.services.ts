@@ -1,4 +1,4 @@
-import { HttpMethod, HttpRequestClientServices } from '@vissoto-angular-toolkit/http-client';
+import { HttpMethod, HttpRequestClientServices } from '@vissoto-angular/http-client';
 
 import { ButtonEvents } from '../../../../interfaces/components/ui/button/button-events.interface';
 import { Injectable } from '@angular/core';

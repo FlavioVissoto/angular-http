@@ -29,7 +29,7 @@ export class ButtonComponent implements OnInit {
 
   codeModule = {
     code: `
-    import { ButtonModule } from '@vissoto-angular-toolkit/ui';
+    import { ButtonModule } from '@vissoto-angular/ui';
     
     @NgModule({
       declarations: [],

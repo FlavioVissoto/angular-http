@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { CardAlfa } from '@vissoto-angular-toolkit/ui';
+import { CardAlfa } from '@vissoto-angular/ui';
 import { CodeViewer } from 'src/app/components/code-viewer/interfaces/code-viewer.interface';
 import { Language } from 'src/app/components/code-viewer/interfaces/languages.enum';
 
@@ -14,7 +14,7 @@ export class CardComponent implements OnInit {
 
   codeModule = {
     code:
-      "import { CardAlfaModule } from '@vissoto-angular-toolkit/ui';\n\n" +
+      "import { CardAlfaModule } from '@vissoto-angular/ui';\n\n" +
       '\t@NgModule({\n' +
       '\t\tdeclarations: [],\n' +
       '\t\tproviders: [],\n' +

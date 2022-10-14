@@ -1,5 +1,5 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, NgModule } from '@angular/core';
-import { CardAlfaModule, TooltipModule } from '@vissoto-angular-toolkit/ui';
+import { CardAlfaModule, TooltipModule } from '@vissoto-angular/ui';
 import { CommonModule, DatePipe } from '@angular/common';
 
 import { HomeCardsComponent } from './home-cards/home-cards.component';

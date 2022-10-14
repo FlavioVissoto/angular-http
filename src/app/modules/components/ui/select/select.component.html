@@ -11,21 +11,17 @@
 </div>
 
 <app-example-viewer [title]="'Alguns exemplos do componente Select'">
-  <div class="flex flex-wrap space-x-2 justify-center items-center">
-    <vat-select class="w-2/6" [title]="'Selecione o Pokemon'" [placeholder]="'Selecione um item'" [itens]="itens"></vat-select>
-    <vat-select
-      class="w-2/6"
-      [title]="'Selecione o Pokemon'"
-      [placeholder]="'Selecione um item'"
-      [itens]="itens"
-      [rounded]="5"></vat-select>
+  <div class="flex flex-col xsm:flex-row xsm:space-x-2 space-y-4 xsm:space-y-0 justify-center items-center">
+    <vat-select class="w-full sm:w-60" [title]="'Selecione o Pokemon'" [placeholder]="'Selecione um item'" [itens]="itens"></vat-select>
+    <vat-select class="w-full sm:w-60" [title]="'Selecione o Pokemon'" [placeholder]="'Selecione um item'" [itens]="itens" [rounded]="5"></vat-select>
   </div>
 </app-example-viewer>
 
 <div class="mt-10">
   <h2 class="font-semibold">Configuração</h2>
   <p class="text-sm">
-    Após instalar o componente, será necessário importar o Modulo do Bottão nos modulos da aplicação, conforme exemplo abaixo.
+    Após instalar o componente, será necessário importar o Modulo do Bottão nos modulos da aplicação, conforme exemplo
+    abaixo.
   </p>
   <app-code-viewer *ngIf="moduleCV" [codeViewer]="moduleCV"></app-code-viewer>
 </div>
@@ -54,26 +50,14 @@
 
 <div class="mt-10">
   <h2 class="font-semibold">Exemplo de personalização para estilo "Rounded"</h2>
-  <div class="px-4 pt-4 bg-sky-100/50">
-    <div class="flex flex-wrap w-full pb-4">
-      <div class="w-2/6 px-1 py-1">
-        <vat-select [title]="'Selecione o Pokemon'" [placeholder]="'Selecione um item'" [itens]="itens"></vat-select>
-      </div>
-      <div class="w-2/6 px-1 py-1">
-        <vat-select [title]="'Selecione o Pokemon'" [placeholder]="'Selecione um item'" [itens]="itens" [rounded]="1"></vat-select>
-      </div>
-      <div class="w-2/6 px-1 py-1">
-        <vat-select [title]="'Selecione o Pokemon'" [placeholder]="'Selecione um item'" [itens]="itens" [rounded]="2"></vat-select>
-      </div>
-      <div class="w-2/6 px-1 py-1">
-        <vat-select [title]="'Selecione o Pokemon'" [placeholder]="'Selecione um item'" [itens]="itens" [rounded]="3"></vat-select>
-      </div>
-      <div class="w-2/6 px-1 py-1">
-        <vat-select [title]="'Selecione o Pokemon'" [placeholder]="'Selecione um item'" [itens]="itens" [rounded]="4"></vat-select>
-      </div>
-      <div class="w-2/6 px-1 py-1">
-        <vat-select [title]="'Selecione o Pokemon'" [placeholder]="'Selecione um item'" [itens]="itens" [rounded]="5"></vat-select>
-      </div>
+  <div class="bg-sky-100/50 flex flex-col space-y-2">
+    <div class="grid grid-cols-1 place-items-center xsm:grid-cols-2 xsm:gap-x-2 xsm:gap-y-4 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+      <vat-select class="w-full sm:w-60 md:w-56 lg:w-52 2xl:max-w-2xl" [title]="'Selecione o Pokemon'" [placeholder]="'Selecione um item'" [itens]="itens"></vat-select>
+      <vat-select class="w-full sm:w-60 md:w-56 lg:w-52 2xl:max-w-2xl" [title]="'Selecione o Pokemon'" [placeholder]="'Selecione um item'" [itens]="itens" [rounded]="1"></vat-select>
+      <vat-select class="w-full sm:w-60 md:w-56 lg:w-52 2xl:max-w-2xl" [title]="'Selecione o Pokemon'" [placeholder]="'Selecione um item'" [itens]="itens" [rounded]="2"></vat-select>
+      <vat-select class="w-full sm:w-60 md:w-56 lg:w-52 2xl:max-w-2xl" [title]="'Selecione o Pokemon'" [placeholder]="'Selecione um item'" [itens]="itens" [rounded]="3"></vat-select>
+      <vat-select class="w-full sm:w-60 md:w-56 lg:w-52 2xl:max-w-2xl" [title]="'Selecione o Pokemon'" [placeholder]="'Selecione um item'" [itens]="itens" [rounded]="4"></vat-select>
+      <vat-select class="w-full sm:w-60 md:w-56 lg:w-52 2xl:max-w-2xl" [title]="'Selecione o Pokemon'" [placeholder]="'Selecione um item'" [itens]="itens" [rounded]="5"></vat-select>
     </div>
     <p>O parâmetro <span class="font-semibold">"Rounded"</span> recebe um enumerador, conforme mostrado abaixo:</p>
     <app-code-viewer *ngIf="roundedEnumCV" [codeViewer]="roundedEnumCV"></app-code-viewer>
@@ -83,14 +67,11 @@
 
 <div class="mt-10">
   <h2 class="font-semibold">Exemplo de utilização para "Title"</h2>
-  <div class="px-4 pt-4 bg-sky-100/50">
-    <div class="flex flex-wrap w-full pb-4">
-      <div class="w-2/6 px-1 py-1">
-        <vat-select class="w-2/6" [title]="'Selecione o Pokemon - Titulo do select '" [itens]="itens"></vat-select>
-      </div>
+  <div class="bg-sky-100/50 flex flex-col space-y-2">
+    <div class="grid grid-cols-1 place-items-center xsm:grid-cols-2 xsm:gap-x-2 xsm:gap-y-4 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+        <vat-select class="w-full sm:w-60 md:w-56 lg:w-52 2xl:max-w-2xl" [title]="'Selecione o Pokemon'" [itens]="itens"></vat-select>
     </div>
     <p>O parâmetro <span class="font-semibold">"Title"</span> é uma label que fica acima do select.</p>
     <app-code-viewer *ngIf="titleCV" [codeViewer]="titleCV"></app-code-viewer>
   </div>
 </div>
-

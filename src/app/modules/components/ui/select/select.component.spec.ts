@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { CodeViewer } from '../../../../components/code-viewer/interfaces/code-viewer.interface';
 import { EnumsServices } from '../../../../services/components/ui/enuns.services';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpRequestClientServices } from '@vissoto-angular-toolkit/http-client';
+import { HttpRequestClientServices } from '@vissoto-angular/http-client';
 import { Language } from '../../../../components/code-viewer/interfaces/languages.enum';
 import { RequestDefault } from '../../../../interfaces/request/request.interface';
 import { RouterTestingModule } from '@angular/router/testing';

@@ -1,7 +1,7 @@
 import { mockNavBarSecondary, mockNavbar } from './../tests/mocks/navbar.mock';
 
 import { HttpClientModule } from '@angular/common/http';
-import { HttpRequestClientServices } from '@vissoto-angular-toolkit/http-client';
+import { HttpRequestClientServices } from '@vissoto-angular/http-client';
 import { Navbar } from '../components/navbar/interface/navbar.interface';
 import { NavbarSecondary } from './../components/navbar/interface/navbar.interface';
 import { NavbarServices } from './navbar.services';

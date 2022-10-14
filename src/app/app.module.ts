@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpRequestClientServices } from '@vissoto-angular-toolkit/http-client';
+import { HttpRequestClientServices } from '@vissoto-angular/http-client';
 import { SharingComponentsModule } from './components/components.module';
 
 @NgModule({

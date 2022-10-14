@@ -4,7 +4,7 @@ import { NavigationEnd, Router, RouterEvent } from '@angular/router';
 import { mockNavBarSecondary, mockNavbar } from './../../../tests/mocks/navbar.mock';
 
 import { BrowserModule } from '@angular/platform-browser';
-import { CardAlfaModule } from '@vissoto-angular-toolkit/ui';
+import { CardAlfaModule } from '@vissoto-angular/ui';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { Navbar } from './../interface/navbar.interface';

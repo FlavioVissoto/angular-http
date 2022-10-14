@@ -1,5 +1,5 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
-import { CardAlfa, CardAlfaModule } from '@vissoto-angular-toolkit/ui';
+import { CardAlfa, CardAlfaModule } from '@vissoto-angular/ui';
 import { CommonModule, DatePipe } from '@angular/common';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 

@@ -1,5 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
-import { HttpRequestClientServices } from '@vissoto-angular-toolkit/http-client';
+import { HttpRequestClientServices } from '@vissoto-angular/http-client';
 import { Language } from '../../../../components/code-viewer/interfaces/languages.enum';
 import { RequestDefault } from '../../../../interfaces/request/request.interface';
 import { SelectRequest } from '../../../../interfaces/components/ui/select/select-request.interface';

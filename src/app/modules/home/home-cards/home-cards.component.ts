@@ -1,4 +1,4 @@
-import { CardAlfa, TagAlfa } from '@vissoto-angular-toolkit/ui';
+import { CardAlfa, TagAlfa } from '@vissoto-angular/ui';
 import { CardPost, TagPost } from './../../../interfaces/card-post.interface';
 import { Component, OnInit } from '@angular/core';
 

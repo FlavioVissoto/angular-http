@@ -1,11 +1,11 @@
 {
-  "name": "@vissoto-angular-toolkit/angular-toolkit",
+  "name": "@vissoto-angular/angular-toolkit",
   "description": "",
   "version": "1.0.0",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FlavioVissoto/vissoto-angular-toolkit.git"
+    "url": "git+https://github.com/FlavioVissoto/vissoto-angular.git"
   },
   "keywords": [
     "angular",
@@ -19,9 +19,9 @@
   "author": "Flavio Vissoto",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/FlavioVissoto/vissoto-angular-toolkit/issues"
+    "url": "https://github.com/FlavioVissoto/vissoto-angular/issues"
   },
-  "homepage": "https://github.com/FlavioVissoto/vissoto-angular-toolkit#readme",
+  "homepage": "https://github.com/FlavioVissoto/vissoto-angular#readme",
   "publishConfig": {
     "access": "public"
   },
@@ -71,8 +71,8 @@
     "@types/jest": "^28.1.2",
     "@typescript-eslint/eslint-plugin": "^5.28.0",
     "@typescript-eslint/parser": "^5.28.0",
-    "@vissoto-angular-toolkit/http-client": "^1.1.0",
-    "@vissoto-angular-toolkit/ui": "^1.5.0",
+    "@vissoto-angular/http-client": "^14.0.1",
+    "@vissoto-angular/ui": "^12.0.3",
     "eslint": "^8.17.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-angular": "^4.1.0",
