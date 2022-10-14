@@ -15,18 +15,18 @@
 </div>
 
 <app-example-viewer [title]="'Exemplo do componente Tooltip'">
-  <div class="flex space-x-2 space-y-1 justify-center items-center xl:space-y-0 lg:justify-start lg:items-start">
+  <div class="grid grid-cols-1 place-items-center gap-y-4 sm:grid-cols-2 xl:grid-cols-4">
     <vat-tooltip [text]="'Tooltip Exemplo'" [position]="0">
-      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Tooltip para cima</button>
+      <button class="w-56 xl:w-40 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded">Tooltip para cima</button>
     </vat-tooltip>
     <vat-tooltip [text]="'Tooltip Exemplo'" [position]="1">
-      <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Tooltip para direita</button>
+      <button class="w-56 xl:w-44 bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-2 rounded">Tooltip para direita</button>
     </vat-tooltip>
     <vat-tooltip [text]="'Tooltip Exemplo'" [position]="2">
-      <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Tooltip para baixo</button>
+      <button class="w-56 xl:w-40 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-2 rounded">Tooltip para baixo</button>
     </vat-tooltip>
     <vat-tooltip [text]="'Tooltip Exemplo'" [position]="3">
-      <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Tooltip para esquerda</button>
+      <button class="w-56 xl:w-50 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-2 rounded">Tooltip para esquerda</button>
     </vat-tooltip>
   </div>
 </app-example-viewer>

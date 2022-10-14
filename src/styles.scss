@@ -1,6 +1,8 @@
-@tailwind base;
-@tailwind components;
+//@tailwind base;
+//@tailwind components;
 @tailwind utilities;
+
+@import '../node_modules/@vissoto-angular/ui/src/assets/css/tailwind.css';
 
 ::-webkit-scrollbar-track {
   width: 8px;
