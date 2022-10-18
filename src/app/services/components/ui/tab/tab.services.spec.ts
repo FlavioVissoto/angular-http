@@ -1,8 +1,9 @@
+import { EventsComponents } from '../../../../interfaces/components/events.interface';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpRequestClientServices } from '@vissoto-angular/http-client';
 import { Language } from '../../../../components/code-viewer/interfaces/languages.enum';
 import { RequestDefault } from '../../../../interfaces/request/request.interface';
-import { SelectRequest } from '../../../../interfaces/components/ui/select/select-request.interface';
+import { TabRequest } from '../../../../interfaces/components/ui/tab/tab-request.interface';
 import { TabServices } from './tab.services';
 import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
@@ -11,29 +12,37 @@ describe('TabServices', () => {
   let service: TabServices;
   let http: HttpRequestClientServices;
 
-  const mockSelectRequest = {
+  const mockTabRequest = {
     data: {
       codeModule: {
-        code: 'codigo',
+        code: 'code',
         language: Language.TypeScript,
       },
-      codeTitle: {
-        code: 'codigo',
-        language: Language.TypeScript,
+      interfaceTab: {
+        code: 'code',
+        language: Language.CSS,
       },
-      codeRounded: {
-        code: 'codigo',
-        language: Language.TypeScript,
+      maxWidthElement: {
+        code: 'code',
+        language: Language.CSS,
+      },
+      maxWidthPx: {
+        code: 'code',
+        language: Language.CSS,
+      },
+      widthPx: {
+        code: 'code',
+        language: Language.CSS,
       },
       events: [
         {
-          name: 'nome evento',
-          trigger: 'trigger evento',
-          return: 'return evento',
+          name: 'nameEvent',
+          return: 'return event',
+          trigger: 'trigger event',
         },
-      ],
+      ] as EventsComponents[],
     },
-  } as RequestDefault<SelectRequest>;
+  } as RequestDefault<TabRequest>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -55,10 +64,10 @@ describe('TabServices', () => {
   });
 
   test('should return MenuSecondary', () => {
-    jest.spyOn(http, 'execute').mockImplementation(() => of(mockSelectRequest));
+    jest.spyOn(http, 'execute').mockImplementation(() => of(mockTabRequest));
     service.getTabCodes().subscribe({
-      next: (x: RequestDefault<SelectRequest>) => {
-        expect(x.data).toBe(mockSelectRequest.data);
+      next: (x: RequestDefault<TabRequest>) => {
+        expect(x.data).toBe(mockTabRequest.data);
       },
     });
   });
