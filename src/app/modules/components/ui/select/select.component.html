@@ -20,8 +20,7 @@
 <div class="mt-10">
   <h2 class="font-semibold">Configuração</h2>
   <p class="text-sm">
-    Após instalar o componente, será necessário importar o Modulo do Bottão nos modulos da aplicação, conforme exemplo
-    abaixo.
+    Após instalar o componente, será necessário importar o Modulo do Select nos modulos da aplicação, conforme exemplo abaixo.
   </p>
   <app-code-viewer *ngIf="moduleCV" [codeViewer]="moduleCV"></app-code-viewer>
 </div>
@@ -39,7 +38,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let item of events" class="hover:bg-gray-200/30">
-          <th class="py-2 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ item.name }}</th>
+          <th class="py-2 px-6 font-medium text-gray-900 whitespace-nowrap">{{ item.name }}</th>
           <td class="px-6">{{ item.trigger }}</td>
           <td class="px-6">{{ item.return }}</td>
         </tr>

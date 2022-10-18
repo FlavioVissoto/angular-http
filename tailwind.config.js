@@ -1,5 +1,5 @@
 module.exports = {
-  mode: 'aot',
+  mode: 'jit',
   content: ['./src/**/*.{html,ts}', './projects/**/*.{html,ts,js}'],
   theme: {
     fontFamily: {
@@ -22,6 +22,12 @@ module.exports = {
       // => @media (min-width: 1536px) { ... }
     },
     extend: {
+      backgroundImage: {
+        'type-grass': "url('src/assets/img/details_type_bg_grass.png')",
+        'type-fire': "url('src/assets/img/details_type_bg_fire.png')",
+        'type-water': "url('src/assets/img/details_type_bg_water.png')",
+        'type-poison': "url('src/assets/img/details_type_bg_poison.png')",
+      },
       opacity: {
         10: '0.1',
         20: '0.2',

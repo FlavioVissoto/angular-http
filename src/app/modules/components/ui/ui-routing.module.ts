@@ -4,6 +4,7 @@ import { ButtonComponent } from './button/button.component';
 import { CardComponent } from './card/card.component';
 import { NgModule } from '@angular/core';
 import { SelectComponent } from './select/select.component';
+import { TabComponent } from './tab/tab.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
 import { TooltipIconsComponent } from './tooltip-icons/tooltip-icons.component';
 
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'select',
     component: SelectComponent,
+  },
+  {
+    path: 'tab',
+    component: TabComponent,
   },
 ];
 
