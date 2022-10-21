@@ -28,7 +28,19 @@
                   </div>
                   <ul class="pl-4">
                      <li *ngFor="let subitem of item.items">
-                        <a [routerLink]="subitem.href"
+                        <a *ngIf="subitem.target != '_blank'" [routerLink]="subitem.href"
+                           class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group"
+                           (click)="clickMenu()">
+                           <i class="pl-1 text-gray-500 {{ subitem.iconCss }}"></i>
+                           <span class="flex-1 ml-3">{{subitem.text}}</span>
+                           <span *ngIf="subitem.textAuxiliary"
+                              class="inline-flex justify-center items-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full"
+                              [ngClass]="{'text-blue-600 bg-blue-200': subitem.textAuxiliaryCollor == 'blue',
+                                    'text-red-600 bg-red-200': subitem.textAuxiliaryCollor == 'red'}">{{subitem.textAuxiliary}}</span>
+                        </a>
+                        <a *ngIf="subitem.target == '_blank'" 
+                           [href]="subitem.href"
+                           [target]="subitem.target"
                            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group"
                            (click)="clickMenu()">
                            <i class="pl-1 text-gray-500 {{ subitem.iconCss }}"></i>
