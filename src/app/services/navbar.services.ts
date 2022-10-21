@@ -1,6 +1,6 @@
 import { HttpMethod, HttpRequestClientServices } from '@vissoto-angular/http-client';
-import { Navbar, NavbarSecondary } from '../components/navbar/interface/navbar.interface';
 import { Observable, tap } from 'rxjs';
+import { Sidebar, SidebarSecondary } from '../components/sidebar/interface/sidebar.interface';
 
 import { Injectable } from '@angular/core';
 
@@ -10,15 +10,16 @@ export class NavbarServices {
 
   private readonly httpUrlBase = 'assets/json/';
 
-  getMenuPrincipal(): Observable<Navbar[]> {
-    return this.http.execute<Navbar[]>(HttpMethod.Get, this.httpUrlBase + 'navbar-principal.json');
+  getMenuPrincipal(): Observable<Sidebar[]> {
+    return this.http.execute<Sidebar[]>(HttpMethod.Get, this.httpUrlBase + 'navbar-principal.json');
   }
 
-  getMenuSecondary(): Observable<NavbarSecondary[]> {
-    return this.http.execute<NavbarSecondary[]>(HttpMethod.Get, this.httpUrlBase + 'navbar-secondary.json').pipe(
-      tap((result: NavbarSecondary[]) => {
+  getMenuSecondary(): Observable<SidebarSecondary[]> {
+    return this.http.execute<SidebarSecondary[]>(HttpMethod.Get, this.httpUrlBase + 'navbar-secondary.json').pipe(
+      tap((result: SidebarSecondary[]) => {
         for (let index = 0; index < result.length; index++) {
-          result[index].items.sort((a: Navbar, b: Navbar) => {
+          result[index].textAuxiliary = `${result[index].items.length - 1}`;
+          result[index].items.sort((a: Sidebar, b: Sidebar) => {
             if (b.text != null && b.text != undefined && b.text.toLowerCase() == 'instalação') {
               return 1;
             } else {

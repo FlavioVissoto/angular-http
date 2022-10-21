@@ -1,11 +1,9 @@
 <div class="background-sky hero"></div>
-<app-sidebar></app-sidebar>
-<div class="pt-[3.8125rem]">
-  <div class="max-w-8xl mx-auto px-4 sm:px-6 md:px-8">
-    <app-navbar></app-navbar>
-    <div class="lg:pl-[19.5rem]">
-      <router-outlet></router-outlet>
-      <app-footer></app-footer>
-    </div>
+<app-navbar (byClickOpenMenu)="openMenu()"></app-navbar>
+<div class="container flex mt-16">
+  <app-sidebar [toggleMenuEmitter]="toggleOpenMenu"></app-sidebar>  
+  <div class="px-6 w-full md:w-8/12 lg:w-full md:ml-[25%] lg:ml-[20%] 2xl:ml-[16.6%]">
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
   </div>
 </div>

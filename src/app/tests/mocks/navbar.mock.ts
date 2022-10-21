@@ -1,6 +1,6 @@
-import { Navbar, NavbarSecondary } from './../../components/navbar/interface/navbar.interface';
+import { Sidebar, SidebarSecondary } from '../../components/sidebar/interface/sidebar.interface';
 
-export const mockNavbar: Navbar[] = [
+export const mockNavbar: Sidebar[] = [
   {
     text: 'Instalação',
     href: 'test2Href',
@@ -24,7 +24,7 @@ export const mockNavbar: Navbar[] = [
   },
 ];
 
-export const mockNavBarSecondary: NavbarSecondary[] = [
+export const mockNavBarSecondary: SidebarSecondary[] = [
   {
     title: 'testSecondary1',
     items: mockNavbar,

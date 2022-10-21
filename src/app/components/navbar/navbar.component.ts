@@ -1,42 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { Navbar, NavbarSecondary } from './interface/navbar.interface';
-
-import { NavbarServices } from './../../services/navbar.services';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
 })
-export class NavbarComponent implements OnInit {
-  constructor(private navBarServices: NavbarServices) {}
+export class NavbarComponent {
+  @Output() byClickOpenMenu = new EventEmitter<boolean>();
 
-  navbarPrincipal: Navbar[];
-  navbarSecondary: NavbarSecondary[];
-  showMenu = false;
-
-  ngOnInit(): void {
-    this.getPrimaryMenu();
-    this.getSecondaryMenu();
-  }
-
-  toggleMenu(): void {
-    this.showMenu = !this.showMenu;
-  }
-
-  private getPrimaryMenu(): void {
-    this.navBarServices.getMenuPrincipal().subscribe({
-      next: (x: Navbar[]) => {
-        this.navbarPrincipal = x;
-      },
-    });
-  }
-
-  private getSecondaryMenu(): void {
-    this.navBarServices.getMenuSecondary().subscribe({
-      next: (x: NavbarSecondary[]) => {
-        this.navbarSecondary = x;
-      },
-    });
+  clickOpenMenu(): void {
+    this.byClickOpenMenu.emit();
   }
 }

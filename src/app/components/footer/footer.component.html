@@ -1,16 +1,30 @@
-<footer class="mx-auto max-w-7xl">
-  <div class="flex w-full max-w-2xl flex-col justify-center space-y-5 px-4 py-12 md:items-start">
-    <a
-      class="text-xs leading-5 text-blue-600 bg-blue-400/10 py-1 px-3 xl:flex items-center hover:bg-blue-400/20 font-semibold"
+<footer class="mt-6 p-4 md:flex md:items-center md:justify-between md:p-6 bg-blue-400/10">
+  <div class="flex flex-col space-y-4 justify-center py-4 ">
+    <a class="w-44 text-xs leading-5 text-blue-600 py-1 px-4 font-semibold"
       [routerLink]="['/']">
       Vissoto - Angular Toolkit
     </a>
-    <nav class="flex flex-row flex-wrap items-center text-xs font-medium text-gray-500 sm:flex-row sm:space-x-4 sm:space-y-0">
-      <a href="https://www.facebook.com/flavio.vissoto/" class="hover:text-black">Facebook</a>
-      <a href="https://www.instagram.com/flaviovissoto/" class="hover:text-black">Instagram</a>
-      <a href="https://github.com/FlavioVissoto" class="hover:text-black">GitHub</a>
-      <a href="https://www.youtube.com/user/flaviovissoto" class="hover:text-black">YouTube</a>
-      <a href="https://www.linkedin.com/in/flavio-vissoto" class="hover:text-black">LinkedIn</a>
-    </nav>
+    <div class="flex items-center ml-4 space-x-4">
+      <vat-tooltip [text]="'Facebook'" [position]="2">
+        <a href="https://www.facebook.com/flavio.vissoto/" target="_blank"
+          class="icon-facebook2 block text-blue-500 hover:text-blue-600 tooltip-trigger"></a>
+      </vat-tooltip>
+      <vat-tooltip [text]="'Instagram'" [position]="2">
+        <a href="https://www.instagram.com/flaviovissoto/" target="_blank"
+          class="icon-instagram block text-blue-500 hover:text-blue-600 tooltip-trigger"></a>
+      </vat-tooltip>
+      <vat-tooltip [text]="'GitHub'" [position]="2">
+        <a href="https://github.com/FlavioVissoto" target="_blank"
+          class="icon-github block text-blue-500 hover:text-blue-600 tool"></a>
+      </vat-tooltip>
+      <vat-tooltip [text]="'YouTube'" [position]="2">
+        <a href="https://www.youtube.com/user/flaviovissoto" target="_blank"
+          class="icon-youtube2 block text-blue-500 hover:text-blue-600 tooltip-trigger"></a>
+      </vat-tooltip>
+      <vat-tooltip [text]="'LinkedIn'" [position]="2">
+        <a href="https://www.linkedin.com/in/flavio-vissoto" target="_blank"
+          class="icon-linkedin block text-blue-500 hover:text-blue-600 tooltip-trigger"></a>
+      </vat-tooltip>
+    </div>
   </div>
 </footer>

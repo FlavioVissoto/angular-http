@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-toolkit-web';
+
+  toggleOpenMenu = new EventEmitter<boolean>();
+
+  openMenu(): void {
+    this.toggleOpenMenu.emit();
+  }
 }

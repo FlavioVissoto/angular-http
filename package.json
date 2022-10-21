@@ -33,7 +33,7 @@
     "build:storage": "ng build http-client && npm run pack",
     "watch": "ng build --watch --configuration development",
     "watch:tailwind": "npx tailwindcss -o ./src/assets/css/tailwind.css --watch",
-    "test": "npx jest --no-cache",
+    "test": "npx jest --no-cache --maxWorkers=1",
     "lint": "eslint . --ext .ts",
     "pack": "cd dist && npm pack",
     "tailwind": "npx tailwindcss -o ./src/assets/css/tailwind.css"

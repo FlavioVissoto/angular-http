@@ -7,7 +7,8 @@
   {
     "href": "module/componentes",
     "iconCss": "icon-books",
-    "text": "Componentes"
+    "text": "Componentes",
+    "textAuxiliary": "3"
   },
   {
     "href": "module/tutoriais",
