@@ -7,9 +7,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { TooltipModule } from '@vissoto-angular/ui';
+import { InfoComponent } from './sidebar/info/info.component';
 
 @NgModule({
-  declarations: [SidebarComponent, NavbarComponent, ExampleViewerComponent, CodeViewerComponent, FooterComponent],
+  declarations: [SidebarComponent, NavbarComponent, ExampleViewerComponent, CodeViewerComponent, FooterComponent, InfoComponent],
   exports: [SidebarComponent, NavbarComponent, ExampleViewerComponent, CodeViewerComponent, FooterComponent],
   imports: [CommonModule, TooltipModule, RouterModule],
 })

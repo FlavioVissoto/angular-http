@@ -50,7 +50,6 @@ export class SidebarComponent implements OnInit {
     this.navBarServices.getMenuSecondary().subscribe({
       next: (x: SidebarSecondary[]) => {
         this.sidebarSecondary = x;
-        console.log(x);
       },
     });
   }
