@@ -4,6 +4,7 @@ import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, NgModule } from '@angular/cor
 import { ButtonComponent } from './button/button.component';
 import { CardComponent } from './card/card.component';
 import { CommonModule } from '@angular/common';
+import { NumberStepperComponent } from './number-stepper/number-stepper.component';
 import { SanitizeHtmlPipe } from 'src/app/pipes/sanitize.pipe';
 import { SelectComponent } from './select/select.component';
 import { SharingComponentsModule } from 'src/app/components/components.module';
@@ -14,7 +15,16 @@ import { UIRoutingModule } from './ui-routing.module';
 import { UiComponent } from './ui.component';
 
 @NgModule({
-  declarations: [UiComponent, TooltipComponent, TooltipIconsComponent, CardComponent, ButtonComponent, SelectComponent, TabComponent],
+  declarations: [
+    UiComponent,
+    TooltipComponent,
+    TooltipIconsComponent,
+    CardComponent,
+    ButtonComponent,
+    SelectComponent,
+    TabComponent,
+    NumberStepperComponent,
+  ],
   providers: [SanitizeHtmlPipe],
   imports: [CommonModule, UIRoutingModule, SharingComponentsModule, TooltipModule, CardAlfaModule, ButtonModule, SelectModule, TabModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],

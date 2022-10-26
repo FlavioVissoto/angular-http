@@ -1,3 +1,4 @@
+import { CheckboxComponent } from './checkbox/checkbox.component';
 import { CodeViewerComponent } from './code-viewer/code-viewer.component';
 import { CommonModule } from '@angular/common';
 import { ExampleViewerComponent } from './example-viewer/example-viewer.component';
@@ -10,7 +11,15 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { TooltipModule } from '@vissoto-angular/ui';
 
 @NgModule({
-  declarations: [SidebarComponent, NavbarComponent, ExampleViewerComponent, CodeViewerComponent, FooterComponent, InfoComponent],
+  declarations: [
+    SidebarComponent,
+    NavbarComponent,
+    ExampleViewerComponent,
+    CodeViewerComponent,
+    FooterComponent,
+    InfoComponent,
+    CheckboxComponent,
+  ],
   exports: [SidebarComponent, NavbarComponent, ExampleViewerComponent, CodeViewerComponent, FooterComponent],
   imports: [CommonModule, TooltipModule, RouterModule],
 })

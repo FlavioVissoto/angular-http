@@ -71,6 +71,18 @@
         "text": "Number Stepper",
         "target": "_parent",
         "selected": false
+      },
+      {
+        "href": "/components/ui/checkbox",
+        "text": "Checkbox",
+        "target": "_parent",
+        "selected": false
+      },
+      {
+        "href": "/components/ui/input-text",
+        "text": "Input Text",
+        "target": "_parent",
+        "selected": false
       }
     ]
   }
