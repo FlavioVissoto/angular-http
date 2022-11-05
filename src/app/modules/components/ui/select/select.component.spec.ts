@@ -87,7 +87,7 @@ describe('SelectComponent', () => {
     expect(component.roundedEnumCV).toEqual(mockGetSizeEnum.data);
   });
 
-  test('getRoundedEnum', () => {
+  test('getSelectCodes', () => {
     jest.spyOn(selectServices, 'getSelectCodes').mockImplementation(() => of(mockGetSelectCodes));
     component['getSelectRequest']();
     expect(component.events).toEqual(mockGetSelectCodes.data.events);
