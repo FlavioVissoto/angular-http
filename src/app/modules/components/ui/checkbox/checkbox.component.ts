@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
-import { CheckboxRequest } from '../../../../interfaces/components/ui/checkbox/checkbox-request.interface';
+import { CheckboxRequest } from '../../../../interfaces/components/ui/checkbox-request.interface';
 import { RequestDefault } from '../../../../interfaces/request/request.interface';
 import { UIServices } from './../../../../services/components/ui/ui.services';
 

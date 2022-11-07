@@ -1,0 +1,17 @@
+{
+  "data": {
+    "codeModule": {
+      "code": "import { InputTextModule } from '@vissoto-angular/ui';\n\n\t@NgModule({\n\t\tdeclarations: [],\n\t\tproviders: [],\n\t\timports: [CommonModule, ComponentsRoutingModule, InputTextModule],\n\t})\n\n\texport class ComponentsModule { }",
+      "language": "typescript"
+    },
+    "rounded": {
+      "code": "\n\t<vat-input-text [rounded]=\"1\"></vat-input-text>\n\t<vat-input-text [rounded]=\"2\"></vat-input-text>\n\t<vat-input-text [rounded]=\"3\"></vat-input-text>\n\t<vat-input-text [rounded]=\"4\"></vat-input-text>\n\t<vat-input-text [rounded]=\"5\"></vat-input-text>",
+      "language": "html"
+    },
+    "cssClassInput": {
+      "code": "<vat-input-text [label]=\"'DragonBall'\" [placeholder]=\"'personagem do DragonBall'\" [cssClassInput]=\"'cssSuperSaiyajin'\"></vat-input-text>",
+      "language": "html"
+    },
+    "attributes": ["placeholder", "readonly", "required", "max", "maxlength", "min", "minlength", "name"]
+  }
+}

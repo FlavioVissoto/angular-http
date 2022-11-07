@@ -1,4 +1,8 @@
-import { CheckboxRequest } from '../../../../interfaces/components/ui/checkbox/checkbox-request.interface';
+import { AttributesItem } from '../../../../interfaces/components/attributes.interface';
+import { CheckboxRequest } from '../../../../interfaces/components/ui/checkbox-request.interface';
+import { CodeViewer } from '../../../../components/code-viewer/interfaces/code-viewer.interface';
+import { EventsRequest } from '../../../../interfaces/components/events.interface';
+import { InputTextRequest } from '../../../../interfaces/components/ui/input-text-request.interface';
 import { Language } from '../../../../components/code-viewer/interfaces/languages.enum';
 import { RequestDefault } from '../../../../interfaces/request/request.interface';
 
@@ -37,3 +41,56 @@ export const mockCheckboxRequest = {
     ],
   },
 } as RequestDefault<CheckboxRequest>;
+
+export const mockEventsRequest = {
+  data: {
+    FormEvents: [
+      {
+        name: '',
+        return: '',
+        trigger: '',
+      },
+    ],
+    KeyboardEvents: [
+      {
+        name: '',
+        return: '',
+        trigger: '',
+      },
+    ],
+    MouseEvents: [
+      {
+        name: '',
+        return: '',
+        trigger: '',
+      },
+    ],
+    ClipboardEvents: [
+      {
+        name: '',
+        return: '',
+        trigger: '',
+      },
+    ],
+    DragEvents: [
+      {
+        name: '',
+        return: '',
+        trigger: '',
+      },
+    ],
+  },
+} as RequestDefault<EventsRequest>;
+
+export const mockInputTextRequest = {} as RequestDefault<InputTextRequest>;
+
+export const mockEnumSize = {
+  data: {
+    code: 'codigo',
+    language: Language.TypeScript,
+  } as CodeViewer,
+} as RequestDefault<CodeViewer>;
+
+export const mockAttributesHTML = {
+  data: {},
+} as RequestDefault<AttributesItem>;

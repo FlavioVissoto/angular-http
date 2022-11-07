@@ -3,7 +3,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ActivatedRoute } from '@angular/router';
 import { CodeViewer } from '../../../../components/code-viewer/interfaces/code-viewer.interface';
-import { EnumsServices } from '../../../../services/components/ui/enuns.services';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpRequestClientServices } from '@vissoto-angular/http-client';
 import { Language } from '../../../../components/code-viewer/interfaces/languages.enum';
@@ -12,11 +11,12 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { SelectComponent } from './select.component';
 import { SelectRequest } from '../../../../interfaces/components/ui/select/select-request.interface';
 import { SelectServices } from '../../../../services/components/ui/select/select.services';
+import { UIServices } from './../../../../services/components/ui/ui.services';
 import { of } from 'rxjs';
 
 describe('SelectComponent', () => {
   let component: SelectComponent;
-  let enumServices: EnumsServices;
+  let uiService: UIServices;
   let selectServices: SelectServices;
   let fixture: ComponentFixture<SelectComponent>;
 
@@ -59,13 +59,13 @@ describe('SelectComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [SelectComponent],
-      providers: [HttpRequestClientServices, EnumsServices, SelectServices, { provide: ActivatedRoute, useValue: fakeActivatedRoute }],
+      providers: [HttpRequestClientServices, UIServices, SelectServices, { provide: ActivatedRoute, useValue: fakeActivatedRoute }],
       imports: [HttpClientModule, RouterTestingModule],
       schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
     }).compileComponents();
 
     fixture = TestBed.createComponent(SelectComponent);
-    enumServices = TestBed.inject(EnumsServices);
+    uiService = TestBed.inject(UIServices);
     selectServices = TestBed.inject(SelectServices);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -82,7 +82,7 @@ describe('SelectComponent', () => {
   });
 
   test('getRoundedEnum', () => {
-    jest.spyOn(enumServices, 'getSizeEnum').mockImplementation(() => of(mockGetSizeEnum));
+    jest.spyOn(uiService, 'getSizeEnum').mockImplementation(() => of(mockGetSizeEnum));
     component['getRoundedEnum']();
     expect(component.roundedEnumCV).toEqual(mockGetSizeEnum.data);
   });

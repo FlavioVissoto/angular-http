@@ -2,12 +2,12 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
 
 import { ActivatedRoute } from '@angular/router';
 import { CodeViewer } from './../../../../components/code-viewer/interfaces/code-viewer.interface';
-import { EnumsServices } from '../../../../services/components/ui/enuns.services';
 import { EventsComponents } from '../../../../interfaces/components/events.interface';
 import { RequestDefault } from '../../../../interfaces/request/request.interface';
 import { SelectItem } from '@vissoto-angular/ui';
 import { SelectRequest } from '../../../../interfaces/components/ui/select/select-request.interface';
 import { SelectServices } from '../../../../services/components/ui/select/select.services';
+import { UIServices } from '../../../../services/components/ui/ui.services';
 
 @Component({
   selector: 'app-select',
@@ -15,7 +15,7 @@ import { SelectServices } from '../../../../services/components/ui/select/select
   styleUrls: ['./select.component.scss'],
 })
 export class SelectComponent implements OnInit, AfterViewInit {
-  constructor(private selectServices: SelectServices, private enumServices: EnumsServices, private route: ActivatedRoute) {}
+  constructor(private selectServices: SelectServices, private uiServices: UIServices, private route: ActivatedRoute) {}
 
   @ViewChild('pageInfo') pageInfo: ElementRef;
 
@@ -120,7 +120,7 @@ export class SelectComponent implements OnInit, AfterViewInit {
   }
 
   private getRoundedEnum(): void {
-    this.enumServices.getSizeEnum().subscribe({
+    this.uiServices.getSizeEnum().subscribe({
       next: (x: RequestDefault<CodeViewer>) => {
         this.roundedEnumCV = x.data;
       },

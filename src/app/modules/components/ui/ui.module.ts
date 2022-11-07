@@ -1,10 +1,11 @@
-import { ButtonModule, CardAlfaModule, CheckboxModule, SelectModule, TabModule, TooltipModule } from '@vissoto-angular/ui';
+import { ButtonModule, CardAlfaModule, CheckboxModule, InputTextModule, SelectModule, TabModule, TooltipModule } from '@vissoto-angular/ui';
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, NgModule } from '@angular/core';
 
 import { ButtonComponent } from './button/button.component';
 import { CardComponent } from './card/card.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 import { CommonModule } from '@angular/common';
+import { InputTextComponent } from './input-text/input-text.component';
 import { NumberStepperComponent } from './number-stepper/number-stepper.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SanitizeHtmlPipe } from 'src/app/pipes/sanitize.pipe';
@@ -27,6 +28,7 @@ import { UiComponent } from './ui.component';
     TabComponent,
     NumberStepperComponent,
     CheckboxComponent,
+    InputTextComponent,
   ],
   providers: [SanitizeHtmlPipe],
   imports: [
@@ -40,6 +42,7 @@ import { UiComponent } from './ui.component';
     SelectModule,
     TabModule,
     CheckboxModule,
+    InputTextModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })

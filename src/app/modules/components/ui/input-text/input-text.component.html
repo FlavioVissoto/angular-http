@@ -1,0 +1,111 @@
+<div class="md:mt-2">
+    <div class="flex items-center font-bold uppercase text-2xl">
+        <h1>UI Input Text</h1>
+    </div>
+    <p class="pt-2 text-gray-600">Exemplos para utilização do componente Input Text.</p>
+</div>
+<hr class="my-4 border-b-2 border-gray-200" />
+
+<div class="mb-6 text-sm">
+    <p class="">Use o componente Input Text para permitir o usuário inserir valores de texto, email, número, senha, URL,
+        número de telefone e outros.</p>
+</div>
+
+<app-example-viewer [title]="'Alguns exemplos do componente InputText'">
+    <div class="flex flex-col space-y-2">
+
+        <div class="w-full">
+            <vat-input-text [label]="'Primeiro input'" [placeholder]="'placeholder'" [rounded]="1"></vat-input-text>
+        </div>
+        <div class="w-4/5">
+            <vat-input-text [label]="'Segundo input'" [placeholder]="'Vissoto'" [rounded]="2"></vat-input-text>
+        </div>
+        <div class="w-3/5">
+            <vat-input-text [label]="'Terceiro input'" [placeholder]="'Miguel'" [rounded]="3"></vat-input-text>
+        </div>
+        <div class="w-2/5">
+            <vat-input-text [label]="'Quarto input'" [placeholder]="'Pokémon'" [rounded]="4"></vat-input-text>
+        </div>
+        <div class="w-1/5">
+            <vat-input-text [label]="'Quinto input'" [placeholder]="'DragonBall'" [rounded]="5" [cssClassInput]="'novaClasseCss'"></vat-input-text>
+        </div>
+    </div>
+</app-example-viewer>
+
+<div class="mt-10">
+    <h2 class="font-semibold">Configuração</h2>
+    <p class="text-sm">
+        Após instalar o componente, será necessário importar o Modulo do InputText nos modulos da aplicação, conforme
+        exemplo abaixo.
+    </p>
+    <app-code-viewer *ngIf="valuesPage.codeModule" [codeViewer]="valuesPage.codeModule"></app-code-viewer>
+</div>
+
+<div class="mt-10">
+    <h2 class="font-semibold">Eventos disponíveis no componente InputText</h2>
+    <div class="overflow-x-auto relative shadow-md mt-2">
+        <table class="w-full text-sm text-left text-gray-500">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-100">
+                <tr>
+                    <th class="py-1 px-6">Nome do Evento</th>
+                    <th class="py-1 px-6">Quando ocorre</th>
+                    <th class="py-1 px-6">Retorno</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of valuesPage.events" class="hover:bg-gray-200/30">
+                    <th class="py-2 px-6 font-medium text-gray-900 whitespace-nowrap">{{ item.name }}</th>
+                    <td class="px-6">{{ item.trigger }}</td>
+                    <td class="px-6">{{ item.return }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="mt-10">
+    <h2 class="font-semibold">Atributos HTML disponíveis no componente InputText</h2>
+    <div class="overflow-x-auto relative shadow-md mt-2">
+        <table class="w-full text-sm text-left text-gray-500">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-100">
+                <tr>
+                    <th class="py-1 px-6">Nome do Atributo</th>
+                    <th class="py-1 px-6">Descrição</th>
+                    <th class="py-1 px-6">Tipo de dado de entrada</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of valuesPage.attributesHTML" class="hover:bg-gray-200/30">
+                    <th class="py-2 px-6 font-medium text-gray-900 whitespace-nowrap">{{ item.name }}</th>
+                    <td class="px-6">{{ item.description }}</td>
+                    <td class="px-6">{{ item.typeEntry }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="mt-10">
+    <h2 class="font-semibold">Exemplo de personalização para estilo "Rounded"</h2>
+    <div class="bg-sky-100/50 flex flex-col space-y-2">
+        <div
+            class="grid grid-cols-1 place-items-center xsm:grid-cols-2 xsm:gap-x-2 xsm:gap-y-4 xl:grid-cols-4 2xl:grid-cols-5">
+
+        </div>
+        <p>O parâmetro <span class="font-semibold">"Rounded"</span> recebe um enumerador, conforme mostrado abaixo:</p>
+        <app-code-viewer *ngIf="valuesPage.roundedEnum" [codeViewer]="valuesPage.roundedEnum"></app-code-viewer>
+        <app-code-viewer *ngIf="valuesPage.rounded" [codeViewer]="valuesPage.rounded"></app-code-viewer>
+    </div>
+</div>
+
+<div class="mt-10">
+    <h2 class="font-semibold">Exemplo de personalização para estilo do Input</h2>
+    <div class="bg-sky-100/50 flex flex-col space-y-2">
+        <div
+            class="grid grid-cols-1 place-items-center xsm:grid-cols-2 xsm:gap-x-2 xsm:gap-y-4 xl:grid-cols-4 2xl:grid-cols-5">
+
+        </div>
+        <p>O parâmetro <span class="font-semibold">"cssClassInput"</span> recebe um string, que será aplicado no atributo "class" do input:</p>
+        <app-code-viewer *ngIf="valuesPage.cssClassInput" [codeViewer]="valuesPage.cssClassInput"></app-code-viewer>
+    </div>
+</div>
