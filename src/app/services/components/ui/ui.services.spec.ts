@@ -1,7 +1,9 @@
+import { mockAttributesHTML, mockEnumSize } from './../../../tests/mocks/components/ui/mocks';
 import { mockCheckboxRequest, mockEventsRequest, mockInputTextRequest } from '../../../tests/mocks/components/ui/mocks';
 
 import { AttributesItem } from './../../../interfaces/components/attributes.interface';
 import { CheckboxRequest } from '../../../interfaces/components/ui/checkbox-request.interface';
+import { CodeViewer } from '../../../components/code-viewer/interfaces/code-viewer.interface';
 import { EventsRequest } from '../../../interfaces/components/events.interface';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpRequestClientServices } from '@vissoto-angular/http-client';
@@ -9,7 +11,6 @@ import { InputTextRequest } from '../../../interfaces/components/ui/input-text-r
 import { RequestDefault } from '../../../interfaces/request/request.interface';
 import { TestBed } from '@angular/core/testing';
 import { UIServices } from './ui.services';
-import { mockAttributesHTML } from './../../../tests/mocks/components/ui/mocks';
 import { of } from 'rxjs';
 
 describe('UIServices', () => {
@@ -53,6 +54,15 @@ describe('UIServices', () => {
     });
   });
 
+  test('should getSizeEnum', () => {
+    jest.spyOn(http, 'execute').mockImplementation(() => of(mockEnumSize));
+    service.getSizeEnum().subscribe({
+      next: (x: RequestDefault<CodeViewer>) => {
+        expect(x.data).toBe(mockEnumSize.data);
+      },
+    });
+  });
+
   test('should getInputTextCodes', () => {
     jest.spyOn(http, 'execute').mockImplementation(() => of(mockInputTextRequest));
     service.getInputTextCodes().subscribe({
@@ -64,7 +74,7 @@ describe('UIServices', () => {
 
   test('should return AttributesHTML', () => {
     jest.spyOn(http, 'execute').mockImplementation(() => of(mockAttributesHTML));
-    service.getAttributes(['placeholder', 'required']).subscribe({
+    service.getAttributes(['placeholder', 'required', 'max']).subscribe({
       next: (x: RequestDefault<AttributesItem[]>) => {
         expect(x.data).toBe(mockAttributesHTML.data);
       },

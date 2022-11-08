@@ -40,10 +40,7 @@ export class UIServices {
             if (a.name < b.name) {
               return -1;
             }
-            if (a.name > b.name) {
-              return 1;
-            }
-            return 0;
+            return 1;
           });
         return { data: nArray } as RequestDefault<AttributesItem[]>;
       })

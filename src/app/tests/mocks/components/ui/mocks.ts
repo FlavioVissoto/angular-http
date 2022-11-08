@@ -82,7 +82,14 @@ export const mockEventsRequest = {
   },
 } as RequestDefault<EventsRequest>;
 
-export const mockInputTextRequest = {} as RequestDefault<InputTextRequest>;
+export const mockInputTextRequest = {
+  data: {
+    rounded: {
+      code: 'rounded',
+      language: Language.TypeScript,
+    },
+  },
+} as RequestDefault<InputTextRequest>;
 
 export const mockEnumSize = {
   data: {
@@ -92,5 +99,26 @@ export const mockEnumSize = {
 } as RequestDefault<CodeViewer>;
 
 export const mockAttributesHTML = {
-  data: {},
-} as RequestDefault<AttributesItem>;
+  data: [
+    {
+      description: 'abc',
+      name: 'placeholder',
+      typeEntry: 'string',
+    },
+    {
+      description: 'abc',
+      name: 'required',
+      typeEntry: 'string',
+    },
+    {
+      description: 'abc',
+      name: 'name',
+      typeEntry: 'string',
+    },
+    {
+      description: 'abc',
+      name: 'max',
+      typeEntry: 'string',
+    },
+  ],
+} as RequestDefault<AttributesItem[]>;
