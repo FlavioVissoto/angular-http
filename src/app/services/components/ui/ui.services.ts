@@ -7,6 +7,7 @@ import { CodeViewer } from '../../../components/code-viewer/interfaces/code-view
 import { EventsRequest } from '../../../interfaces/components/events.interface';
 import { Injectable } from '@angular/core';
 import { InputTextRequest } from '../../../interfaces/components/ui/input-text-request.interface';
+import { ModalRequest } from '../../../interfaces/components/ui/modal-request.interface';
 import { RequestDefault } from '../../../interfaces/request/request.interface';
 
 @Injectable({ providedIn: 'root' })
@@ -21,6 +22,10 @@ export class UIServices {
 
   getInputTextCodes(): Observable<RequestDefault<InputTextRequest>> {
     return this.http.execute<RequestDefault<InputTextRequest>>(HttpMethod.Get, this.httpUrlBase + 'input-text.json');
+  }
+
+  getModalCodes(): Observable<RequestDefault<ModalRequest>> {
+    return this.http.execute<RequestDefault<ModalRequest>>(HttpMethod.Get, this.httpUrlBase + 'modal.json');
   }
 
   getEvents(): Observable<RequestDefault<EventsRequest>> {

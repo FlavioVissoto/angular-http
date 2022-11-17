@@ -3,7 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { ButtonComponent } from './button/button.component';
 import { CardComponent } from './card/card.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
+import { IconsComponent } from './icons/icons.component';
 import { InputTextComponent } from './input-text/input-text.component';
+import { ModalComponent } from './modal/modal.component';
 import { NgModule } from '@angular/core';
 import { NumberStepperComponent } from './number-stepper/number-stepper.component';
 import { SelectComponent } from './select/select.component';
@@ -52,6 +54,14 @@ const routes: Routes = [
   {
     path: 'input-text',
     component: InputTextComponent,
+  },
+  {
+    path: 'icons',
+    component: IconsComponent,
+  },
+  {
+    path: 'modal',
+    component: ModalComponent,
   },
 ];
 

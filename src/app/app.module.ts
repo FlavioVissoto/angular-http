@@ -13,5 +13,6 @@ import { SharingComponentsModule } from './components/components.module';
   providers: [HttpRequestClientServices],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],
+  exports: [],
 })
 export class AppModule {}

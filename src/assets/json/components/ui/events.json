@@ -149,6 +149,13 @@
         "trigger": "Disparado quando a barra de rolagem de um elemento está sendo rolada.",
         "return": "EventEmitter<DragEvent>"
       }
+    ],
+    "CustomEvents": [
+      {
+        "name": "byClickClose",
+        "trigger": "Dispara quando houver um clique do mouse no botão para fechar o elemento.",
+        "return": "EventEmitter"
+      }
     ]
   }
 }

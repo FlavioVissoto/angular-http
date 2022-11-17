@@ -4,6 +4,7 @@ export interface EventsRequest {
   MouseEvents: EventsComponents[];
   ClipboardEvents: EventsComponents[];
   DragEvents: EventsComponents[];
+  CustomEvents: EventsComponents[];
 }
 export interface EventsComponents {
   name: string;

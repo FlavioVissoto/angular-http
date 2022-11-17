@@ -5,7 +5,10 @@ import { ButtonComponent } from './button/button.component';
 import { CardComponent } from './card/card.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 import { CommonModule } from '@angular/common';
+import { IcoComponent } from './icons/ico/ico.component';
+import { IconsComponent } from './icons/icons.component';
 import { InputTextComponent } from './input-text/input-text.component';
+import { ModalComponent } from './modal/modal.component';
 import { NumberStepperComponent } from './number-stepper/number-stepper.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SanitizeHtmlPipe } from 'src/app/pipes/sanitize.pipe';
@@ -29,6 +32,9 @@ import { UiComponent } from './ui.component';
     NumberStepperComponent,
     CheckboxComponent,
     InputTextComponent,
+    IconsComponent,
+    ModalComponent,
+    IcoComponent,
   ],
   providers: [SanitizeHtmlPipe],
   imports: [
