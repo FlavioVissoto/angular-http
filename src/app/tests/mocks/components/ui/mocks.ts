@@ -1,3 +1,4 @@
+import { AlertRequest } from '../../../../interfaces/components/ui/alert.request';
 import { AttributesItem } from '../../../../interfaces/components/attributes.interface';
 import { CheckboxRequest } from '../../../../interfaces/components/ui/checkbox.request.interface';
 import { CodeViewer } from '../../../../components/code-viewer/interfaces/code-viewer.interface';
@@ -107,6 +108,15 @@ export const mockModalRequest = {
     },
   },
 } as RequestDefault<ModalRequest>;
+
+export const mockAlertRequest = {
+  data: {
+    codeModule: {
+      code: 'template',
+      language: Language.TypeScript,
+    },
+  },
+} as RequestDefault<AlertRequest>;
 
 export const mockEnumSize = {
   data: {

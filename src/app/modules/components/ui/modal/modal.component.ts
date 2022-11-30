@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EventsComponents, EventsRequest } from '../../../../interfaces/components/events.interface';
 
-import { EventsRequest } from '../../../../interfaces/components/events.interface';
 import { ModalRequest } from '../../../../interfaces/components/ui/modal.request.interface';
 import { RequestDefault } from '../../../../interfaces/request/request.interface';
 import { UIServices } from '../../../../services/components/ui/ui.services';
@@ -42,8 +42,7 @@ export class ModalComponent implements OnInit {
     this.uiServices.getEvents().subscribe({
       next: (x: RequestDefault<EventsRequest>) => {
         this.valuesPage.events = [];
-        console.log(x);
-        x.data.CustomEvents.forEach((element) => {
+        x.data.CustomEvents.forEach((element: EventsComponents) => {
           this.valuesPage.events.push(element);
         });
       },

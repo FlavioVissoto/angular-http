@@ -1,6 +1,7 @@
-import { mockAttributesHTML, mockEnumSize } from './../../../tests/mocks/components/ui/mocks';
+import { mockAlertRequest, mockAttributesHTML, mockEnumSize, mockModalRequest } from './../../../tests/mocks/components/ui/mocks';
 import { mockCheckboxRequest, mockEventsRequest, mockInputTextRequest } from '../../../tests/mocks/components/ui/mocks';
 
+import { AlertRequest } from '../../../interfaces/components/ui/alert.request';
 import { AttributesItem } from './../../../interfaces/components/attributes.interface';
 import { CheckboxRequest } from '../../../interfaces/components/ui/checkbox.request.interface';
 import { CodeViewer } from '../../../components/code-viewer/interfaces/code-viewer.interface';
@@ -8,6 +9,7 @@ import { EventsRequest } from '../../../interfaces/components/events.interface';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpRequestClientServices } from '@vissoto-angular/http-client';
 import { InputTextRequest } from '../../../interfaces/components/ui/input-text.request.interface';
+import { ModalRequest } from '../../../interfaces/components/ui/modal.request.interface';
 import { RequestDefault } from '../../../interfaces/request/request.interface';
 import { TestBed } from '@angular/core/testing';
 import { UIServices } from './ui.services';
@@ -45,6 +47,15 @@ describe('UIServices', () => {
     });
   });
 
+  test('should return getModalCodes json', () => {
+    jest.spyOn(http, 'execute').mockImplementation(() => of(mockModalRequest));
+    service.getModalCodes().subscribe({
+      next: (x: RequestDefault<ModalRequest>) => {
+        expect(x.data).toBe(mockModalRequest.data);
+      },
+    });
+  });
+
   test('should return events json', () => {
     jest.spyOn(http, 'execute').mockImplementation(() => of(mockEventsRequest));
     service.getEvents().subscribe({
@@ -77,6 +88,15 @@ describe('UIServices', () => {
     service.getAttributes(['placeholder', 'required', 'max']).subscribe({
       next: (x: RequestDefault<AttributesItem[]>) => {
         expect(x.data).toBe(mockAttributesHTML.data);
+      },
+    });
+  });
+
+  test('should return getAlertCodes json', () => {
+    jest.spyOn(http, 'execute').mockImplementation(() => of(mockAlertRequest));
+    service.getAlertCodes().subscribe({
+      next: (x: RequestDefault<AlertRequest>) => {
+        expect(x.data).toBe(mockAlertRequest.data);
       },
     });
   });
