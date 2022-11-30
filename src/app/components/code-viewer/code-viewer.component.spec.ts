@@ -30,6 +30,14 @@ describe('CodeViewerComponent', () => {
     expect(component.codeElement.nativeElement.innerHTML).not.toBeUndefined();
   });
 
+  test('should start without parameter CodeViewer', () => {
+    component.codeViewer = {
+      code: '<div>oi</div>',
+    };
+    component.ngAfterViewInit();
+    expect(component.codeElement.nativeElement.innerHTML).not.toBeUndefined();
+  });
+
   test('should start with parameter CodeViewer without language', () => {
     component.codeViewer = {
       code: '<div>oi</div>',
