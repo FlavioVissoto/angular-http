@@ -9,7 +9,8 @@ export class IcoComponent {
   @Input() name: string;
   @Input() valueCopy: string;
 
-  copy() {
+  /* istanbul ignore next */
+  copy(): void {
     const selBox = document.createElement('textarea');
     selBox.style.position = 'fixed';
     selBox.style.left = '0';

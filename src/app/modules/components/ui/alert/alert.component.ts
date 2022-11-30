@@ -20,22 +20,27 @@ export class AlertComponent implements OnInit {
     {
       color: 'red',
       message: 'Charizard: Se Charizard ficar furioso, a chama na ponta de sua cauda se acende em um tom azul claro.',
+      show: true,
     },
     {
       color: 'gray',
       message: 'Gengar: Ele rouba o calor de seus arredores. Se você sentir um calafrio repentino, é certo que um GENGAR apareceu.',
+      show: true,
     },
     {
       color: 'blue',
       message: 'Blastoise: Ele deliberadamente se torna pesado para poder suportar o recuo dos jatos de água que dispara.',
+      show: true,
     },
     {
       color: 'green',
       message: 'Venusaur: Espalhando as largas pétalas de sua flor e captando os raios do sol, ela enche seu corpo de poder.',
+      show: true,
     },
     {
       color: 'yellow',
       message: 'Zapdos: Este Pokémon pássaro lendário causa tempestades selvagens ao bater suas asas brilhantes.',
+      show: true,
     },
   ];
 
@@ -61,6 +66,18 @@ export class AlertComponent implements OnInit {
           this.valuesPage.events.push(element);
         });
       },
+    });
+  }
+
+  openAllAlerts(): void {
+    this.colors.forEach((element: AlertUI) => {
+      element.show = true;
+    });
+  }
+
+  closeAllAlerts(): void {
+    this.colors.forEach((element: AlertUI) => {
+      element.show = false;
     });
   }
 }

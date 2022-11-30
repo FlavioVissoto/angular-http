@@ -58,7 +58,7 @@
             <vat-checkbox [text]="'Checkbox simples'"></vat-checkbox>
             <vat-checkbox [text]="'Checkbox simples outro texto'"></vat-checkbox>
         </div>
-        <p>O parâmetro <span class="font-semibold">"text"</span> recebe um string.</p>
+        <p class="text-sm">O parâmetro <span class="font-semibold">"text"</span> recebe um string.</p>
         <app-code-viewer *ngIf="valuesPage.codeSimples" [codeViewer]="valuesPage.codeSimples"></app-code-viewer>
     </div>
 </div>
@@ -71,7 +71,7 @@
             <vat-checkbox [text]="'Checkbox não selecionado'" [checked]="false"></vat-checkbox>
         </div>
         <div>
-            <p>O parâmetro <span class="font-semibold">"checked"</span> recebe um boolean, para selecionar o elemento.</p>
+            <p class="text-sm">O parâmetro <span class="font-semibold">"checked"</span> recebe um boolean, para selecionar o elemento.</p>
             <p class="text-[12px]">Por padrão o valor será false.</p>
         </div>
         <app-code-viewer *ngIf="valuesPage.codeChecked" [codeViewer]="valuesPage.codeChecked"></app-code-viewer>
@@ -86,7 +86,7 @@
             <vat-checkbox [text]="'Checkbox não selecionado'" [checked]="false"></vat-checkbox>
         </div>
         <div>
-            <p>O parâmetro <span class="font-semibold">"disabled"</span> recebe um boolean, que desativa o elemento.</p>
+            <p class="text-sm">O parâmetro <span class="font-semibold">"disabled"</span> recebe um boolean, que desativa o elemento.</p>
             <p class="text-[12px]">Por padrão o valor será false.</p>
         </div>
         <app-code-viewer *ngIf="valuesPage.codeDisabled" [codeViewer]="valuesPage.codeDisabled"></app-code-viewer>
@@ -99,7 +99,7 @@
         <div class="flex justify-center p-4">
             <vat-checkbox [text]="'Checkbox com Helper'" [helperText]="'Mensagem de ajuda para o checkbox'"></vat-checkbox>
         </div>
-        <p>O parâmetro <span class="font-semibold">"helperText"</span> recebe um string, que será exibido logo abaixo do
+        <p class="text-sm">O parâmetro <span class="font-semibold">"helperText"</span> recebe um string, que será exibido logo abaixo do
             texto.</p>
         <app-code-viewer *ngIf="valuesPage.codeHelperText" [codeViewer]="valuesPage.codeHelperText"></app-code-viewer>
     </div>
@@ -107,12 +107,12 @@
 
 <div class="mt-10">
     <h2 class="font-semibold">Exemplo para utilização da propriedade FormControl</h2>
-    <p>Caso esteja utilizando o modulo "ReactiveFormsModule", é possível passar um FormControl para o componente Checkbox.</p>
+    <p class="text-sm">Caso esteja utilizando o modulo "ReactiveFormsModule", é possível passar um FormControl para o componente Checkbox.</p>
     <div class="bg-sky-100/50 flex flex-col space-y-2">
         <div class="flex justify-center p-4">
             <vat-checkbox [text]="'Checkbox com FormControl'" [control]="formCheck.controls.chk" [helperText]="'Está utilizando o FormControl'"></vat-checkbox>
         </div>
-        <p>O parâmetro <span class="font-semibold">"control"</span> recebe um objeto "FormControl.</p>
+        <p class="text-sm">O parâmetro <span class="font-semibold">"control"</span> recebe um objeto "FormControl.</p>
         <app-code-viewer *ngIf="valuesPage.codeControlForm" [codeViewer]="valuesPage.codeControlForm"></app-code-viewer>
     </div>
 </div>

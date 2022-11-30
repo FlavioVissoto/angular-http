@@ -1,4 +1,13 @@
-import { ButtonModule, CardAlfaModule, CheckboxModule, InputTextModule, SelectModule, TabModule, TooltipModule } from '@vissoto-angular/ui';
+import {
+  AlertModule,
+  ButtonModule,
+  CardAlfaModule,
+  CheckboxModule,
+  InputTextModule,
+  SelectModule,
+  TabModule,
+  TooltipModule,
+} from '@vissoto-angular/ui';
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, NgModule } from '@angular/core';
 
 import { AlertComponent } from './alert/alert.component';
@@ -51,6 +60,7 @@ import { UiComponent } from './ui.component';
     TabModule,
     CheckboxModule,
     InputTextModule,
+    AlertModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })

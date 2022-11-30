@@ -8,16 +8,15 @@ describe('IcoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ IcoComponent ]
-    })
-    .compileComponents();
+      declarations: [IcoComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(IcoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  test('should create', () => {
     expect(component).toBeTruthy();
   });
 });

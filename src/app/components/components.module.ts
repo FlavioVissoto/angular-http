@@ -1,5 +1,4 @@
 import { AlertCircleComponent } from './svg/alert-circle/alert-circle.component';
-import { AlertComponent } from './alert/alert.component';
 import { AlignLeftComponent } from './svg/align-left/align-left.component';
 import { BellComponent } from './svg/bell/bell.component';
 import { BoxComponent } from './svg/box/box.component';
@@ -27,7 +26,6 @@ import { InfoComponent } from './sidebar/info/info.component';
 import { LayoutComponent } from './svg/layout/layout.component';
 import { LinkExternalComponent } from './svg/link-external/link-external.component';
 import { LoadingLoaderComponent } from './svg/loading-loader/loading-loader.component';
-import { ModalComponent } from './modal/modal.component';
 import { MousePointerComponent } from './svg/mouse-pointer/mouse-pointer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NgModule } from '@angular/core';
@@ -93,9 +91,7 @@ import { XComponent } from './svg/x/x.component';
     HexagonComponent,
     CoffeComponent,
     SlashComponent,
-    ModalComponent,
     AlertCircleComponent,
-    AlertComponent,
   ],
   exports: [
     SidebarComponent,
@@ -139,9 +135,7 @@ import { XComponent } from './svg/x/x.component';
     HexagonComponent,
     CoffeComponent,
     SlashComponent,
-    ModalComponent,
     AlertCircleComponent,
-    AlertComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule, TooltipModule, RouterModule],
 })
