@@ -20,10 +20,6 @@ export class AlertComponent {
    */
   @Output() byClickClose = new EventEmitter();
 
-  close(): void {
-    this.byClickClose.emit();
-  }
-
   /**
    * Cor utilizada para o alerta.
    *
@@ -31,5 +27,37 @@ export class AlertComponent {
    */
   @Input() color: string;
 
+  /**
+   * Classe CSS customizada para o alerta.
+   */
   @Input() customCss: string;
+
+  /**
+   * Tempo de exibição do alerta em milisegundos.
+   */
+  @Input() timer = 3000;
+
+  /**
+   * Realiza o fechamento do alerta automaticamente no intervalo especificado no parametro "time" após aberto.
+   */
+  @Input() autoClose = true;
+
+  _show = false;
+  @Input() set show(value: boolean) {
+    this._show = value;
+    this.timeoutClose();
+  }
+
+  timeoutClose() {
+    setTimeout(() => {
+      if (this.autoClose) {
+        this.close();
+      }
+    }, this.timer);
+  }
+
+  close(): void {
+    this._show = false;
+    this.byClickClose.emit();
+  }
 }

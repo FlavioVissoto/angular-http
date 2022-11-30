@@ -5,7 +5,7 @@
       <nav class="lg:px-3 lg:pl-0 lg:pt-2 font-normal text-base lg:text-sm pb-20">
          <ul class="space-y-2">
             <li *ngFor="let item of sidebarPrincipal">
-               <a [routerLink]="item.href" class="flex flex-row items-baseline p-2 text-base font-normal text-gray-900"
+               <a [routerLink]="item.href" class="flex flex-row items-baseline p-2 text-sm font-normal text-gray-900"
                   (click)="clickMenu()">
                   <i class="pl-1 text-gray-500 {{ item.iconCss }}"></i>
                   <span class="flex-1 ml-3">{{item.text}}</span>
@@ -29,7 +29,7 @@
                   <ul class="pl-4">
                      <li *ngFor="let subitem of item.items">
                         <a *ngIf="subitem.target != '_blank'" [routerLink]="subitem.href"
-                           class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group"
+                           class="flex items-center p-2 md:p-1 text-xs font-normal text-gray-900 rounded-lg transition duration-75 hover:bg-gray-100 group"
                            (click)="clickMenu()">
                            <i class="pl-1 text-gray-500 {{ subitem.iconCss }}"></i>
                            <span class="flex-1 ml-3">{{subitem.text}}</span>
@@ -38,10 +38,8 @@
                               [ngClass]="{'text-blue-600 bg-blue-200': subitem.textAuxiliaryCollor == 'blue',
                                     'text-red-600 bg-red-200': subitem.textAuxiliaryCollor == 'red'}">{{subitem.textAuxiliary}}</span>
                         </a>
-                        <a *ngIf="subitem.target == '_blank'" 
-                           [href]="subitem.href"
-                           [target]="subitem.target"
-                           class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group"
+                        <a *ngIf="subitem.target == '_blank'" [href]="subitem.href" [target]="subitem.target"
+                           class="flex items-center p-2 md:p-1 text-xs font-normal text-gray-900 rounded-lg transition duration-75 hover:bg-gray-100  group"
                            (click)="clickMenu()">
                            <i class="pl-1 text-gray-500 {{ subitem.iconCss }}"></i>
                            <span class="flex-1 ml-3">{{subitem.text}}</span>

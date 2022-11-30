@@ -1,13 +1,14 @@
 import { HttpMethod, HttpRequestClientServices } from '@vissoto-angular/http-client';
 import { Observable, map } from 'rxjs';
 
+import { AlertRequest } from '../../../interfaces/components/ui/alert.request';
 import { AttributesItem } from './../../../interfaces/components/attributes.interface';
-import { CheckboxRequest } from '../../../interfaces/components/ui/checkbox-request.interface';
+import { CheckboxRequest } from '../../../interfaces/components/ui/checkbox.request.interface';
 import { CodeViewer } from '../../../components/code-viewer/interfaces/code-viewer.interface';
 import { EventsRequest } from '../../../interfaces/components/events.interface';
 import { Injectable } from '@angular/core';
-import { InputTextRequest } from '../../../interfaces/components/ui/input-text-request.interface';
-import { ModalRequest } from '../../../interfaces/components/ui/modal-request.interface';
+import { InputTextRequest } from '../../../interfaces/components/ui/input-text.request.interface';
+import { ModalRequest } from '../../../interfaces/components/ui/modal.request.interface';
 import { RequestDefault } from '../../../interfaces/request/request.interface';
 
 @Injectable({ providedIn: 'root' })
@@ -26,6 +27,10 @@ export class UIServices {
 
   getModalCodes(): Observable<RequestDefault<ModalRequest>> {
     return this.http.execute<RequestDefault<ModalRequest>>(HttpMethod.Get, this.httpUrlBase + 'modal.json');
+  }
+
+  getAlertCodes(): Observable<RequestDefault<AlertRequest>> {
+    return this.http.execute<RequestDefault<AlertRequest>>(HttpMethod.Get, this.httpUrlBase + 'alert.json');
   }
 
   getEvents(): Observable<RequestDefault<EventsRequest>> {

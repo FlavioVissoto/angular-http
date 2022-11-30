@@ -4,7 +4,7 @@ import { AttributesItem } from '../../../../interfaces/components/attributes.int
 import { CodeViewer } from 'src/app/components/code-viewer/interfaces/code-viewer.interface';
 import { EventsRequest } from './../../../../interfaces/components/events.interface';
 import { FormControl } from '@angular/forms';
-import { InputTextRequest } from '../../../../interfaces/components/ui/input-text-request.interface';
+import { InputTextRequest } from '../../../../interfaces/components/ui/input-text.request.interface';
 import { RequestDefault } from '../../../../interfaces/request/request.interface';
 import { UIServices } from './../../../../services/components/ui/ui.services';
 

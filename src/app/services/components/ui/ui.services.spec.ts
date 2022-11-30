@@ -2,12 +2,12 @@ import { mockAttributesHTML, mockEnumSize } from './../../../tests/mocks/compone
 import { mockCheckboxRequest, mockEventsRequest, mockInputTextRequest } from '../../../tests/mocks/components/ui/mocks';
 
 import { AttributesItem } from './../../../interfaces/components/attributes.interface';
-import { CheckboxRequest } from '../../../interfaces/components/ui/checkbox-request.interface';
+import { CheckboxRequest } from '../../../interfaces/components/ui/checkbox.request.interface';
 import { CodeViewer } from '../../../components/code-viewer/interfaces/code-viewer.interface';
 import { EventsRequest } from '../../../interfaces/components/events.interface';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpRequestClientServices } from '@vissoto-angular/http-client';
-import { InputTextRequest } from '../../../interfaces/components/ui/input-text-request.interface';
+import { InputTextRequest } from '../../../interfaces/components/ui/input-text.request.interface';
 import { RequestDefault } from '../../../interfaces/request/request.interface';
 import { TestBed } from '@angular/core/testing';
 import { UIServices } from './ui.services';

@@ -33,6 +33,22 @@ $colors: (
     margin-bottom: 1rem;
     border-top-width: 4px;
 
+    &.hidden{
+      display: none;
+    }
+
+    .screen-reader-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+
     svg {
       flex-shrink: 0;
       height: 1.25rem;
@@ -136,29 +152,29 @@ $colors: (
     }
 
     &.green {
-        background-color: color(green-1);
-        border-color: color(green-5);
-  
-        svg {
-          color: color(green-5);
+      background-color: color(green-1);
+      border-color: color(green-5);
+
+      svg {
+        color: color(green-5);
+      }
+
+      .content {
+        color: color(green-7);
+      }
+
+      .button-close {
+        color: color(green-5);
+
+        &:active {
+          background-color: color(green-2);
         }
-  
-        .content {
-          color: color(green-7);
-        }
-  
-        .button-close {
-          color: color(green-5);
-  
-          &:active {
-            background-color: color(green-2);
-          }
-  
-          &:hover {
-            background-color: color(green-2);
-          }
+
+        &:hover {
+          background-color: color(green-2);
         }
       }
+    }
 
     &.yellow {
       background-color: color(yellow-1);

@@ -1,9 +1,10 @@
 import { AttributesItem } from '../../../../interfaces/components/attributes.interface';
-import { CheckboxRequest } from '../../../../interfaces/components/ui/checkbox-request.interface';
+import { CheckboxRequest } from '../../../../interfaces/components/ui/checkbox.request.interface';
 import { CodeViewer } from '../../../../components/code-viewer/interfaces/code-viewer.interface';
 import { EventsRequest } from '../../../../interfaces/components/events.interface';
-import { InputTextRequest } from '../../../../interfaces/components/ui/input-text-request.interface';
+import { InputTextRequest } from '../../../../interfaces/components/ui/input-text.request.interface';
 import { Language } from '../../../../components/code-viewer/interfaces/languages.enum';
+import { ModalRequest } from '../../../../interfaces/components/ui/modal.request.interface';
 import { RequestDefault } from '../../../../interfaces/request/request.interface';
 
 export const mockCheckboxRequest = {
@@ -79,6 +80,13 @@ export const mockEventsRequest = {
         trigger: '',
       },
     ],
+    CustomEvents: [
+      {
+        name: '',
+        return: '',
+        trigger: '',
+      },
+    ],
   },
 } as RequestDefault<EventsRequest>;
 
@@ -90,6 +98,15 @@ export const mockInputTextRequest = {
     },
   },
 } as RequestDefault<InputTextRequest>;
+
+export const mockModalRequest = {
+  data: {
+    rounded: {
+      code: 'rounded',
+      language: Language.TypeScript,
+    },
+  },
+} as RequestDefault<ModalRequest>;
 
 export const mockEnumSize = {
   data: {

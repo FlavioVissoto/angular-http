@@ -5,7 +5,7 @@
       "language": "typescript"
     },
     "template": {
-      "code": "<app-modal-teste [title]=\"'DragonBall GT'\" [show]=\"showModal\" [rounded]=\"3\" (byClickClose)=\"closeModal()\">\n\t\t<div body>\n\t\t\t<img src=\"https://i.pinimg.com/564x/dc/19/b7/dc19b79974f05a53755bc95fdb3c0889.jpg\" class=\"w-64\" alt=\"\">\n\t\t</div>\n\t\t<div footer>\n\t\t\t<vat-button [text]=\"'Fechar'\" [rounded]=\"2\" [collor]=\"1\" (byClick)=\"closeModal()\"></vat-button>\n\t\t\t<vat-button [text]=\"'Fechar'\" [rounded]=\"2\" [collor]=\"6\" (byClick)=\"closeModal()\"></vat-button>\n\t\t</div>\n\t</app-modal-teste>",
+      "code": "<vat-modal [title]=\"'DragonBall GT'\" [show]=\"showModal\" [rounded]=\"3\" (byClickClose)=\"closeModal()\">\n\t\t<div body>\n\t\t\t<img src=\"https://i.pinimg.com/564x/dc/19/b7/dc19b79974f05a53755bc95fdb3c0889.jpg\" class=\"w-64\" alt=\"\">\n\t\t</div>\n\t\t<div footer>\n\t\t\t<vat-button [text]=\"'Fechar'\" [rounded]=\"2\" [collor]=\"1\" (byClick)=\"closeModal()\"></vat-button>\n\t\t\t<vat-button [text]=\"'Fechar'\" [rounded]=\"2\" [collor]=\"6\" (byClick)=\"closeModal()\"></vat-button>\n\t\t</div>\n\t</vat-modal>",
       "language": "html"
     },
     "rounded": {
