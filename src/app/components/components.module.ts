@@ -1,4 +1,5 @@
 import { AlertCircleComponent } from './svg/alert-circle/alert-circle.component';
+import { AlertComponent } from './alert/alert.component';
 import { AlignLeftComponent } from './svg/align-left/align-left.component';
 import { BellComponent } from './svg/bell/bell.component';
 import { BoxComponent } from './svg/box/box.component';
@@ -94,6 +95,7 @@ import { XComponent } from './svg/x/x.component';
     SlashComponent,
     ModalComponent,
     AlertCircleComponent,
+    AlertComponent,
   ],
   exports: [
     SidebarComponent,
@@ -139,6 +141,7 @@ import { XComponent } from './svg/x/x.component';
     SlashComponent,
     ModalComponent,
     AlertCircleComponent,
+    AlertComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule, TooltipModule, RouterModule],
 })

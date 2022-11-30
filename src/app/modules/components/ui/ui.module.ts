@@ -1,6 +1,7 @@
 import { ButtonModule, CardAlfaModule, CheckboxModule, InputTextModule, SelectModule, TabModule, TooltipModule } from '@vissoto-angular/ui';
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, NgModule } from '@angular/core';
 
+import { AlertComponent } from './alert/alert.component';
 import { ButtonComponent } from './button/button.component';
 import { CardComponent } from './card/card.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
@@ -35,6 +36,7 @@ import { UiComponent } from './ui.component';
     IconsComponent,
     ModalComponent,
     IcoComponent,
+    AlertComponent,
   ],
   providers: [SanitizeHtmlPipe],
   imports: [

@@ -1,5 +1,6 @@
 import { RouterModule, Routes } from '@angular/router';
 
+import { AlertComponent } from './alert/alert.component';
 import { ButtonComponent } from './button/button.component';
 import { CardComponent } from './card/card.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
@@ -62,6 +63,10 @@ const routes: Routes = [
   {
     path: 'modal',
     component: ModalComponent,
+  },
+  {
+    path: 'alert',
+    component: AlertComponent,
   },
 ];
 

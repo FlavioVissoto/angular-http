@@ -95,6 +95,12 @@
         "text": "Modal",
         "target": "_parent",
         "selected": false
+      },
+      {
+        "href": "/components/ui/alert",
+        "text": "Alert",
+        "target": "_parent",
+        "selected": false
       }
     ]
   }
