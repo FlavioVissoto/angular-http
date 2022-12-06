@@ -6,8 +6,8 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./ico.component.scss'],
 })
 export class IcoComponent {
-  @Input() name: string;
-  @Input() valueCopy: string;
+  @Input() name = '';
+  @Input() valueCopy = '';
 
   /* istanbul ignore next */
   copy(): void {

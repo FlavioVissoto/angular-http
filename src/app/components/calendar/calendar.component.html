@@ -1,0 +1,41 @@
+<div class="calendar">
+  <div class="header">
+    <h3>{{daysWeek[currentDayWeek].name}} {{currentDay}}</h3>
+    <h3 class="year-month">
+      <span (click)="openSelectMonth()">{{months[currentMonth].name}}</span>
+      <span (click)="openSelectYear()">{{currentYear}}</span>
+    </h3>
+  </div>
+  <div class="body-days" [ngClass]="{'show': showSelectDays}">
+    <ul class="days">
+      <li *ngFor="let item of daysWeek">{{item.shortname}}</li>
+    </ul>
+    <ul class="dates">
+      <li *ngFor="let item of renderDates" [class]="item.cssClass"
+        (click)="item.prev || item.next ? changeMonth(item) : selectDate(item)">{{item.text}}
+      </li>
+    </ul>
+  </div>
+  <div class="body-months" [ngClass]="{'show': showSelectMonth}">
+    <ul class="months">
+      <li *ngFor="let item of months" [ngClass]="{'disabled': item.disabled, 'selected': item.index == currentMonth}"
+        (click)="selectedMonth(item)">
+        {{item.name}}</li>
+    </ul>
+  </div>
+  <div class="body-year" [ngClass]="{'show': showSelectYear}">
+    <h1>Selecione o ano</h1>
+    <ul class="years">
+      <li *ngFor="let item of yearList" (click)="selectedYear(item)">{{item}}</li>
+    </ul>
+  </div>
+  <div class="footer">
+    <div class="hours">
+      <p>{{currentHours}}</p>
+    </div>
+    <div class="add show " [ngClass]="{'show': showSelectDays}">
+      <p>+</p>
+    </div>
+    <p>12<sup>o</sup> C</p>
+  </div>
+</div>

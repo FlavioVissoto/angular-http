@@ -101,6 +101,12 @@
         "text": "Alert",
         "target": "_parent",
         "selected": false
+      },
+      {
+        "href": "/components/ui/calendar",
+        "text": "Calendar",
+        "target": "_parent",
+        "selected": false
       }
     ]
   }

@@ -2,6 +2,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AlertComponent } from './alert/alert.component';
 import { ButtonComponent } from './button/button.component';
+import { CalendarComponent } from './calendar/calendar.component';
 import { CardComponent } from './card/card.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 import { IconsComponent } from './icons/icons.component';
@@ -67,6 +68,10 @@ const routes: Routes = [
   {
     path: 'alert',
     component: AlertComponent,
+  },
+  {
+    path: 'calendar',
+    component: CalendarComponent,
   },
 ];
 

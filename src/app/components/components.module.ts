@@ -2,7 +2,7 @@ import { AlertCircleComponent } from './svg/alert-circle/alert-circle.component'
 import { AlignLeftComponent } from './svg/align-left/align-left.component';
 import { BellComponent } from './svg/bell/bell.component';
 import { BoxComponent } from './svg/box/box.component';
-import { CalendarComponent } from './svg/calendar/calendar.component';
+import { CalendarComponent } from './calendar/calendar.component';
 import { CartShoppingComponent } from './svg/cart-shopping/cart-shopping.component';
 import { ChartPieComponent } from './svg/chart-pie/chart-pie.component';
 import { CheckComponent } from './svg/check/check.component';
@@ -22,6 +22,7 @@ import { GlobeComponent } from './svg/globe/globe.component';
 import { HealthActivityComponent } from './svg/health-activity/health-activity.component';
 import { HexagonComponent } from './svg/hexagon/hexagon.component';
 import { HomeComponent } from './svg/home/home.component';
+import { IcoCalendarComponent } from './svg/calendar/calendar.component';
 import { InfoComponent } from './sidebar/info/info.component';
 import { LayoutComponent } from './svg/layout/layout.component';
 import { LinkExternalComponent } from './svg/link-external/link-external.component';
@@ -80,7 +81,7 @@ import { XComponent } from './svg/x/x.component';
     GlobeComponent,
     UserPlusComponent,
     HealthActivityComponent,
-    CalendarComponent,
+    IcoCalendarComponent,
     BellComponent,
     GiftComponent,
     DatabaseComponent,
@@ -92,6 +93,7 @@ import { XComponent } from './svg/x/x.component';
     CoffeComponent,
     SlashComponent,
     AlertCircleComponent,
+    CalendarComponent,
   ],
   exports: [
     SidebarComponent,
@@ -124,7 +126,7 @@ import { XComponent } from './svg/x/x.component';
     GlobeComponent,
     UserPlusComponent,
     HealthActivityComponent,
-    CalendarComponent,
+    IcoCalendarComponent,
     BellComponent,
     GiftComponent,
     DatabaseComponent,
@@ -136,6 +138,7 @@ import { XComponent } from './svg/x/x.component';
     CoffeComponent,
     SlashComponent,
     AlertCircleComponent,
+    CalendarComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule, TooltipModule, RouterModule],
 })
