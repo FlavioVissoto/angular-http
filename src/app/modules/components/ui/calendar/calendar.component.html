@@ -1,1 +1,63 @@
-<app-calendar-test></app-calendar-test>
+<div class="md:mt-2">
+    <div class="flex items-center font-bold uppercase text-2xl">
+        <h1>UI Calendar</h1>
+    </div>
+    <p class="pt-2 text-gray-600">Exemplos para utilização do componente Calendar.</p>
+</div>
+<hr class="my-4 border-b-2 border-gray-200" />
+
+<div class="mb-6 text-sm">
+    <p class="">O componente Calendário permite que o usuário exiba dados pelo calendário. Podendo interagir com o mesmo
+        e ter informações sobre os dias com algum evento.</p>
+</div>
+
+<app-example-viewer [title]="'Alguns exemplos do componente Calendar'">
+    <div class="flex flex-wrap gap-2 justify-center items-center">
+        <app-calendar-test [notifications]="daysEvent" [addNotification]="events" (byClickPlus)="clickPlus()"
+            (byClickDate)="clickDate($event)" (byClickMonth)="clickMonth()" (byClickYear)="clickYear()"
+            (byChangeMonth)="changeMonth($event)" (byChangeYear)="changeYear($event)">
+        </app-calendar-test>
+        <app-calendar-test [theme]="'dark'" [notifications]="daysEvent" [addNotification]="events"
+            (byClickPlus)="clickPlus()" (byClickDate)="clickDate($event)" (byClickMonth)="clickMonth()"
+            (byClickYear)="clickYear()" (byChangeMonth)="changeMonth($event)" (byChangeYear)="changeYear($event)">
+        </app-calendar-test>
+    </div>
+</app-example-viewer>
+
+<div class="mt-10">
+    <h2 class="font-semibold">Configuração</h2>
+    <p class="text-sm">
+        Após instalar o componente, será necessário importar o Modulo do Alert nos modulos da aplicação, conforme
+        exemplo abaixo.
+    </p>
+    <app-code-viewer *ngIf="valuesPage.codeModule" [codeViewer]="valuesPage.codeModule"></app-code-viewer>
+</div>
+
+<div class="mt-10">
+    <h2 class="font-semibold">Eventos disponíveis no componente Alert</h2>
+    <div class="overflow-x-auto relative shadow-md mt-2">
+        <table class="w-full text-sm text-left text-gray-500">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-100">
+                <tr>
+                    <th class="py-1 px-6">Nome do Evento</th>
+                    <th class="py-1 px-6">Quando ocorre</th>
+                    <th class="py-1 px-6">Retorno</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of valuesPage.events" class="hover:bg-gray-200/30">
+                    <th class="py-2 px-6 font-medium text-gray-900">{{ item.name }}</th>
+                    <td class="px-6">{{ item.trigger }}</td>
+                    <td class="px-6">{{ item.return }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="mt-10">
+    <h2 class="font-semibold">Exemplo para exibição do Calendário</h2>
+    <div class="bg-sky-100/50 flex flex-col space-y-2">
+        <!-- <app-code-viewer *ngIf="valuesPage.template" [codeViewer]="valuesPage.template"></app-code-viewer> -->
+    </div>
+</div>

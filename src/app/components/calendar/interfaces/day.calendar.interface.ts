@@ -1,9 +1,13 @@
 export interface Day {
-  year: number;
-  month: number;
-  text: string;
   day: number;
-  cssClass: string;
+  month: number;
+  year: number;
+  isToday?: boolean;
+  text?: string;
   prev?: boolean;
   next?: boolean;
+  active?: boolean;
+  notification?: boolean;
+  countNotifications?: string;
+  selected?: boolean;
 }

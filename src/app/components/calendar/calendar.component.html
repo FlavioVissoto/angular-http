@@ -1,4 +1,4 @@
-<div class="calendar">
+<div ngClass="calendar" [class]="theme">
   <div class="header">
     <h3>{{daysWeek[currentDayWeek].name}} {{currentDay}}</h3>
     <h3 class="year-month">
@@ -11,15 +11,20 @@
       <li *ngFor="let item of daysWeek">{{item.shortname}}</li>
     </ul>
     <ul class="dates">
-      <li *ngFor="let item of renderDates" [class]="item.cssClass"
-        (click)="item.prev || item.next ? changeMonth(item) : selectDate(item)">{{item.text}}
+      <li *ngFor="let item of renderDates" (click)="item.prev || item.next ? changeMonth(item) : selectDate(item)">
+        <div class="text"
+          [ngClass]="{'active': item.active, 'selected': item.selected, 'next': item.next, 'prev': item.prev, 'today': item.isToday, 'notification': item.notification}">
+          {{item.text}}
+          <span *ngIf="item.notification" class="notification-text"
+            [ngClass]="{'small': !item.countNotifications}">{{item.countNotifications}}</span>
+        </div>
       </li>
     </ul>
   </div>
   <div class="body-months" [ngClass]="{'show': showSelectMonth}">
     <ul class="months">
       <li *ngFor="let item of months" [ngClass]="{'disabled': item.disabled, 'selected': item.index == currentMonth}"
-        (click)="selectedMonth(item)">
+        (click)="!item.disabled ? selectedMonth(item) : null">
         {{item.name}}</li>
     </ul>
   </div>
@@ -33,9 +38,10 @@
     <div class="hours">
       <p>{{currentHours}}</p>
     </div>
-    <div class="add show " [ngClass]="{'show': showSelectDays}">
+    <div class="add" [ngClass]="{'show': showSelectDays, 'disabled': disabledPlusButton}"
+      (click)="!disabledPlusButton ? clickPlusButton() : null">
       <p>+</p>
     </div>
-    <p>12<sup>o</sup> C</p>
+    <!-- <p>12<sup>o</sup> C</p> -->
   </div>
 </div>
