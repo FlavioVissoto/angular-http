@@ -109,5 +109,22 @@
         "selected": false
       }
     ]
+  },
+  {
+    "title": "TicTacToe",
+    "items": [
+      {
+        "href": "https://github.com/FlavioVissoto/TicTacToe",
+        "text": "Repositório",
+        "target": "_blank",
+        "selected": false
+      },
+      {
+        "href": "tictactoe",
+        "text": "TicTacToe Game",
+        "target": "_parent",
+        "selected": false
+      }
+    ]
   }
 ]

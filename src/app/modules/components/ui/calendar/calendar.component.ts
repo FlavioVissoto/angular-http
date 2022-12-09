@@ -1,9 +1,10 @@
 import { Component, EventEmitter, OnInit } from '@angular/core';
+import { Day, NotificationCalendar } from '@vissoto-angular/ui';
 
 import { CalendarRequest } from '../../../../interfaces/components/ui/calendar.request';
-import { Day } from '../../../../components/calendar/interfaces/day.calendar.interface';
-import { Month } from './../../../../components/calendar/interfaces/month.calendar.interface';
-import { NotificationCalendar } from '../../../../components/calendar/interfaces/notification.calendar.interface';
+import { EventsRequest } from '../../../../interfaces/components/events.interface';
+import { RequestDefault } from '../../../../interfaces/request/request.interface';
+import { UIServices } from '../../../../services/components/ui/ui.services';
 
 @Component({
   selector: 'app-calendar',
@@ -11,6 +12,8 @@ import { NotificationCalendar } from '../../../../components/calendar/interfaces
   styleUrls: ['./calendar.component.scss'],
 })
 export class CalendarComponent implements OnInit {
+  constructor(private uiServices: UIServices) {}
+
   date = new Date();
   currentDay = this.date.getDate();
   currentDayWeek = this.date.getDay();
@@ -22,37 +25,23 @@ export class CalendarComponent implements OnInit {
 
   valuesPage: CalendarRequest = {} as CalendarRequest;
 
+  componentName = 'Calendar';
+
+  selectedDay: Day;
+  selectedPlus: Day;
+
   ngOnInit(): void {
     this.notifications();
 
-    // setInterval(() => {
-    //   this.notifications();
-    //   this.events.emit(this.daysEvent);
-    // }, 60000);
+    this.getValuesPageRequest();
   }
 
-  clickPlus(): void {
-    console.log('clickPlus');
+  clickPlus(item: Day): void {
+    this.selectedPlus = item;
   }
 
   clickDate(item: Day): void {
-    console.log('clickDate ' + JSON.stringify(item));
-  }
-
-  clickMonth(): void {
-    console.log('clickMonth');
-  }
-
-  clickYear(): void {
-    console.log('clickYear');
-  }
-
-  changeMonth(item: Month): void {
-    console.log('changeMonth ' + JSON.stringify(item));
-  }
-
-  changeYear(item: number): void {
-    console.log('changeMonth ' + JSON.stringify(item));
+    this.selectedDay = item;
   }
 
   private generateNotificationCalendar(): NotificationCalendar {
@@ -82,5 +71,26 @@ export class CalendarComponent implements OnInit {
       }
       this.daysEvent.push(notification);
     }
+  }
+
+  private getValuesPageRequest(): void {
+    this.uiServices.getCalendarCodes().subscribe({
+      next: (x: RequestDefault<CalendarRequest>) => {
+        this.valuesPage = x.data;
+        this.getEventsPage();
+      },
+    });
+  }
+
+  private getEventsPage(): void {
+    this.uiServices.getEvents().subscribe({
+      next: (x: RequestDefault<EventsRequest>) => {
+        this.valuesPage.events = [];
+
+        x.data.CustomEvents.forEach((element) => {
+          this.valuesPage.events.push(element);
+        });
+      },
+    });
   }
 }

@@ -155,6 +155,36 @@
         "name": "byClickClose",
         "trigger": "Dispara quando houver um clique do mouse no botão para fechar o elemento.",
         "return": "EventEmitter"
+      },
+      {
+        "name": "byClickPlus",
+        "trigger": "Dispara quando houver um clique do mouse no botão \"plus\" elemento.",
+        "return": "EventEmitter<Day>"
+      },
+      {
+        "name": "byClickDate",
+        "trigger": "Dispara quando houver um clique do mouse no dia do mês",
+        "return": "EventEmitter<Day>"
+      },
+      {
+        "name": "byChangeMonth",
+        "trigger": "Dispara quando o mês for alterado.",
+        "return": "EventEmitter<Month>"
+      },
+      {
+        "name": "byClickMonth",
+        "trigger": "Dispara quando houver um clique do mouse no botão de seleção do mês.",
+        "return": "EventEmitter"
+      },
+      {
+        "name": "byChangeYear",
+        "trigger": "Dispara quando o ano for alterado.",
+        "return": "EventEmitter<number>"
+      },
+      {
+        "name": "byClickYear",
+        "trigger": "Dispara quando houver um clique do mouse no botão de seleção do ano.",
+        "return": "EventEmitter"
       }
     ]
   }

@@ -1,15 +1,16 @@
 import { HttpMethod, HttpRequestClientServices } from '@vissoto-angular/http-client';
-import { Observable, map } from 'rxjs';
+import { map, Observable } from 'rxjs';
 
-import { AlertRequest } from '../../../interfaces/components/ui/alert.request';
-import { AttributesItem } from './../../../interfaces/components/attributes.interface';
-import { CheckboxRequest } from '../../../interfaces/components/ui/checkbox.request.interface';
+import { Injectable } from '@angular/core';
 import { CodeViewer } from '../../../components/code-viewer/interfaces/code-viewer.interface';
 import { EventsRequest } from '../../../interfaces/components/events.interface';
-import { Injectable } from '@angular/core';
+import { AlertRequest } from '../../../interfaces/components/ui/alert.request';
+import { CalendarRequest } from '../../../interfaces/components/ui/calendar.request';
+import { CheckboxRequest } from '../../../interfaces/components/ui/checkbox.request.interface';
 import { InputTextRequest } from '../../../interfaces/components/ui/input-text.request.interface';
 import { ModalRequest } from '../../../interfaces/components/ui/modal.request.interface';
 import { RequestDefault } from '../../../interfaces/request/request.interface';
+import { AttributesItem } from './../../../interfaces/components/attributes.interface';
 
 @Injectable({ providedIn: 'root' })
 export class UIServices {
@@ -31,6 +32,10 @@ export class UIServices {
 
   getAlertCodes(): Observable<RequestDefault<AlertRequest>> {
     return this.http.execute<RequestDefault<AlertRequest>>(HttpMethod.Get, this.httpUrlBase + 'alert.json');
+  }
+
+  getCalendarCodes(): Observable<RequestDefault<CalendarRequest>> {
+    return this.http.execute<RequestDefault<CalendarRequest>>(HttpMethod.Get, this.httpUrlBase + 'calendar.json');
   }
 
   getEvents(): Observable<RequestDefault<EventsRequest>> {

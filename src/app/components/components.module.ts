@@ -2,7 +2,6 @@ import { AlertCircleComponent } from './svg/alert-circle/alert-circle.component'
 import { AlignLeftComponent } from './svg/align-left/align-left.component';
 import { BellComponent } from './svg/bell/bell.component';
 import { BoxComponent } from './svg/box/box.component';
-import { CalendarComponent } from './calendar/calendar.component';
 import { CartShoppingComponent } from './svg/cart-shopping/cart-shopping.component';
 import { ChartPieComponent } from './svg/chart-pie/chart-pie.component';
 import { CheckComponent } from './svg/check/check.component';
@@ -93,7 +92,6 @@ import { XComponent } from './svg/x/x.component';
     CoffeComponent,
     SlashComponent,
     AlertCircleComponent,
-    CalendarComponent,
   ],
   exports: [
     SidebarComponent,
@@ -138,7 +136,6 @@ import { XComponent } from './svg/x/x.component';
     CoffeComponent,
     SlashComponent,
     AlertCircleComponent,
-    CalendarComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule, TooltipModule, RouterModule],
 })

@@ -118,6 +118,15 @@ export const mockAlertRequest = {
   },
 } as RequestDefault<AlertRequest>;
 
+export const mockCalendarRequest = {
+  data: {
+    codeModule: {
+      code: 'template',
+      language: Language.TypeScript,
+    },
+  },
+} as RequestDefault<AlertRequest>;
+
 export const mockEnumSize = {
   data: {
     code: 'codigo',

@@ -22,6 +22,12 @@ const routes: Routes = [
     },
   },
   {
+    path: 'tictactoe',
+    loadChildren: () => {
+      return import('./modules/tictactoe/tictactoe.module').then((m) => m.TictactoeModule);
+    },
+  },
+  {
     path: 'error',
     loadChildren: () => {
       return import('./modules/error/error.module').then((m) => m.ErrorModule);

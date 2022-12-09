@@ -1,8 +1,15 @@
-import { mockAlertRequest, mockAttributesHTML, mockEnumSize, mockModalRequest } from './../../../tests/mocks/components/ui/mocks';
+import {
+  mockAlertRequest,
+  mockAttributesHTML,
+  mockCalendarRequest,
+  mockEnumSize,
+  mockModalRequest,
+} from './../../../tests/mocks/components/ui/mocks';
 import { mockCheckboxRequest, mockEventsRequest, mockInputTextRequest } from '../../../tests/mocks/components/ui/mocks';
 
 import { AlertRequest } from '../../../interfaces/components/ui/alert.request';
 import { AttributesItem } from './../../../interfaces/components/attributes.interface';
+import { CalendarRequest } from '../../../interfaces/components/ui/calendar.request';
 import { CheckboxRequest } from '../../../interfaces/components/ui/checkbox.request.interface';
 import { CodeViewer } from '../../../components/code-viewer/interfaces/code-viewer.interface';
 import { EventsRequest } from '../../../interfaces/components/events.interface';
@@ -97,6 +104,15 @@ describe('UIServices', () => {
     service.getAlertCodes().subscribe({
       next: (x: RequestDefault<AlertRequest>) => {
         expect(x.data).toBe(mockAlertRequest.data);
+      },
+    });
+  });
+
+  test('should return getCalendarCodes json', () => {
+    jest.spyOn(http, 'execute').mockImplementation(() => of(mockCalendarRequest));
+    service.getCalendarCodes().subscribe({
+      next: (x: RequestDefault<CalendarRequest>) => {
+        expect(x.data).toBe(mockCalendarRequest.data);
       },
     });
   });
