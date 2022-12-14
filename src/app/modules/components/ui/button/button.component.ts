@@ -1,3 +1,4 @@
+import { Color, Rounded, Size } from '@vissoto-angular/ui';
 import { Component, OnInit } from '@angular/core';
 
 import { ButtonEvents } from './../../../../interfaces/components/ui/button/button-events.interface';
@@ -14,6 +15,9 @@ export class ButtonComponent implements OnInit {
   constructor(private service: ButtonServices) {}
 
   buttonEvents: ButtonEvents[];
+  eRounded = Rounded;
+  eSize = Size;
+  eColor = Color;
 
   ngOnInit(): void {
     this.getButtonEvents();
@@ -40,170 +44,82 @@ export class ButtonComponent implements OnInit {
     language: Language.TypeScript,
   } as CodeViewer;
 
+  codeColorEnum = {
+    code: `export enum Color {
+        blue = 'blue',
+        alternative = 'alternative',
+        green = 'green',
+        red = 'red',
+        yellow = 'yellow',
+        purple = 'purple',
+        orange = 'orange',
+        pink = 'pink',
+        purpleToBlue = 'purple-to-blue',
+        cyanToBlue = 'cyan-to-blue',
+        greenToBlue = 'green-to-blue',
+        purpleToPink = 'purple-to-pink',
+        pinkToOrange = 'pink-to-orange',
+        tealToLime = 'teal-to-lime',
+        redToYellow = 'red-to-yellow',
+    }`,
+    language: Language.TypeScript,
+  } as CodeViewer;
+
+  codeColor = {
+    code: `
+        <vat-button [text]="'label'" [color]="'red'"></vat-button>
+        <vat-button [text]="'label'" [color]="'orange'"></vat-button>`,
+    language: Language.HTML,
+  } as CodeViewer;
+
   codeSizeEnum = {
     code: `export enum Size {
-        ExtraSmall = 1,
-        Small,
-        Base,
-        Large,
-        ExtraLarge,
+      'extra-small' = 'extra-small',
+      'small' = 'small',
+      'base' = 'base',
+      'large' = 'large',
+      'extra-large' = 'extra-large',
     }`,
     language: Language.TypeScript,
-  } as CodeViewer;
-
-  codeShadowEnum = {
-    code: `export enum Shadow {
-        Blue = 1,
-        Green,
-        Cyan,
-        Teal,
-        Lime,
-        Red,
-        Pink,
-        Purple,
-      }`,
-    language: Language.TypeScript,
-  } as CodeViewer;
-
-  codeCollorEnum = {
-    code: `export enum Collor {
-      Default = 1,
-      Alternative,
-      Dark,
-      Light,
-      Green,
-      Red,
-      Yellow,
-      Purple,
-    }`,
-    language: Language.TypeScript,
-  } as CodeViewer;
-
-  codeCollor = {
-    code: `
-    <vat-button [text]="'Exemplo'" [collor]="1"></vat-button>
-    <vat-button [text]="'Exemplo'" [collor]="2"></vat-button>
-    <vat-button [text]="'Exemplo'" [collor]="3"></vat-button>
-    <vat-button [text]="'Exemplo'" [collor]="4"></vat-button>
-    <vat-button [text]="'Exemplo'" [collor]="5"></vat-button>
-    <vat-button [text]="'Exemplo'" [collor]="6"></vat-button>
-    <vat-button [text]="'Exemplo'" [collor]="7"></vat-button>
-    <vat-button [text]="'Exemplo'" [collor]="8"></vat-button>`,
-    language: Language.HTML,
-  } as CodeViewer;
-
-  codeGradientDuotoneEnum = {
-    code: `export enum GradientDuotone {
-      PurpleToBlue = 1,
-      CyanToBlue,
-      GreenToBlue,
-      PurpleToPink,
-      PinkToOrange,
-      TealToLime,
-      RedToYellow,
-    }`,
-    language: Language.TypeScript,
-  } as CodeViewer;
-
-  codeGradientDuotone = {
-    code: `
-    <vat-button [text]="'Exemplo'" [gradientDuotone]="1"></vat-button>
-    <vat-button [text]="'Exemplo'" [gradientDuotone]="2"></vat-button>
-    <vat-button [text]="'Exemplo'" [gradientDuotone]="3"></vat-button>
-    <vat-button [text]="'Exemplo'" [gradientDuotone]="4"></vat-button>
-    <vat-button [text]="'Exemplo'" [gradientDuotone]="5"></vat-button>
-    <vat-button [text]="'Exemplo'" [gradientDuotone]="6"></vat-button>
-    <vat-button [text]="'Exemplo'" [gradientDuotone]="7"></vat-button>`,
-    language: Language.HTML,
-  } as CodeViewer;
-
-  codeGradientOutline = {
-    code: `
-    <vat-button [text]="'Exemplo'" [outline]="1"></vat-button>
-    <vat-button [text]="'Exemplo'" [outline]="2"></vat-button>
-    <vat-button [text]="'Exemplo'" [outline]="3"></vat-button>
-    <vat-button [text]="'Exemplo'" [outline]="4"></vat-button>
-    <vat-button [text]="'Exemplo'" [outline]="5"></vat-button>
-    <vat-button [text]="'Exemplo'" [outline]="6"></vat-button>
-    <vat-button [text]="'Exemplo'" [outline]="7"></vat-button>
-    <vat-button [text]="'Exemplo'" [outline]="8"></vat-button>`,
-    language: Language.HTML,
-  } as CodeViewer;
-
-  codeOutline = {
-    code: `
-    <vat-button [text]="'Exemplo'" [outline]="1"></vat-button>
-    <vat-button [text]="'Exemplo'" [outline]="2"></vat-button>
-    <vat-button [text]="'Exemplo'" [outline]="3"></vat-button>
-    <vat-button [text]="'Exemplo'" [outline]="4"></vat-button>
-    <vat-button [text]="'Exemplo'" [outline]="5"></vat-button>
-    <vat-button [text]="'Exemplo'" [outline]="6"></vat-button>
-    <vat-button [text]="'Exemplo'" [outline]="7"></vat-button>
-    <vat-button [text]="'Exemplo'" [outline]="8"></vat-button>`,
-    language: Language.HTML,
-  } as CodeViewer;
-
-  codeGradientMonochromeEnum = {
-    code: `export enum GradientMonochrome {
-      Blue = 1,
-      Green,
-      Cyan,
-      Teal,
-      Lime,
-      Red,
-      Pink,
-      Purple,
-    }`,
-    language: Language.TypeScript,
-  } as CodeViewer;
-
-  codeGradientMonochrome = {
-    code: `
-    <vat-button [text]="'Exemplo'" [gradientMonochrome]="1"></vat-button>
-    <vat-button [text]="'Exemplo'" [gradientMonochrome]="2"></vat-button>
-    <vat-button [text]="'Exemplo'" [gradientMonochrome]="3"></vat-button>
-    <vat-button [text]="'Exemplo'" [gradientMonochrome]="4"></vat-button>
-    <vat-button [text]="'Exemplo'" [gradientMonochrome]="5"></vat-button>
-    <vat-button [text]="'Exemplo'" [gradientMonochrome]="6"></vat-button>
-    <vat-button [text]="'Exemplo'" [gradientMonochrome]="7"></vat-button>
-    <vat-button [text]="'Exemplo'" [gradientMonochrome]="8"></vat-button>`,
-    language: Language.HTML,
   } as CodeViewer;
 
   codeSize = {
-    code: `\n\t<vat-button [text]="'Exemplo'" [collor]="1" [size]="1"></vat-button>
-    <vat-button [text]="'Exemplo'" [collor]="1" [size]="2"></vat-button>
-    <vat-button [text]="'Exemplo'" [collor]="1" [size]="3"></vat-button>
-    <vat-button [text]="'Exemplo'" [collor]="1" [size]="4"></vat-button>
-    <vat-button [text]="'Exemplo'" [collor]="1" [size]="5"></vat-button>`,
+    code: `\n\t<vat-button [text]="'Exemplo'" [color]="'red'" [size]="'extra-small'"></vat-button>
+    <vat-button [text]="'Exemplo'" [color]="'red'" [size]="'small'"></vat-button>
+    <vat-button [text]="'Exemplo'" [color]="'red'" [size]="'base'"></vat-button>
+    <vat-button [text]="'Exemplo'" [color]="'red'" [size]="'large'"></vat-button>
+    <vat-button [text]="'Exemplo'" [color]="'red'" [size]="'extra-large'"></vat-button>`,
     language: Language.HTML,
   } as CodeViewer;
 
-  codeShadow = {
-    code: `\n\t<vat-button [text]="'Exemplo'" [collor]="2" [shadow]="1"></vat-button>
-    <vat-button [text]="'Exemplo'" [collor]="2" [shadow]="2"></vat-button>
-    <vat-button [text]="'Exemplo'" [collor]="2" [shadow]="3"></vat-button>
-    <vat-button [text]="'Exemplo'" [collor]="2" [shadow]="4"></vat-button>
-    <vat-button [text]="'Exemplo'" [collor]="2" [shadow]="5"></vat-button>
-    <vat-button [text]="'Exemplo'" [collor]="2" [shadow]="6"></vat-button>
-    <vat-button [text]="'Exemplo'" [collor]="2" [shadow]="7"></vat-button>
-    <vat-button [text]="'Exemplo'" [collor]="2" [shadow]="8"></vat-button>`,
-    language: Language.HTML,
+  codeRoundedEnum = {
+    code: `export enum Rounded {
+      'sm' = 'sm',
+      'rounded' = 'rounded',
+      'md' = 'md',
+      'lg' = 'lg',
+      'xl' = 'xl',
+      '2xl' = '2xl',
+      '3xl' = '3xl',
+      'full' = 'full',
+      'none' = 'none',
+    }`,
+    language: Language.TypeScript,
   } as CodeViewer;
 
   codeRounded = {
     code: `
-    <vat-button [text]="'Exemplo'" [collor]="3" [rounded]="1"></vat-button>
-    <vat-button [text]="'Exemplo'" [collor]="3" [rounded]="2"></vat-button>
-    <vat-button [text]="'Exemplo'" [collor]="3" [rounded]="3"></vat-button>
-    <vat-button [text]="'Exemplo'" [collor]="3" [rounded]="4"></vat-button>
-    <vat-button [text]="'Exemplo'" [collor]="3" [rounded]="5"></vat-button>`,
+    <vat-button [text]="'Exemplo'" [color]="'red'" [rounded]="1"></vat-button>
+    <vat-button [text]="'Exemplo'" [color]="'red'" [rounded]="2"></vat-button>
+    <vat-button [text]="'Exemplo'" [color]="'red'" [rounded]="3"></vat-button>
+    <vat-button [text]="'Exemplo'" [color]="'red'" [rounded]="4"></vat-button>
+    <vat-button [text]="'Exemplo'" [color]="'red'" [rounded]="5"></vat-button>`,
     language: Language.HTML,
   } as CodeViewer;
 
   codeMensagem = {
     code: `
-    <vat-button [text]="'Exemplo'" [collor]="5" [rounded]="1" [message]="'1.235.896'"></vat-button>
+    <vat-button [text]="'Exemplo'" [color]="'red'" [rounded]="1" [message]="'1.235.896'"></vat-button>
     <vat-button [text]="'Exemplo'" [gradientDuotone]="4" [rounded]="1" [message]="'mensagem'"></vat-button>`,
     language: Language.HTML,
   } as CodeViewer;

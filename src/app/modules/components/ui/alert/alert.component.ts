@@ -1,3 +1,4 @@
+import { Color, Rounded, Size } from '@vissoto-angular/ui';
 import { Component, OnInit } from '@angular/core';
 
 import { AlertRequest } from '../../../../interfaces/components/ui/alert.request';
@@ -13,6 +14,10 @@ import { UIServices } from '../../../../services/components/ui/ui.services';
 })
 export class AlertComponent implements OnInit {
   constructor(private uiServices: UIServices) {}
+
+  eRounded = Rounded;
+  eSize = Size;
+  eColor = Color;
 
   valuesPage: AlertRequest = {} as AlertRequest;
 

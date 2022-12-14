@@ -18,8 +18,8 @@
             *ngFor="let item of colors" [labelButtonClose]="'close'">{{item.message}}</vat-alert>
     </div>
     <div class="w-full flex justify-center">
-        <vat-button [collor]="1" [text]="'Abrir alerts'" [rounded]="2" (byClick)="openAllAlerts()"></vat-button>
-        <vat-button [collor]="1" [text]="'Fechar alerts'" [rounded]="2" (byClick)="closeAllAlerts()"></vat-button>
+        <vat-button [collor]="1" [text]="'Abrir alerts'" [rounded]="eRounded.sm" (byClick)="openAllAlerts()"></vat-button>
+        <vat-button [collor]="1" [text]="'Fechar alerts'" [rounded]="eRounded.sm" (byClick)="closeAllAlerts()"></vat-button>
     </div>
 </app-example-viewer>
 

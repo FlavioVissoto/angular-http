@@ -5,6 +5,7 @@ import { ButtonComponent } from './button/button.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { CardComponent } from './card/card.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
+import { DevComponent } from './dev/dev.component';
 import { IconsComponent } from './icons/icons.component';
 import { InputTextComponent } from './input-text/input-text.component';
 import { ModalComponent } from './modal/modal.component';
@@ -20,6 +21,10 @@ const routes: Routes = [
     path: '',
     redirectTo: 'tooltip',
     pathMatch: 'full',
+  },
+  {
+    path: 'dev',
+    component: DevComponent,
   },
   {
     path: 'tooltip',

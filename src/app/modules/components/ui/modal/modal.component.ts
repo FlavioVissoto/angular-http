@@ -1,3 +1,4 @@
+import { Color, Rounded, Size } from '@vissoto-angular/ui';
 import { Component, OnInit } from '@angular/core';
 import { EventsComponents, EventsRequest } from '../../../../interfaces/components/events.interface';
 
@@ -12,6 +13,10 @@ import { UIServices } from '../../../../services/components/ui/ui.services';
 })
 export class ModalComponent implements OnInit {
   constructor(private uiServices: UIServices) {}
+
+  eRounded = Rounded;
+  eColor = Color;
+  eSize = Size;
 
   showModal = false;
 

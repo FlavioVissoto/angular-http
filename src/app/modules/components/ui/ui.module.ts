@@ -5,6 +5,7 @@ import {
   CardAlfaModule,
   CheckboxModule,
   InputTextModule,
+  ModalModule,
   SelectModule,
   TabModule,
   TooltipModule,
@@ -17,6 +18,7 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { CardComponent } from './card/card.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 import { CommonModule } from '@angular/common';
+import { DevComponent } from './dev/dev.component';
 import { IcoComponent } from './icons/ico/ico.component';
 import { IconsComponent } from './icons/icons.component';
 import { InputTextComponent } from './input-text/input-text.component';
@@ -49,6 +51,7 @@ import { UiComponent } from './ui.component';
     IcoComponent,
     AlertComponent,
     CalendarComponent,
+    DevComponent,
   ],
   providers: [SanitizeHtmlPipe],
   imports: [
@@ -65,6 +68,7 @@ import { UiComponent } from './ui.component';
     InputTextModule,
     AlertModule,
     CalendarModule,
+    ModalModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })

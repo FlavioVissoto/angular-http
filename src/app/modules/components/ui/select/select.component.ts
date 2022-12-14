@@ -1,10 +1,10 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Rounded, SelectItem, Size } from '@vissoto-angular/ui';
 
 import { ActivatedRoute } from '@angular/router';
 import { CodeViewer } from './../../../../components/code-viewer/interfaces/code-viewer.interface';
 import { EventsComponents } from '../../../../interfaces/components/events.interface';
 import { RequestDefault } from '../../../../interfaces/request/request.interface';
-import { SelectItem } from '@vissoto-angular/ui';
 import { SelectRequest } from '../../../../interfaces/components/ui/select/select-request.interface';
 import { SelectServices } from '../../../../services/components/ui/select/select.services';
 import { UIServices } from '../../../../services/components/ui/ui.services';
@@ -26,6 +26,9 @@ export class SelectComponent implements OnInit, AfterViewInit {
   roundedEnumCV: CodeViewer;
   titleCV: CodeViewer;
   events: EventsComponents[];
+
+  eRounded = Rounded;
+  eSize = Size;
 
   ngOnInit(): void {
     this.getSelectRequest();

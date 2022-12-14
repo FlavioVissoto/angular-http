@@ -10,6 +10,7 @@ import { CodeViewerComponent } from './code-viewer/code-viewer.component';
 import { CoffeComponent } from './svg/coffe/coffe.component';
 import { CommonModule } from '@angular/common';
 import { DatabaseComponent } from './svg/database/database.component';
+import { DevCompComponent } from './dev-comp/dev-comp.component';
 import { DownloadComponent } from './svg/download/download.component';
 import { EditComponent } from './svg/edit/edit.component';
 import { ExampleViewerComponent } from './example-viewer/example-viewer.component';
@@ -92,6 +93,7 @@ import { XComponent } from './svg/x/x.component';
     CoffeComponent,
     SlashComponent,
     AlertCircleComponent,
+    DevCompComponent,
   ],
   exports: [
     SidebarComponent,
@@ -136,6 +138,7 @@ import { XComponent } from './svg/x/x.component';
     CoffeComponent,
     SlashComponent,
     AlertCircleComponent,
+    DevCompComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule, TooltipModule, RouterModule],
 })

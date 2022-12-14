@@ -11,19 +11,17 @@
 </div>
 
 <app-example-viewer [title]="'Alguns exemplos do componente Botão'">
-  <div class="flex flex-wrap space-x-2 justify-center items-center">
-    <vat-button [text]="'Exemplo'" [message]="'1'" [collor]="1" [size]="2"></vat-button>
-    <vat-button [text]="'Exemplo'" [rounded]="2" [gradientDuotone]="3" [size]="2"></vat-button>
-    <vat-button [text]="'Exemplo'" [rounded]="3" [message]="'999'" [gradientMonochrome]="6" [size]="2"></vat-button>
-    <vat-button [text]="'Exemplo'" [rounded]="4" [gradientOutline]="4" [size]="2"></vat-button>
-    <vat-button [text]="'Exemplo'" [rounded]="5" [outline]="1" [size]="2"></vat-button>
+  <h1>Personalização do Color</h1>
+  <div class="grid grid-cols-5 gap-1">
+    <vat-button *ngFor="let color of eColor | keyvalue" [text]="color.key" [color]="color.value"></vat-button>
   </div>
 </app-example-viewer>
 
 <div class="mt-10">
   <h2 class="font-semibold">Configuração</h2>
   <p class="text-xs">
-    Após instalar o componente, será necessário importar o Modulo do Bottão nos modulos da aplicação, conforme exemplo abaixo.
+    Após instalar o componente, será necessário importar o Modulo do Bottão nos modulos da aplicação, conforme exemplo
+    abaixo.
   </p>
   <app-code-viewer [codeViewer]="codeModule"></app-code-viewer>
 </div>
@@ -52,265 +50,21 @@
 
 <div class="mt-10">
   <h2 class="font-semibold">Exemplo de personalização para estilo "Color"</h2>
-  <div class="flex flex-wrap px-4 pt-4 bg-sky-100/50">
-    <div class="w-full">
-      <p>Ativado</p>
-      <vat-button [text]="'Exemplo'" [collor]="1"></vat-button>
-      <vat-button [text]="'Exemplo'" [collor]="2"></vat-button>
-      <vat-button [text]="'Exemplo'" [collor]="3"></vat-button>
-      <vat-button [text]="'Exemplo'" [collor]="4"></vat-button>
-      <vat-button [text]="'Exemplo'" [collor]="5"></vat-button>
-      <vat-button [text]="'Exemplo'" [collor]="6"></vat-button>
-      <vat-button [text]="'Exemplo'" [collor]="7"></vat-button>
-      <vat-button [text]="'Exemplo'" [collor]="8"></vat-button>
-    </div>
-    <div class="w-full">
-      <p>Desativado</p>
-      <vat-button [text]="'Exemplo'" [collor]="1" [disabled]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [collor]="2" [disabled]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [collor]="3" [disabled]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [collor]="4" [disabled]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [collor]="5" [disabled]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [collor]="6" [disabled]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [collor]="7" [disabled]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [collor]="8" [disabled]="true"></vat-button>
-    </div>
-    <div class="w-full">
-      <p>Loading</p>
-      <vat-button [text]="'Exemplo'" [collor]="1" [loading]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [collor]="2" [loading]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [collor]="3" [loading]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [collor]="4" [loading]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [collor]="5" [loading]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [collor]="6" [loading]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [collor]="7" [loading]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [collor]="8" [loading]="true"></vat-button>
-    </div>
-    <div class="w-full">
-      <p>Mensagem</p>
-      <vat-button [text]="'Exemplo'" [collor]="1" [message]="'98.754'"></vat-button>
-      <vat-button [text]="'Exemplo'" [collor]="2" [message]="'98.754'"></vat-button>
-      <vat-button [text]="'Exemplo'" [collor]="3" [message]="'98.754'"></vat-button>
-      <vat-button [text]="'Exemplo'" [collor]="4" [message]="'98.754'"></vat-button>
-      <vat-button [text]="'Exemplo'" [collor]="5" [message]="'98.754'"></vat-button>
-      <vat-button [text]="'Exemplo'" [collor]="6" [message]="'98.754'"></vat-button>
-      <vat-button [text]="'Exemplo'" [collor]="7" [message]="'98.754'"></vat-button>
-      <vat-button [text]="'Exemplo'" [collor]="8" [message]="'98.754'"></vat-button>
-    </div>
+  <div class="grid grid-cols-5 gap-1">
+    <vat-button *ngFor="let color of eColor | keyvalue" [text]="color.key" [color]="color.value"></vat-button>
   </div>
   <p>O parâmetro <span class="font-semibold">"Collor"</span> recebe um enumerador, conforme mostrado abaixo:</p>
-  <app-code-viewer [codeViewer]="codeCollorEnum"></app-code-viewer>
-  <app-code-viewer [codeViewer]="codeCollor"></app-code-viewer>
-</div>
-
-<div class="mt-10">
-  <h2 class="font-semibold">Exemplo de personalização para estilo "Gradient Duotone"</h2>
-  <div class="flex flex-wrap px-4 pt-4 bg-sky-100/50">
-    <div class="w-full">
-      <p>Ativado</p>
-      <vat-button [text]="'Exemplo'" [gradientDuotone]="1"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientDuotone]="2"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientDuotone]="3"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientDuotone]="4"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientDuotone]="5"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientDuotone]="6"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientDuotone]="7"></vat-button>
-    </div>
-    <div>
-      <p>Desativado</p>
-      <vat-button [text]="'Exemplo'" [gradientDuotone]="1" [disabled]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientDuotone]="2" [disabled]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientDuotone]="3" [disabled]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientDuotone]="4" [disabled]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientDuotone]="5" [disabled]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientDuotone]="6" [disabled]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientDuotone]="7" [disabled]="true"></vat-button>
-    </div>
-    <div class="w-full">
-      <p>Loading</p>
-      <vat-button [text]="'Exemplo'" [gradientDuotone]="1" [loading]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientDuotone]="2" [loading]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientDuotone]="3" [loading]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientDuotone]="4" [loading]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientDuotone]="5" [loading]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientDuotone]="6" [loading]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientDuotone]="7" [loading]="true"></vat-button>
-    </div>
-    <div class="w-full">
-      <p>Mensagem</p>
-      <vat-button [text]="'Exemplo'" [gradientDuotone]="1" [message]="'98.754'"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientDuotone]="2" [message]="'98.754'"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientDuotone]="3" [message]="'98.754'"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientDuotone]="4" [message]="'98.754'"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientDuotone]="5" [message]="'98.754'"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientDuotone]="6" [message]="'98.754'"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientDuotone]="7" [message]="'98.754'"></vat-button>
-    </div>
-  </div>
-  <app-code-viewer [codeViewer]="codeGradientDuotoneEnum"></app-code-viewer>
-  <app-code-viewer [codeViewer]="codeGradientDuotone"></app-code-viewer>
-</div>
-
-<div class="mt-10">
-  <h2 class="font-semibold">Exemplo de personalização para estilo "Gradient Monochrome"</h2>
-  <div class="flex flex-wrap px-4 pt-4 bg-sky-100/50">
-    <div class="w-full">
-      <p>Ativado</p>
-      <vat-button [text]="'Exemplo'" [gradientMonochrome]="1"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientMonochrome]="2"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientMonochrome]="3"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientMonochrome]="4"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientMonochrome]="5"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientMonochrome]="6"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientMonochrome]="7"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientMonochrome]="8"></vat-button>
-    </div>
-    <div>
-      <p>Desativado</p>
-      <vat-button [text]="'Exemplo'" [gradientMonochrome]="1" [disabled]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientMonochrome]="2" [disabled]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientMonochrome]="3" [disabled]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientMonochrome]="4" [disabled]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientMonochrome]="5" [disabled]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientMonochrome]="6" [disabled]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientMonochrome]="7" [disabled]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientMonochrome]="8" [disabled]="true"></vat-button>
-    </div>
-    <div class="w-full">
-      <p>Loading</p>
-      <vat-button [text]="'Exemplo'" [gradientMonochrome]="1" [loading]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientMonochrome]="2" [loading]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientMonochrome]="3" [loading]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientMonochrome]="4" [loading]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientMonochrome]="5" [loading]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientMonochrome]="6" [loading]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientMonochrome]="7" [loading]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientMonochrome]="8" [loading]="true"></vat-button>
-    </div>
-    <div class="w-full">
-      <p>Mensagem</p>
-      <vat-button [text]="'Exemplo'" [gradientMonochrome]="1" [message]="'98.754'"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientMonochrome]="2" [message]="'98.754'"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientMonochrome]="3" [message]="'98.754'"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientMonochrome]="4" [message]="'98.754'"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientMonochrome]="5" [message]="'98.754'"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientMonochrome]="6" [message]="'98.754'"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientMonochrome]="7" [message]="'98.754'"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientMonochrome]="8" [message]="'98.754'"></vat-button>
-    </div>
-  </div>
-  <app-code-viewer [codeViewer]="codeGradientMonochromeEnum"></app-code-viewer>
-  <app-code-viewer [codeViewer]="codeGradientMonochrome"></app-code-viewer>
-</div>
-
-<div class="mt-10">
-  <h2 class="font-semibold">Exemplo de personalização para estilo "Gradient Outline"</h2>
-  <div class="flex flex-wrap px-4 pt-4 bg-sky-100/50">
-    <div class="w-full">
-      <p>Ativado</p>
-      <vat-button [text]="'Exemplo'" [gradientOutline]="1"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientOutline]="2"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientOutline]="3"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientOutline]="4"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientOutline]="5"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientOutline]="6"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientOutline]="7"></vat-button>
-    </div>
-    <div>
-      <p>Desativado</p>
-      <vat-button [text]="'Exemplo'" [gradientOutline]="1" [disabled]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientOutline]="2" [disabled]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientOutline]="3" [disabled]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientOutline]="4" [disabled]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientOutline]="5" [disabled]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientOutline]="6" [disabled]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientOutline]="7" [disabled]="true"></vat-button>
-    </div>
-    <div class="w-full">
-      <p>Loading</p>
-      <vat-button [text]="'Exemplo'" [gradientOutline]="1" [loading]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientOutline]="2" [loading]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientOutline]="3" [loading]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientOutline]="4" [loading]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientOutline]="5" [loading]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientOutline]="6" [loading]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientOutline]="7" [loading]="true"></vat-button>
-    </div>
-    <div class="w-full">
-      <p>Mensagem</p>
-      <vat-button [text]="'Exemplo'" [gradientOutline]="1" [message]="'98.754'"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientOutline]="2" [message]="'98.754'"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientOutline]="3" [message]="'98.754'"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientOutline]="4" [message]="'98.754'"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientOutline]="5" [message]="'98.754'"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientOutline]="6" [message]="'98.754'"></vat-button>
-      <vat-button [text]="'Exemplo'" [gradientOutline]="7" [message]="'98.754'"></vat-button>
-    </div>
-  </div>
-  <app-code-viewer [codeViewer]="codeGradientDuotoneEnum"></app-code-viewer>
-  <app-code-viewer [codeViewer]="codeGradientOutline"></app-code-viewer>
-</div>
-
-<div class="mt-10">
-  <h2 class="font-semibold">Exemplo de personalização para estilo "Outline"</h2>
-  <div class="flex flex-wrap px-4 pt-4 bg-sky-100/50">
-    <div>
-      <p>Ativado</p>
-      <vat-button [text]="'Exemplo'" [outline]="1"></vat-button>
-      <vat-button [text]="'Exemplo'" [outline]="2"></vat-button>
-      <vat-button [text]="'Exemplo'" [outline]="3"></vat-button>
-      <vat-button [text]="'Exemplo'" [outline]="4"></vat-button>
-      <vat-button [text]="'Exemplo'" [outline]="5"></vat-button>
-      <vat-button [text]="'Exemplo'" [outline]="6"></vat-button>
-      <vat-button [text]="'Exemplo'" [outline]="7"></vat-button>
-      <vat-button [text]="'Exemplo'" [outline]="8"></vat-button>
-    </div>
-    <div>
-      <p>Desativado</p>
-      <vat-button [text]="'Exemplo'" [outline]="1" [disabled]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [outline]="2" [disabled]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [outline]="3" [disabled]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [outline]="4" [disabled]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [outline]="5" [disabled]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [outline]="6" [disabled]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [outline]="7" [disabled]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [outline]="8" [disabled]="true"></vat-button>
-    </div>
-    <div class="w-full">
-      <p>Loading</p>
-      <vat-button [text]="'Exemplo'" [outline]="1" [loading]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [outline]="2" [loading]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [outline]="3" [loading]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [outline]="4" [loading]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [outline]="5" [loading]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [outline]="6" [loading]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [outline]="7" [loading]="true"></vat-button>
-      <vat-button [text]="'Exemplo'" [outline]="8" [loading]="true"></vat-button>
-    </div>
-    <div class="w-full">
-      <p>Mensagem</p>
-      <vat-button [text]="'Exemplo'" [outline]="1" [message]="'98.754'"></vat-button>
-      <vat-button [text]="'Exemplo'" [outline]="2" [message]="'98.754'"></vat-button>
-      <vat-button [text]="'Exemplo'" [outline]="3" [message]="'98.754'"></vat-button>
-      <vat-button [text]="'Exemplo'" [outline]="4" [message]="'98.754'"></vat-button>
-      <vat-button [text]="'Exemplo'" [outline]="5" [message]="'98.754'"></vat-button>
-      <vat-button [text]="'Exemplo'" [outline]="6" [message]="'98.754'"></vat-button>
-      <vat-button [text]="'Exemplo'" [outline]="7" [message]="'98.754'"></vat-button>
-      <vat-button [text]="'Exemplo'" [outline]="8" [message]="'98.754'"></vat-button>
-    </div>
-  </div>
-  <app-code-viewer [codeViewer]="codeCollorEnum"></app-code-viewer>
-  <app-code-viewer [codeViewer]="codeOutline"></app-code-viewer>
+  <app-code-viewer [codeViewer]="codeColorEnum"></app-code-viewer>
+  <app-code-viewer [codeViewer]="codeColor"></app-code-viewer>
 </div>
 
 <div class="mt-10">
   <h2 class="font-semibold">Exemplo de personalização de Tamanho</h2>
-  <div class="flex flex-wrap items-center px-4 pt-4 bg-sky-100/50 mb-2">
-    <vat-button [text]="'Exemplo'" [collor]="1" [size]="1"></vat-button>
-    <vat-button [text]="'Exemplo'" [collor]="1" [size]="2"></vat-button>
-    <vat-button [text]="'Exemplo'" [collor]="1" [size]="3"></vat-button>
-    <vat-button [text]="'Exemplo'" [collor]="1" [size]="4"></vat-button>
-    <vat-button [text]="'Exemplo'" [collor]="1" [size]="5"></vat-button>
+  <div class="w-4/5">
+    <h1>Personalização do Size</h1>
+    <div class="grid grid-cols-5 gap-1 items-center">
+      <vat-button *ngFor="let size of eSize | keyvalue" [text]="size.key" [size]="size.value"></vat-button>
+    </div>
   </div>
   <p>O parâmetro <span class="font-semibold">"size"</span> recebe um enumerador, conforme mostrado abaixo:</p>
   <app-code-viewer [codeViewer]="codeSizeEnum"></app-code-viewer>
@@ -318,41 +72,21 @@
 </div>
 
 <div class="mt-10">
-  <h2 class="font-semibold">Exemplo de personalização da Sombra</h2>
-  <div class="grid grid-cols-2 xsm:grid-cols-3 md:grid-cols-4 2xl:grid-cols-6 gap-x-4 items-center px-4 py-4 bg-sky-100/50 mb-2">
-    <vat-button [text]="'Exemplo'" [collor]="2" [shadow]="1"></vat-button>
-    <vat-button [text]="'Exemplo'" [collor]="2" [shadow]="2"></vat-button>
-    <vat-button [text]="'Exemplo'" [collor]="2" [shadow]="3"></vat-button>
-    <vat-button [text]="'Exemplo'" [collor]="2" [shadow]="4"></vat-button>
-    <vat-button [text]="'Exemplo'" [collor]="2" [shadow]="5"></vat-button>
-    <vat-button [text]="'Exemplo'" [collor]="2" [shadow]="6"></vat-button>
-    <vat-button [text]="'Exemplo'" [collor]="2" [shadow]="7"></vat-button>
-    <vat-button [text]="'Exemplo'" [collor]="2" [shadow]="8"></vat-button>
-  </div>
-  <p>O parâmetro <span class="font-semibold">"shadow"</span> recebe um enumerador, conforme mostrado abaixo:</p>
-  <app-code-viewer [codeViewer]="codeShadowEnum"></app-code-viewer>
-  <app-code-viewer [codeViewer]="codeShadow"></app-code-viewer>
-</div>
-
-<div class="mt-10">
   <h2 class="font-semibold">Exemplo de personalização do Arredondamento</h2>
-  <div class="flex flex-wrap space-x-4 items-center px-4 py-4 bg-sky-100/50">
-    <vat-button [text]="'Exemplo'" [collor]="3" [rounded]="1"></vat-button>
-    <vat-button [text]="'Exemplo'" [collor]="3" [rounded]="2"></vat-button>
-    <vat-button [text]="'Exemplo'" [collor]="3" [rounded]="3"></vat-button>
-    <vat-button [text]="'Exemplo'" [collor]="3" [rounded]="4"></vat-button>
-    <vat-button [text]="'Exemplo'" [collor]="3" [rounded]="5"></vat-button>
+  <h1>Personalização do Rounded</h1>
+  <div class="grid grid-cols-5 gap-1">
+    <vat-button *ngFor="let rounded of eRounded | keyvalue" [text]="rounded.key" [rounded]="rounded.value"></vat-button>
   </div>
   <p>O parâmetro <span class="font-semibold">"rounded"</span> recebe um enumerador, conforme mostrado abaixo:</p>
-  <app-code-viewer [codeViewer]="codeSizeEnum"></app-code-viewer>
+  <app-code-viewer [codeViewer]="codeRoundedEnum"></app-code-viewer>
   <app-code-viewer [codeViewer]="codeRounded"></app-code-viewer>
 </div>
 
 <div class="mt-10">
   <h2 class="font-semibold">Exemplo de personalização da Mensagem</h2>
   <div class="flex flex-wrap space-x-4 items-center px-4 py-4 bg-sky-100/50">
-    <vat-button [text]="'Exemplo'" [collor]="5" [rounded]="1" [message]="'1.235.896'"></vat-button>
-    <vat-button [text]="'Exemplo'" [gradientDuotone]="4" [rounded]="1" [message]="'mensagem'"></vat-button>
+    <vat-button [text]="'Exemplo'" [collor]="5" [rounded]="eRounded.md" [message]="'1.235.896'"></vat-button>
+    <vat-button [text]="'Exemplo'" [gradientDuotone]="4" [rounded]="eRounded.none" [message]="'mensagem'"></vat-button>
   </div>
   <p>O parâmetro <span class="font-semibold">"message"</span> recebe um string, conforme mostrado abaixo:</p>
   <app-code-viewer [codeViewer]="codeMensagem"></app-code-viewer>

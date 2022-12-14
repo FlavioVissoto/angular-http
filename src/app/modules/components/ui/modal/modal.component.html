@@ -1,12 +1,16 @@
-<app-modal-teste [title]="'DragonBall GT'" [show]="showModal" [rounded]="3" (byClickClose)="closeModal()">
+<vat-modal [title]="'DragonBall GT'" [show]="showModal" [rounded]="eSize.base" (byClickClose)="closeModal()">
     <div body class="flex justify-center">
         <img src="https://i.pinimg.com/564x/dc/19/b7/dc19b79974f05a53755bc95fdb3c0889.jpg" class="w-64" alt="">
     </div>
     <div footer>
-        <vat-button [text]="'Fechar'" [rounded]="2" [collor]="1" (byClick)="closeModal()"></vat-button>
-        <vat-button [text]="'Fechar'" [rounded]="2" [collor]="6" (byClick)="closeModal()"></vat-button>
+        <div class="flex flex-col items-center mt-4">
+            <div class="w-52">
+                <vat-button [text]="'Fechar'" [rounded]="eRounded.md" [color]="eColor.blue" (byClick)="closeModal()"></vat-button>
+                <vat-button [text]="'Fechar'" [rounded]="eRounded.md" [color]="eColor.orange" (byClick)="closeModal()"></vat-button>
+            </div>
+        </div>
     </div>
-</app-modal-teste>
+</vat-modal>
 
 <div class="md:mt-2">
     <div class="flex items-center font-bold uppercase text-2xl">
@@ -22,7 +26,7 @@
 
 <app-example-viewer [title]="'Alguns exemplos do componente Modal'">
     <div class="flex flex-col items-center">
-        <vat-button [text]="'Exibir/Esconder Modal'" [rounded]="2" [collor]="1" (byClick)="toggleModal()"></vat-button>
+        <vat-button [text]="'Exibir/Esconder Modal'" [rounded]="eRounded.md" [color]="eColor.blue" (byClick)="toggleModal()"></vat-button>
     </div>
 </app-example-viewer>
 
