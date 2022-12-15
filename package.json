@@ -72,7 +72,7 @@
     "@typescript-eslint/eslint-plugin": "^5.28.0",
     "@typescript-eslint/parser": "^5.28.0",
     "@vissoto-angular/http-client": "^14.0.1",
-    "@vissoto-angular/ui": "file:../vissoto-angular-toolkit-ui/dist/vissoto-angular-ui-12.6.3.tgz",
+    "@vissoto-angular/ui": "file:../vissoto-angular-toolkit-ui/dist/vissoto-angular-ui-12.6.4.tgz",
     "eslint": "^8.17.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-angular": "^4.1.0",

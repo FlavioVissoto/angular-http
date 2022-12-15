@@ -1,6 +1,6 @@
-import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
+import { Color, Rounded } from '@vissoto-angular/ui';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
-import { SelectItem } from './interface/select.interface';
 import { Size } from './interface/size.interface';
 
 @Component({
@@ -8,82 +8,60 @@ import { Size } from './interface/size.interface';
   templateUrl: './dev-comp.component.html',
   styleUrls: ['./dev-comp.component.scss'],
 })
-export class DevCompComponent {
-  thisElementClicked = false;
-
-  @HostListener('click', ['$event'])
-  onLocalClick() {
-    this.thisElementClicked = true;
+export class DevCompComponent implements OnInit {
+  ngOnInit(): void {
+    console.log(this.eColor, this.eRounded, this.eSize);
   }
 
-  @HostListener('document:click', ['$event'])
-  onClick() {
-    if (!this.thisElementClicked) {
-      this.showItens = false;
-    }
-    this.thisElementClicked = false;
+  eColor = Color;
+  eRounded = Rounded;
+  eSize = Size;
+
+  /**
+   * Dispara quando houver um clique do mouse no botão para fechar o elemento.
+   *
+   * Return: EventEmitter
+   */
+  @Output() byClickClose = new EventEmitter();
+
+  /**
+   * Cor utilizada para o alerta.
+   *
+   * Cores disponíveis: red | gray | blue | green | yellow
+   */
+  @Input() color: Color = Color.yellow;
+
+  /**
+   * Classe CSS customizada para o alerta.
+   */
+  @Input() customCss: string;
+
+  /**
+   * Tempo de exibição do alerta em milisegundos.
+   */
+  @Input() timer = 3000;
+
+  /**
+   * Realiza o fechamento do alerta automaticamente no intervalo especificado no parametro "time" após aberto.
+   */
+  @Input() autoClose = true;
+
+  _show = false;
+  @Input() set show(value: boolean) {
+    this._show = value;
+    this.timeoutClose();
   }
 
-  @Output() bySelected = new EventEmitter<SelectItem>();
-
-  @Input() title: string;
-  @Input() placeholder: string;
-
-  idSelect = this.getRandomInt(0, 999999);
-
-  cssClassRounded: string;
-
-  private _rounded: Size;
-
-  @Input() set itens(value: SelectItem[]) {
-    this.selectItems = value;
-    this.selectedItem = value.filter((x: SelectItem) => x.selected)[0];
-  }
-  get itens(): SelectItem[] {
-    return this.selectItems;
+  timeoutClose() {
+    setTimeout(() => {
+      if (this.autoClose) {
+        this.close();
+      }
+    }, this.timer);
   }
 
-  selectItems: SelectItem[];
-  selectedItem: SelectItem;
-  showItens = false;
-
-  clickButton(): void {
-    this.showItens = true;
-  }
-
-  clickItem(value: SelectItem): void {
-    this.selectItems = this.selectItems.map((x) => ({
-      ...x,
-      selected: x.value == value.value,
-    }));
-    this.selectedItem = value;
-    this.bySelected.emit(value);
-    this.showItens = false;
-  }
-
-  @Input() set rounded(value: Size) {
-    this._rounded = value;
-    this.cssClassRounded = this.getCssRounded();
-  }
-
-  private getRandomInt(min: number, max: number): number {
-    return Math.floor(Math.random() * (max - min) + min);
-  }
-
-  private getCssRounded(): string {
-    switch (this._rounded) {
-      case Size['extra-small']:
-        return 'rounded-sm';
-      case Size.small:
-        return 'rounded';
-      case Size.base:
-        return 'rounded-md';
-      case Size.large:
-        return 'rounded-lg';
-      case Size['extra-large']:
-        return 'rounded-full';
-      default:
-        return '';
-    }
+  close(): void {
+    //this._show = false;
+    this.byClickClose.emit();
   }
 }

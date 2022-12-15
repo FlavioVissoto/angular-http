@@ -13,13 +13,18 @@
 </div>
 
 <app-example-viewer [title]="'Alguns exemplos do componente Alert'">
-    <div class="flex flex-wrap">
-        <vat-alert [show]="item.show" class="w-full" [autoClose]="false" [color]="item.color"
-            *ngFor="let item of colors" [labelButtonClose]="'close'">{{item.message}}</vat-alert>
-    </div>
-    <div class="w-full flex justify-center">
-        <vat-button [collor]="1" [text]="'Abrir alerts'" [rounded]="eRounded.sm" (byClick)="openAllAlerts()"></vat-button>
-        <vat-button [collor]="1" [text]="'Fechar alerts'" [rounded]="eRounded.sm" (byClick)="closeAllAlerts()"></vat-button>
+    <div class="grid grid-cols-1 xsm:grid-cols-2 lg:grid-cols-3 gap-2">
+        <vat-alert [show]="true" [autoClose]="false" [color]="item.value" *ngFor="let item of eColor | keyvalue">
+            <div class="flex gap-x-1 ml-2 items-center">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" x2="12" y1="8" y2="12" />
+                    <line x1="12" x2="12.01" y1="16" y2="16" />
+                </svg>
+                <p>Cor: {{item.value}}</p>
+            </div>
+        </vat-alert>
     </div>
 </app-example-viewer>
 
@@ -66,8 +71,8 @@
     <div class="bg-sky-100/50 flex flex-col space-y-2">
         <p class="text-sm">O parâmetro <span class="font-semibold">"Color"</span> recebe uma string, conforme mostrado
             abaixo:</p>
-        <app-code-viewer *ngIf="valuesPage.colorOptions" [codeViewer]="valuesPage.colorOptions"></app-code-viewer>
-        <app-code-viewer *ngIf="valuesPage.color" [codeViewer]="valuesPage.color"></app-code-viewer>
+
+        <app-code-viewer *ngIf="valuesPage.colorStyle.enum" [codeViewer]="valuesPage.colorStyle.enum"></app-code-viewer>
     </div>
 </div>
 
@@ -94,15 +99,5 @@
         <p class="text-sm">O parâmetro <span class="font-semibold">"Timer"</span> é utilizado para especificar o tempo
             que o alerta será exibido na tela antes de fechar</p>
         <app-code-viewer *ngIf="valuesPage.timer" [codeViewer]="valuesPage.timer"></app-code-viewer>
-    </div>
-</div>
-
-<div class="mt-10">
-    <h2 class="font-semibold">LabelButtonClose</h2>
-    <div class="bg-sky-100/50 flex flex-col space-y-2">
-        <p class="text-sm">O parâmetro <span class="font-semibold">"LabelButtonClose"</span> é utilizado para exibir o
-            nome do botão fechar para os leitores de tela.</p>
-        <app-code-viewer *ngIf="valuesPage.labelButtonClose" [codeViewer]="valuesPage.labelButtonClose">
-        </app-code-viewer>
     </div>
 </div>

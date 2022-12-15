@@ -2,10 +2,11 @@ import { Color, Rounded, Size } from '@vissoto-angular/ui';
 import { Component, OnInit } from '@angular/core';
 
 import { AlertRequest } from '../../../../interfaces/components/ui/alert.request';
-import { AlertUI } from './interfaces/alert.interface';
+import { ColorStyle } from '../../../../interfaces/components/ui/style/color.interface';
 import { EventsRequest } from '../../../../interfaces/components/events.interface';
 import { RequestDefault } from '../../../../interfaces/request/request.interface';
 import { UIServices } from '../../../../services/components/ui/ui.services';
+import { UIStyleServices } from '../../../../services/components/ui/style.services';
 
 @Component({
   selector: 'app-alert',
@@ -13,7 +14,7 @@ import { UIServices } from '../../../../services/components/ui/ui.services';
   styleUrls: ['./alert.component.scss'],
 })
 export class AlertComponent implements OnInit {
-  constructor(private uiServices: UIServices) {}
+  constructor(private uiServices: UIServices, private uiStyleServices: UIStyleServices) {}
 
   eRounded = Rounded;
   eSize = Size;
@@ -21,36 +22,9 @@ export class AlertComponent implements OnInit {
 
   valuesPage: AlertRequest = {} as AlertRequest;
 
-  colors: AlertUI[] = [
-    {
-      color: 'red',
-      message: 'Charizard: Se Charizard ficar furioso, a chama na ponta de sua cauda se acende em um tom azul claro.',
-      show: true,
-    },
-    {
-      color: 'gray',
-      message: 'Gengar: Ele rouba o calor de seus arredores. Se você sentir um calafrio repentino, é certo que um GENGAR apareceu.',
-      show: true,
-    },
-    {
-      color: 'blue',
-      message: 'Blastoise: Ele deliberadamente se torna pesado para poder suportar o recuo dos jatos de água que dispara.',
-      show: true,
-    },
-    {
-      color: 'green',
-      message: 'Venusaur: Espalhando as largas pétalas de sua flor e captando os raios do sol, ela enche seu corpo de poder.',
-      show: true,
-    },
-    {
-      color: 'yellow',
-      message: 'Zapdos: Este Pokémon pássaro lendário causa tempestades selvagens ao bater suas asas brilhantes.',
-      show: true,
-    },
-  ];
-
   ngOnInit(): void {
     this.getValuesPageRequest();
+    this.getStylesRequest();
   }
 
   private getValuesPageRequest(): void {
@@ -74,15 +48,11 @@ export class AlertComponent implements OnInit {
     });
   }
 
-  openAllAlerts(): void {
-    this.colors.forEach((element: AlertUI) => {
-      element.show = true;
-    });
-  }
-
-  closeAllAlerts(): void {
-    this.colors.forEach((element: AlertUI) => {
-      element.show = false;
+  private getStylesRequest(): void {
+    this.uiStyleServices.getColor().subscribe({
+      next: (x: RequestDefault<ColorStyle>) => {
+        this.valuesPage.colorStyle = x.data;
+      },
     });
   }
 }

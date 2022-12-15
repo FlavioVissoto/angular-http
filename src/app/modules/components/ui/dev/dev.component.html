@@ -1,40 +1,13 @@
-<div class="w-52">
-    <app-dev-comp [itens]="itens" [title]="'Pokemon'"></app-dev-comp>
+<div class="grid grid-cols-3 gap-2">
+    <app-dev-comp [show]="show" [autoClose]="false" [color]="item.value" *ngFor="let item of eColor | keyvalue" (byClickClose)="close()">
+        <div class="flex gap-x-1 ml-2 items-center">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="12" x2="12" y1="8" y2="12" />
+                <line x1="12" x2="12.01" y1="16" y2="16" />
+            </svg>
+            <p>{{item.key}} - {{item.value}}</p>
+        </div>
+    </app-dev-comp>
 </div>
-
-<!-- <div class="w-4/5">
-    <h1>Personalização do Color</h1>
-    <div class="grid grid-cols-5 gap-1">
-        <app-dev-comp *ngFor="let color of eColor | keyvalue" [text]="color.key" [color]="color.value"></app-dev-comp>
-    </div>
-</div>
-
-<div class="w-4/5">
-    <h1>Personalização do Rounded</h1>
-    <div class="grid grid-cols-5 gap-1">
-        <app-dev-comp *ngFor="let rounded of eRounded | keyvalue" [text]="rounded.key"
-            [rounded]="rounded.value"></app-dev-comp>
-    </div>
-</div>
-
-<div class="w-4/5">
-    <h1>Personalização do Size</h1>
-    <div class="grid grid-cols-5 gap-1 items-center">
-        <app-dev-comp *ngFor="let size of eSize | keyvalue" [text]="size.key" [size]="size.value"></app-dev-comp>
-    </div>
-</div>
-
-<div class="w-4/5">
-    <h1>Personalização do Loading</h1>
-    <div class="grid grid-cols-5 gap-1 items-center">
-        <app-dev-comp [loading]="true" [text]="'Loading'"></app-dev-comp>
-    </div>
-</div>
-
-<div class="w-4/5">
-    <h1>Personalização do Message</h1>
-    <div class="grid grid-cols-5 gap-1 items-center">
-        <app-dev-comp [message]="'99.999'" [text]="'Loading'"></app-dev-comp>
-        <app-dev-comp [message]="'Pokémon'" [text]="'Loading'"></app-dev-comp>
-    </div>
-</div> -->

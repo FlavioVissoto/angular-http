@@ -3,152 +3,272 @@
 @import './../../../assets/css/scss/border.scss';
 @import './../../../assets/css/scss/font.scss';
 
-.vat {
-  &-select {
+:host {
+  .vat {
+    &-alert {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem;
+      border-top-width: 0.25rem;
 
-    .title {
-      display: block;
-      @extend .vat-font-size-sm;
-      @extend .vat-font-medium;
-      color: color(gray-700);
-    }
+      &.hidden {
+        display: none;
+      }
 
-    &-container {
-      position: relative;
-      margin-bottom: 0.25rem;
+      .content {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        font-weight: 500;
+      }
 
-      &-box {
-        position: relative;
-        width: 100%;
-        cursor: pointer;
-        background-color: color(white);
-        border: 1px solid color(gray-300);
-        padding: 0.5rem 2.5rem 0.5rem 0.75rem;
-        text-align: left;
+      .button-close {
+        border-radius: 0.5rem;
+        padding: 0.25rem;
+        margin-bottom: 0.1rem;
 
-        &:focus {
-          border-color: color(blue-300);
+        svg {
+          height: 1.25rem;
+          width: 1.25rem;
         }
-        &:hover {
-          color: color(blue-700);
-          .icon {
-            svg {
-              color: color(blue-600);
-            }
-          }
-        }
-        &:active {
-          border-color: color(blue-400);
-          background-color: color(gray-50);
-        }
+      }
 
-        .img-selected {
-          display: flex;
-          align-items: center;
-          height: 1.5rem;
-          justify-content: center;
+      &.pink {
+        background-color: color(pink-500);
+        border-color: color(pink-600);
+        color: color(white);
 
-          .img {
-            width: 1.5rem;
-            flex-shrink: 0;
-            @extend .vat-border-radius-full;
+        .button-close {
+          &:hover {
+            background-color: color(pink-600);
           }
 
-          .text {
-            display: block;
-            margin-left: 0.75rem;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-          }
-        }
-
-        .icon {
-          pointer-events: none;
-          position: absolute;
-          display: flex;
-          align-items: center;
-          top: 0px;
-          bottom: 0px;
-          right: 0px;
-          margin-left: 0.75rem;
-          padding-right: 0.5rem;
-
-          svg {
-            height: 1.25rem;
-            width: 1.25rem;
-            color: color(gray-400);
+          &:active {
+            background-color: color(pink-700);
           }
         }
       }
 
-      .list-items {
-        position: absolute;
-        z-index: 10;
-        margin-top: 0.25rem;
-        width: 100%;
-        overflow: auto;
-        background-color: color(white);
-        @extend .vat-border-radius-md;
-        @extend .vat-font-size-md;
+      &.red {
+        background-color: color(red-500);
+        border-color: color(red-600);
+        color: color(white);
 
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 9px;
-        border: 1px solid color(gray-200);
-
-        &.hidden {
-          display: none;
-        }
-
-        .item {
-          color: color(gray-900);
-          position: relative;
-          cursor: pointer;
-          user-select: none;
-          padding: 0.5rem 0.75rem;
-
+        .button-close {
           &:hover {
-            background-color: color(blue-300);
+            background-color: color(red-600);
           }
 
-          .item-detail {
-            display: flex;
-            align-items: center;
+          &:active {
+            background-color: color(red-700);
+          }
+        }
+      }
 
-            .img {
-              height: 1.5rem;
-              width: 1.5rem;
-              flex-shrink: 0;
-              @extend .vat-border-radius-full;
-              background-color: color(white);
-            }
+      &.purple {
+        background-color: color(purple-500);
+        border-color: color(purple-600);
+        color: color(white);
 
-            .text {
-              display: block;
-              margin-left: 0.75rem;
-              overflow: hidden;
-              text-overflow: ellipsis;
-              white-space: nowrap;
-            }
-
-            > .text:first-child {
-              padding-left: 1.5rem;
-            }
+        .button-close {
+          &:hover {
+            background-color: color(purple-600);
           }
 
-          .selected {
-            color: color(blue-500);
-            display: flex;
-            align-items: center;
-            position: absolute;
-            top: 0px;
-            bottom: 0px;
-            right: 0px;
-            padding-right: 1rem;
+          &:active {
+            background-color: color(purple-700);
+          }
+        }
+      }
 
-            svg {
-              height: 1.25rem;
-              width: 1.25rem;
-            }
+      &.yellow {
+        background-color: color(yellow-400);
+        border-color: color(yellow-500);
+        color: color(white);
+
+        .button-close {
+          &:hover {
+            background-color: color(yellow-500);
+          }
+
+          &:active {
+            background-color: color(yellow-600);
+          }
+        }
+      }
+
+      &.green {
+        background-color: color(green-500);
+        border-color: color(green-600);
+        color: color(white);
+
+        .button-close {
+          &:hover {
+            background-color: color(green-600);
+          }
+
+          &:active {
+            background-color: color(green-700);
+          }
+        }
+      }
+
+      &.orange {
+        background-color: color(orange-500);
+        border-color: color(orange-600);
+        color: color(white);
+
+        .button-close {
+          &:hover {
+            background-color: color(orange-600);
+          }
+
+          &:active {
+            background-color: color(orange-700);
+          }
+        }
+      }
+
+      &.blue {
+        background-color: color(blue-500);
+        border-color: color(blue-600);
+        color: color(white);
+
+        .button-close {
+          &:hover {
+            background-color: color(blue-600);
+          }
+
+          &:active {
+            background-color: color(blue-700);
+          }
+        }
+      }
+
+      &.alternative {
+        background-color: color(white);
+        border-color: color(gray-200);
+        color: color(gray-900);
+
+        .button-close {
+          &:hover {
+            background-color: color(gray-200);
+          }
+
+          &:active {
+            background-color: color(gray-300);
+          }
+        }
+      }
+
+      &.cyan-to-blue {
+        background-image: linear-gradient(to bottom right, color(cyan-500), color(blue-500));
+        border-image: linear-gradient(to bottom right, color(cyan-500), color(blue-500));
+        color: color(gray-900);
+
+        .button-close {
+          &:hover {
+            background-image: linear-gradient(to left, color(cyan-500), color(blue-500));
+          }
+
+          &:active {
+            background-image: linear-gradient(to left top, color(cyan-500), color(blue-500));
+          }
+        }
+      }
+
+      &.green-to-blue {
+        background-image: linear-gradient(to bottom right, color(green-500), color(blue-500));
+        border-image: linear-gradient(to bottom right, color(green-500), color(blue-500));
+        color: color(gray-900);
+
+        .button-close {
+          &:hover {
+            background-image: linear-gradient(to left, color(green-500), color(blue-500));
+          }
+
+          &:active {
+            background-image: linear-gradient(to left top, color(green-500), color(blue-500));
+          }
+        }
+      }
+
+      &.purple-to-pink {
+        background-image: linear-gradient(to bottom right, color(purple-500), color(pink-500));
+        border-image: linear-gradient(to bottom right, color(purple-500), color(pink-500));
+        color: color(gray-900);
+
+        .button-close {
+          &:hover {
+            background-image: linear-gradient(to left, color(purple-500), color(pink-500));
+          }
+
+          &:active {
+            background-image: linear-gradient(to left top, color(purple-500), color(pink-500));
+          }
+        }
+      }
+
+      &.red-to-yellow {
+        background-image: linear-gradient(to bottom right, color(red-500), color(yellow-500));
+        border-image: linear-gradient(to bottom right, color(red-500), color(yellow-500));
+        color: color(gray-900);
+
+        .button-close {
+          &:hover {
+            background-image: linear-gradient(to left, color(red-500), color(yellow-500));
+          }
+
+          &:active {
+            background-image: linear-gradient(to left top, color(red-500), color(yellow-500));
+          }
+        }
+      }
+
+      &.pink-to-orange {
+        background-image: linear-gradient(to bottom right, color(pink-500), color(orange-500));
+        border-image: linear-gradient(to bottom right, color(pink-500), color(orange-500));
+        color: color(gray-900);
+
+        .button-close {
+          &:hover {
+            background-image: linear-gradient(to left, color(pink-500), color(orange-500));
+          }
+
+          &:active {
+            background-image: linear-gradient(to left top, color(pink-500), color(orange-500));
+          }
+        }
+      }
+
+      &.purple-to-blue {
+        background-image: linear-gradient(to bottom right, color(purple-500), color(blue-500));
+        border-image: linear-gradient(to bottom right, color(purple-500), color(blue-500));
+        color: color(gray-900);
+
+        .button-close {
+          &:hover {
+            background-image: linear-gradient(to left, color(purple-500), color(blue-500));
+          }
+
+          &:active {
+            background-image: linear-gradient(to left top, color(purple-500), color(blue-500));
+          }
+        }
+      }
+
+      &.teal-to-lime {
+        background-image: linear-gradient(to bottom right, color(teal-500), color(lime-500));
+        border-image: linear-gradient(to bottom right, color(teal-500), color(lime-500));
+        color: color(gray-900);
+
+        .button-close {
+          &:hover {
+            background-image: linear-gradient(to left, color(teal-500), color(lime-500));
+          }
+
+          &:active {
+            background-image: linear-gradient(to left top, color(teal-500), color(lime-500));
           }
         }
       }

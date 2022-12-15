@@ -42,18 +42,4 @@ describe('AlertComponent', () => {
     component['getEventsPage']();
     expect(component.valuesPage.events.length).not.toEqual(0);
   });
-
-  test('openAllAlerts', () => {
-    component.openAllAlerts();
-    component.colors.forEach((element) => {
-      expect(element.show).toBeTruthy();
-    });
-  });
-
-  test('closeAllAlerts', () => {
-    component.closeAllAlerts();
-    component.colors.forEach((element) => {
-      expect(element.show).toBeFalsy();
-    });
-  });
 });
