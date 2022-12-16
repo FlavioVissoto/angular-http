@@ -1,13 +1,8 @@
-<div class="grid grid-cols-3 gap-2">
-    <app-dev-comp [show]="show" [autoClose]="false" [color]="item.value" *ngFor="let item of eColor | keyvalue" (byClickClose)="close()">
-        <div class="flex gap-x-1 ml-2 items-center">
-            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="10" />
-                <line x1="12" x2="12" y1="8" y2="12" />
-                <line x1="12" x2="12.01" y1="16" y2="16" />
-            </svg>
-            <p>{{item.key}} - {{item.value}}</p>
-        </div>
-    </app-dev-comp>
+<div class="h-16"></div>
+<div class="flex flex-row space-x-4 justify-between w-52">
+    <div *ngFor="let item of ePosition | keyvalue" class="bg-blue-100">
+        <app-dev-comp [text]="'botão hbv uogv ouv ' + item.value" [position]="item.value" [show]="item.value == 'top' || item.value == 'bottom'">
+            <p>{{item.value}}</p>
+        </app-dev-comp>
+    </div>
 </div>

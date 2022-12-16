@@ -1,6 +1,7 @@
 import { CodeViewer } from './../../../../components/code-viewer/interfaces/code-viewer.interface';
 import { Component } from '@angular/core';
 import { Language } from 'src/app/components/code-viewer/interfaces/languages.enum';
+import { Position } from '@vissoto-angular/ui';
 
 @Component({
   selector: 'app-tooltip',
@@ -8,6 +9,8 @@ import { Language } from 'src/app/components/code-viewer/interfaces/languages.en
   styleUrls: ['./tooltip.component.scss'],
 })
 export class TooltipComponent {
+  ePosition = Position;
+
   codeModule = {
     code:
       "import { TooltipModule } from '@vissoto-angular/ui';\n\n" +
@@ -22,7 +25,7 @@ export class TooltipComponent {
 
   codeExample = {
     code:
-      '<vat-tooltip [text]="\'Tooltip Exemplo\'" [position]="0">\n' +
+      '<vat-tooltip [text]="\'Tooltip Exemplo\'" [position]="\'Position.top\'">\n' +
       '\t\t<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Tooltip para cima</button>\n' +
       '\t</vat-tooltip>',
     language: Language.HTML,
@@ -34,12 +37,17 @@ export class TooltipComponent {
   } as CodeViewer;
 
   codePosition = {
-    code: '<vat-tooltip [position]="0"></vat-tooltip>',
+    code: '<vat-tooltip [position]="\'Position.top\'"></vat-tooltip>',
     language: Language.HTML,
   } as CodeViewer;
 
   codeEnum = {
-    code: 'export const enum Position {\n' + '\t\ttop = 0,\n' + '\t\tright = 1,\n' + '\t\tbottom = 2,\n' + '\t\tleft = 3,\n' + '\t}',
+    code: `export enum Position {
+      top = 'top',
+      right = 'right',
+      bottom = 'bottom',
+      left = 'left',
+    }`,
     language: Language.TypeScript,
   } as CodeViewer;
 }

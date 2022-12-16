@@ -1,7 +1,10 @@
 import { AlertRequest } from '../../../../interfaces/components/ui/alert.request';
 import { AttributesItem } from '../../../../interfaces/components/attributes.interface';
+import { BaseStyle } from '../../../../interfaces/components/ui/style/base-style.interface';
+import { BorderStyle } from '../../../../interfaces/components/ui/style/border.interface';
 import { CheckboxRequest } from '../../../../interfaces/components/ui/checkbox.request.interface';
 import { CodeViewer } from '../../../../components/code-viewer/interfaces/code-viewer.interface';
+import { ColorStyle } from '../../../../interfaces/components/ui/style/color.interface';
 import { EventsRequest } from '../../../../interfaces/components/events.interface';
 import { InputTextRequest } from '../../../../interfaces/components/ui/input-text.request.interface';
 import { Language } from '../../../../components/code-viewer/interfaces/languages.enum';
@@ -158,3 +161,29 @@ export const mockAttributesHTML = {
     },
   ],
 } as RequestDefault<AttributesItem[]>;
+
+export const mockBorderStyle = {
+  data: {
+    radius: [
+      {
+        name: 'name',
+        cssClass: 'classCss',
+      },
+    ] as BaseStyle[],
+  },
+} as RequestDefault<BorderStyle>;
+
+export const mockColorStyle = {
+  data: {
+    colors: [
+      {
+        name: 'name',
+        cssClass: 'classCss',
+      },
+    ] as BaseStyle[],
+    enum: {
+      code: 'code enum',
+      language: 'typescript',
+    } as CodeViewer,
+  },
+} as RequestDefault<ColorStyle>;
